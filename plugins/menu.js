@@ -142,8 +142,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
     
     let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
-    //conn.sendMessage(m.chat, {  video: tumbv, caption: text.trim(), gifPlayback: true }, m)
-    conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] })
+    conn.sendMessage(m.chat, {  video: tumbv, caption: text.trim(), gifPlayback: true }, m)
+    conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] }, m)
     /*conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
       ['ꨄ︎ Apoyar', '/donate'],
       ['⏍ Info', '/botinfo'],
