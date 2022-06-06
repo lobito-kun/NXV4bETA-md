@@ -1,10 +1,11 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
+ await conn.reply(m.chat, global.wait, m)
  let res = await fetch('https://api.waifu.pics/sfw/waifu')
  if (!res.ok) throw await res.text()
  let json = await res.json()
- if (!json.url) throw '❎ Error!'
+ if (!json.url) throw global.error
  conn.sendFile(m.chat, json, 'error.png', '*LOLI*', m)
 }
 
