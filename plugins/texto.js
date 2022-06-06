@@ -9,7 +9,7 @@ let handler = async (m, { conn, args }) => {
     let inputPath = 'src/kertas/magernulis1.jpg'
     let d = new Date
     let tgl = d.toLocaleDateString('id-Id')
-    let hari = d.toLocaleDateString('id-Id', { weekday: 'long' })
+    let hari = d.toLocaleDateString('es-Id', { weekday: 'long' })
     m.reply(tgl + '\n' + hari)
     let teks = args.join` `
     let bufs = []
