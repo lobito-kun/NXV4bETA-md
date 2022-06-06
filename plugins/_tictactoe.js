@@ -28,7 +28,7 @@ export async function before(m) {
             }))
         if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
             m.reply({
-                '-3': 'El juego ha terminado'',
+                '-3': 'El juego ha terminado',
                 '-2': 'Inválido',
                 '-1': 'Posición inválida',
                 0: 'Posición inválida',
