@@ -5,50 +5,41 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'ACERCA DE',
-  'game': 'JUEGOS',
-  'xp': 'NIVEL & ECONOMIA',
-  'rg': 'REGISTRO',
-  'sticker': 'STICKER',
-   'img': 'IMAGEN',
-  'group': 'GRUPO',
-  'nable': 'EN/DISABLE OPCIONES', 
-  'premium': 'PREMIUM',
-  'nime': 'ANIME',
-  'downloader': 'DESCARGAS',
-  'tools': 'TOOLS',
-  'fun': 'FUN',
-  'database': 'DATABASE',
-  'nsfw': 'NSFW +18', 
-  'owner': 'OWNER', 
-  'advanced': 'AVANZADO',
+  'main': 'Menu 🧇',
+  'rpg': 'Juego - RPG 🌋',
+  'game': 'Juegos 🎮',
+  'xp': 'Exp & limite ✨',
+  'sticker': 'Stickers 🧩',
+  'quotes': 'Citas 💌',
+  'adm': 'Admins 😎',
+  'group': 'Grupos 👥',
+  'premium': 'Premiun 👑',
+  'internet': 'Internet 📶',
+  'random': 'Random 🍥',
+  'nsfw': 'Nsfw 🔞',
+  'anonymous': 'Chat - anónimo 🕵️‍♂️',
+  'maker': 'Logo - maker 🎨',
+  'audio': 'Audio 🔊',
+  'downloader': 'Descargas 📥',
+  'tools': 'Ajustes ⚙️',
+  'fun': 'Diverción 🎡',
+  'database': 'Almacenamiento 📂',
+  'vote': 'Votación 🗳️',
+  'jadibot': 'Jadi - bot 🤖',
+  'owner': 'Creador 🐈',
+  'host': 'Host 📡',
+  'advanced': 'Abanzado 💠',
+  'info': 'Info 📍',
+  '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
   before: `
-  ────  *DyLux  ┃ ᴮᴼᵀ*  ────
 
-👋🏻 _Hola_ *%name*
-
-🏆 Rango : *%role*
-🧿 Nivel : *%level* 
-👥 Usuarios : %totalreg
-─────────────
-▢ Crea tu propio bot 
-• https://youtu.be/jeXHB0IIzCM
-▢ Descarga *FGWhatsApp*
-• https://fgmods.epizy.com
-─────────────
-%readmore
-Ⓟ = Premium
-ⓓ = Diamantes
------  -----  -----  -----  -----
-  ≡ *LISTA DE MENUS*
 `.trimStart(),
-  header: '┌─⊷ *%category*',
-  body: '▢ %cmd %islimit %isPremium',
-  footer: '└───────────\n',
-  after: `
-`,
+  header: '❒ *%category*',
+  body: '│∙ *%cmd* %islimit %isPremium',
+  footer: '╰•\n',
+  after: '',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
