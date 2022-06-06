@@ -34,13 +34,15 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'dylux-bot'
-global.author = '@fg98._'
+global.packname = 'Lolibot - OFC'
+global.author = '💌 Lobita & Gatito 💫'
+
+global.wait = '*↻ Esperɑ soy lentɑ. . .*'
+global.error = '*☓ Ocurrió un error inesperado*'
+
 global.igfg = '\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n' 
 global.fgsc = 'https://github.com/FG98F/dylux-fg' 
 global.fgyt = 'https://youtube.com/fg98f'
-
-global.wait = '*⌛ _Cargando..._*\n*▰▰▰▱▱▱▱▱▱*'
 
 global.multiplier = 69 // Cuanto más alto, más difícil subir de nivel
 
