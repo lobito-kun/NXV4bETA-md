@@ -1,4 +1,4 @@
-let { webp2mp4 } = require('../lib/webp2mp4')
+import { webp2mp4 } from '../lib/webp2mp4'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
     if (!m.quoted) throw `balas stiker dengan perintah *${usedPrefix + command}*`
