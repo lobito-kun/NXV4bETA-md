@@ -110,8 +110,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(ⓓ)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
+                .replace(/%islimit/g, menu.limit ? '(limite)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(premium)' : '')
                 .trim()
             }).join('\n')
           }),
@@ -142,8 +142,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
     
     let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
-    conn.sendMessage(m.chat, { video: tumbv, caption: text.trim(), gifPlayback: true }, { quoted: m })
-    //conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] })
+    //conn.sendMessage(m.chat, { video: tumbv, caption: text.trim(), gifPlayback: true }, { quoted: m })
+    conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] }, { quoted: m })
     /*conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
       ['ꨄ︎ Apoyar', '/donate'],
       ['⏍ Info', '/botinfo'],
