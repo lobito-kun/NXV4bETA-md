@@ -76,10 +76,10 @@ ${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
         //const btn = isTie ? ['TicTacToe', '/ttt'] : ['Rendirse', 'surrender']
         if (room.x !== room.o)
-            await this.sendMessage(room.x, str, m, {
+            await this.sendMessage(m.chat, str, m, {
                 mentions: this.parseMention(str)
             })
-        await this.sendMessage(room.o, str, m, {
+        await this.sendMessage(m.chat, str, m, {
             mentions: this.parseMention(str)
         })
         if (isTie || isWin) {
