@@ -3,11 +3,11 @@ import TicTacToe from '../lib/tictactoe.js'
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
     if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Todavía estás en el juego'
-    if (!text) throw `✳️ Ponga un nombre a la sala`
+    if (!text) throw `Ponga un nombre a la sala`
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
-        m.reply('✅ Compañero encontrado')
+        m.reply('Compañero encontrado')
         room.o = m.chat
         room.game.playerO = m.sender
         room.state = 'PLAYING'
@@ -27,19 +27,18 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
             }[v]
         })
         let str = `
-Esperando a @${room.game.currentTurn.split('@')[0]} como primer jugador
-        
-${arr.slice(0, 3).join('')}
-${arr.slice(3, 6).join('')}
-${arr.slice(6).join('')}
+*🎮 Juego Tres En Raya 🎮*
 
-▢ *JUGADOR 1* @${room.game.playerX.split('@')[0]} ❎
-▢ *JUGADOR 2* @${room.game.playerO.split('@')[0]} ⭕
-▢ *SALA ID* ${room.id}
+❎ = @${room.game.playerX.split('@')[0]}
+⭕ = @${room.game.playerO.split('@')[0]}
 
-▢ *Reglas*
-‣ Haz 3 filas de símbolos verticales, horizontales o diagonales para ganar
-‣ Escribe *surrender* para salir del juego y ser declarado derrotado.
+      ${arr.slice(0, 3).join('')}
+      ${arr.slice(3, 6).join('')}
+      ${arr.slice(6).join('')}
+
+Tu turno *@${room.game.currentTurn.split('@')[0]}*
+
+Escriba *rendirse* para dejar de jugar
 `.trim()
         if (room.x !== room.o) await conn.sendButton(room.x, str, igfg, ['Rendirse', 'surrender'], m, {
             mentions: conn.parseMention(str)
@@ -57,10 +56,9 @@ ${arr.slice(6).join('')}
         }
         if (text) room.name = text
         
-        conn.sendButton(m.chat, `⏳ *Esperando pareja*\nEscriba el siguiente comando para aceptar o presiona el botón 
-▢ *${usedPrefix + command} ${text}*
+        conn.sendButton(m.chat, `*Esperando segundo jugador*
 
-🎁 Recompensa: *4999 XP*`, igfg, ['👍🏻 Aceptar', `${usedPrefix + command} ${text}`], m, {
+*• Recompensa:* +4999 Exp`, 'Click para unirte a la partida', ['🎮 Unirse', `${usedPrefix + command} ${text}`], m, {
             mentions: conn.parseMention(text)
         })
 
