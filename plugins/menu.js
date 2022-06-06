@@ -139,7 +139,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       npmname: _package.name,
       npmdesc: _package.description,
       version: _package.version,
-      comand: => Object.values(global.plugins).filter( (v) => v.help && v.tags ).length,
+      comand: Object.values(global.plugins).filter( (v) => v.help && v.tags ).length,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
