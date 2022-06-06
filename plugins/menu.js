@@ -33,7 +33,10 @@ let tags = {
   '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
-  before: `
+  before: `Holɑ *@%user 👋*, %greeting
+
+*• Biografíɑ:* %bio
+
 🍬 *Nombre:* Lolibot
 🍬 *Versión:* 7.0.0
 🍬 *Prefijo:* 「 *%p* 」
@@ -46,7 +49,8 @@ const defaultMenu = {
 *• Fechɑ:* %date
 *• Horɑ:* %time
 
-`.trimStart(),
+Cuɑlquier bug o error en un comɑndo reportɑr con el comɑndo *%preport <bug/error>
+`,
   header: '❒ *%category*',
   body: '│∙ *%cmd* %islimit %isPremium',
   footer: '╰•\n',
@@ -140,6 +144,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       npmdesc: _package.description,
       version: _package.version,
       comand: Object.values(global.plugins).filter( (v) => v.help && v.tags ).length,
+      greeting: saludo,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
@@ -183,3 +188,33 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
+
+var ase = new Date();
+var waktoonyabro = ase.getHours();
+switch(waktoonyabro){
+ case 0: waktoonyabro = `que tengas una linda noche 🌙`; break;
+ case 1: waktoonyabro = `que tengas una linda noche 💤`; break;
+ case 2: waktoonyabro = `que tengas una linda noche 🦉`; break;
+ case 3: waktoonyabro = `que tengas una linda mañana ✨`; break;
+ case 4: waktoonyabro = `que tengas una linda mañana 💫`; break;
+ case 5: waktoonyabro = `que tengas una linda mañana 🌅`; break;
+ case 6: waktoonyabro = `que tengas una linda mañana 🌄`; break;
+ case 7: waktoonyabro = `que tengas una linda mañana 🌅`; break;
+ case 8: waktoonyabro = `que tengas una linda mañana 💫`; break;
+ case 9: waktoonyabro = `que tengas una linda mañana ✨`; break;
+ case 10: waktoonyabro = `que tengas un lindo dia 🌞`; break;
+ case 11: waktoonyabro = `que tengas un lindo dia 🌨`; break;
+ case 12: waktoonyabro = `que tengas un lindo dia ❄`; break;
+ case 13: waktoonyabro = `que tengas un lindo dia 🌤`; break;
+ case 14: waktoonyabro = `que tengas una linda tarde 🌇`; break;
+ case 15: waktoonyabro = `que tengas una linda tarde 🥀`; break;
+ case 16: waktoonyabro = `que tengas una linda tarde 🌹`; break;
+ case 17: waktoonyabro = `que tengas una linda tarde 🌆`; break;
+ case 18: waktoonyabro = `que tengas una linda noche 🌙`; break;
+ case 19: waktoonyabro = `que tengas una linda noche 🌃`; break;
+ case 20: waktoonyabro = `que tengas una linda noche 🌌`; break;
+ case 21: waktoonyabro = `que tengas una linda noche 🌃`; break;
+ case 22: waktoonyabro = `que tengas una linda noche 🌙`; break;
+ case 23: waktoonyabro = `que tengas una linda noche 🌃`; break;
+ }
+var saludo = "" + waktoonyabro;
