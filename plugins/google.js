@@ -1,9 +1,10 @@
 import { googleIt } from '@bochilteam/scraper'
 let handler = async (m, { conn, command, args }) => {
     const fetch = (await import('node-fetch')).default
-    let full = /f$/i.test(command)
+    let full = /g$/i.test(command)
     let text = args.join` `
-    if (!text) return conn.reply(m.chat, '✳️ Que quieres buscar en Google?', m)
+    if (!text) return conn.reply(m.chat, 'Que quieres buscar en Google?', m)
+    await conn.reply(m.chat, global.wait, m)
     let url = 'https://google.com/search?q=' + encodeURIComponent(text)
     let search = await googleIt(text)
     let msg = search.articles.map(({
@@ -22,9 +23,9 @@ let handler = async (m, { conn, command, args }) => {
         m.reply(msg)
     }
 }
-handler.help = ['google <buscar>']
-handler.tags = ['tools']
-handler.command = ['google'] 
 
+handler.help = ['google']
+handler.tags = ['tools']
+handler.command = /^(google)$/i
 
 export default handler
