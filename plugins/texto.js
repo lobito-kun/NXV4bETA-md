@@ -1,5 +1,4 @@
 import { format } from 'util'
-// let path = require('path')
 import { spawn } from 'child_process'
 
 let fontPath = 'src/font/Zahraaa.ttf'
@@ -11,8 +10,9 @@ let handler = async (m, { conn, args }) => {
     let d = new Date
     let tgl = d.toLocaleDateString('id-Id')
     let hari = d.toLocaleDateString('id-Id', { weekday: 'long' })
+    m.reply(tgl)
+    m.reply(hari)
     let teks = args.join` `
-    // conn.reply(m.chat, util.format({fontPath, inputPath, outputPath, tgl, hari, teks}), m)
     let bufs = []
     const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []),
         'convert',
@@ -61,15 +61,13 @@ let handler = async (m, { conn, args }) => {
     spawn(_spawnprocess, _spawnargs)
         .on('error', e => m.reply(format(e)))
         .on('close', () => {
-            conn.sendFile(m.chat, Buffer.concat(bufs), 'txt.jpg', '✅ Es mejor de lo que escribes tú ✍🏻', m)
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'txt.jpg', '*Es mejor de lo que escribes tú 7w7*', m)
         })
         .stdout.on('data', chunk => bufs.push(chunk))
 }
-handler.help = ['txt <text>']
+
+handler.help = ['texto']
 handler.tags = ['fun']
-handler.command = ['escribe', 'txt'] 
+handler.command = /^(texto|txt|escribe|nulis)$/i
 
 export default handler
-
-// BY MFARELS
-// https://GitHub.com/MFarelS/
