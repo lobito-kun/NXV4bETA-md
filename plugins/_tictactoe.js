@@ -14,7 +14,7 @@ export async function before(m) {
     let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
     if (room) {
         // m.reply(`[DEBUG]\n${parseInt(m.text)}`)
-        if (!/^([1-9]|(me)?nyerah|surr?ender)$/i.test(m.text))
+        if (!/^([1-9]|(me)?nyerah|\*rendirse\*|rendirse|surr?ender)$/i.test(m.text))
             return !0
         isSurrender = !/^[1-9]$/.test(m.text)
         if (m.sender !== room.game.currentTurn) { // nek wayahku
@@ -60,15 +60,18 @@ export async function before(m) {
         }
         let winner = isSurrender ? room.game.currentTurn : room.game.winner
         let str = `
-${isWin ? `@${winner.split('@')[0]} Eres el ganador 🎉 *+${winScore} XP*` : isTie ? `Se acabó el juego, con un empate *+${playScore} XP*` : `@${room.game.currentTurn.split('@')[0]} Ahora es tu turno`}
-        
-${arr.slice(0, 3).join('')}
-${arr.slice(3, 6).join('')}
-${arr.slice(6).join('')}
+*🎮 Juego Tres En Raya 🎮*
 
-▢ *JUGADOR 1* @${room.game.playerX.split('@')[0]} ❎
-▢ *JUGADOR 2* @${room.game.playerO.split('@')[0]} ⭕
-▢ *SALA ID* ${room.id}
+❎ = @${room.game.playerX.split('@')[0]}
+⭕ = @${room.game.playerO.split('@')[0]}
+
+      ${arr.slice(0, 3).join('')}
+      ${arr.slice(3, 6).join('')}
+      ${arr.slice(6).join('')}
+
+${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganastee 🥳!*` : isTie ? '*El juego terminó en empate 😐*' : `Tu turno *@${room.game.currentTurn.split('@')[0]}*\n\nEscriba *rendirse* para dejar de jugar`}
+
+${isWin ? `@${winner.split('@')[0]} Eres el ganador 🎉 *+${winScore} XP*` : isTie ? `Se acabó el juego, con un empate *+${playScore} XP*` : `@${room.game.currentTurn.split('@')[0]} Ahora es tu turno`}
 `.trim()
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
