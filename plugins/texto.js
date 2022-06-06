@@ -10,7 +10,6 @@ let handler = async (m, { conn, args }) => {
     let d = new Date
     let tgl = d.toLocaleDateString('id-Id')
     let hari = d.toLocaleDateString('es-Id', { weekday: 'long' })
-    m.reply(tgl + '\n' + hari)
     let teks = args.join` `
     let bufs = []
     const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []),
