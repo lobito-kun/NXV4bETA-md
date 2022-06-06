@@ -16,4 +16,4 @@ handler.help = ['togif']
 handler.tags = ['sticker']
 handler.command = /^(togif|agif)$/i
 
-module.exports = handler
+export default handler
