@@ -74,12 +74,12 @@ ${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        const btn = isTie ? ['TicTacToe', '/ttt'] : ['Rendirse', 'surrender']
+        //const btn = isTie ? ['TicTacToe', '/ttt'] : ['Rendirse', 'surrender']
         if (room.x !== room.o)
-            await this.sendButton(room.x, str, igfg, btn, m, {
+            await this.sendMessage(room.x, str, m, {
                 mentions: this.parseMention(str)
             })
-        await this.sendButton(room.o, str, igfg, btn, m, {
+        await this.sendMessage(room.o, str, m, {
             mentions: this.parseMention(str)
         })
         if (isTie || isWin) {
