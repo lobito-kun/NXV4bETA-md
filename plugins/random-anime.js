@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
  await conn.reply(m.chat, global.wait, m)
 
-let type = (m.text.replace(usedPrefix + ' ', '') || m.text.replace(usedPrefix, '')).toLowerCase()
+let type = (args[0] || m.text.replace(usedPrefix, '')).toLowerCase()
 
 switch (type) {
 case 'waifu':
