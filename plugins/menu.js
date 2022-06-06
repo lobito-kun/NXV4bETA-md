@@ -143,7 +143,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
     //conn.sendMessage(m.chat, {  video: tumbv, caption: text.trim(), gifPlayback: true }, m)
-    conn.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/c82d5c358495e8ef15916.mp4' }, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: await conn.getName(conn.user.jid) , templateButtons: [{ quickReplyButton: { displayText: 'Speedtest', id: `Test` }}, { quickReplyButton: { displayText: 'Owner', id: `Test II` }} ] })
+    conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] })
     /*conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
       ['ꨄ︎ Apoyar', '/donate'],
       ['⏍ Info', '/botinfo'],
