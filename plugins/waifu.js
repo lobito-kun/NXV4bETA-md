@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
  if (!res.ok) throw await res.text()
  let json = await res.json()
  if (!json.url) throw global.error
- conn.sendFile(m.chat, json, global.error, '*WAIFU*', m)
+ conn.sendFile(m.chat, json.url, 'Error.jpg', '*WAIFU*', m)
 }
 
 handler.help = ['waifu']
