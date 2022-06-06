@@ -69,9 +69,7 @@ export async function before(m) {
       ${arr.slice(3, 6).join('')}
       ${arr.slice(6).join('')}
 
-${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganastee 🥳!*` : isTie ? '*El juego terminó en empate 😐*' : `Tu turno *@${room.game.currentTurn.split('@')[0]}*\n\nEscriba *rendirse* para dejar de jugar`}
-
-${isWin ? `@${winner.split('@')[0]} Eres el ganador 🎉 *+${winScore} XP*` : isTie ? `Se acabó el juego, con un empate *+${playScore} XP*` : `@${room.game.currentTurn.split('@')[0]} Ahora es tu turno`}
+${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganastee 🥳!*\n+499 Exp` : isTie ? '*El juego terminó en empate 😐*' : `Tu turno *@${room.game.currentTurn.split('@')[0]}*\n\nEscriba *rendirse* para dejar de jugar`}
 `.trim()
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
