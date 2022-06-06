@@ -34,6 +34,17 @@ let tags = {
 }
 const defaultMenu = {
   before: `
+🍬 *Nombre:* Lolibot
+🍬 *Versión:* 7.0.0
+🍬 *Prefijo:* 「 *%p* 」
+🍬 *Batería:* %batery
+🍬 *Estado:* %batery2
+🍬 *Lenguɑje:* JavaScript
+🍬 *Libreria:* Baileys
+🍬 *Comandos:* %comand Totɑl
+
+*• Fechɑ:* %date
+*• Horɑ:* %time
 
 `.trimStart(),
   header: '❒ *%category*',
