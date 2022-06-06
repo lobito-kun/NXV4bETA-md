@@ -67,8 +67,8 @@ Escriba *rendirse* para dejar de jugar
     
 }
 
-handler.help = ['tictactoe <nombre Sala>']
+handler.help = ['xo']
 handler.tags = ['game']
-handler.command = ['tictactoe', 'ttc', 'ttt', 'xo']
+handler.command = /^(tictactoe|ttc|ttt|xo)$/i
 
 export default handler
