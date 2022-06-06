@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
- await conn.reply(m.chat, global.wait, m)
+ await conn.reply(m.chat, args[0], m) //global.wait
 
 let type = (args[0] || m.text.replace(usedPrefix, '')).toLowerCase()
 
