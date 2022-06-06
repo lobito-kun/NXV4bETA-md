@@ -1,4 +1,5 @@
 import { areJidsSameUser } from '@adiwajshing/baileys'
+
 let handler = async (m, { conn, participants }) => {
     let users = m.mentionedJid.filter(u => !areJidsSameUser(u, conn.user.id))
     let kickedUser = []
@@ -8,17 +9,19 @@ let handler = async (m, { conn, participants }) => {
             kickedUser.concat(res)
             await delay(1 * 1000)
         }
-    m.reply(`✅ Usuario eliminado ${kickedUser.map(v => '@' + v.split('@')[0])}`, null, { mentions: kickedUser })
+    m.reply(`Se eliminó a ${kickedUser.map(v => '@' + v.split('@')[0])}`, null, { mentions: kickedUser })
 
 }
-handler.help = ['kick @user']
+
+handler.help = ['kick']
 handler.tags = ['group']
-handler.command = ['kick', 'expulsar'] 
+handler.command = /^(kick|ban|echar|hechar)$/i
 
 handler.admin = true
 handler.group = true
 handler.botAdmin = true
 
 export default handler
+
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
