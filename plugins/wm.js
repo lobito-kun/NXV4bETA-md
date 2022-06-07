@@ -1,16 +1,16 @@
 import { addExif } from '../lib/sticker.js'
 
-
 let handler = async (m, { conn, text }) => {
-  if (!m.quoted) throw 'El  sticker!'
+  let isSticker = 'Etiqueta un sticker'
+  if (!m.quoted) throw isSticker
   let stiker = false
   try {
     let [packname, ...author] = text.split('|')
     author = (author || []).join('|')
     let mime = m.quoted.mimetype || ''
-    if (!/webp/.test(mime)) throw 'Responde a un sticker'
+    if (!/webp/.test(mime)) throw isSticker
     let img = await m.quoted.download()
-    if (!img) throw 'Responde a un sticker!'
+    if (!img) throw isSticker
     stiker = await addExif(img, packname || '', author || '')
   } catch (e) {
     console.error(e)
@@ -20,8 +20,9 @@ let handler = async (m, { conn, text }) => {
     else throw 'La conversión falló'
   }
 }
-handler.help = ['take <nombre>|<autor>']
+
+handler.help = ['wm']
 handler.tags = ['sticker']
-handler.command = ['take', 'robar', 'wm'] 
+handler.command = /^(take|robar|wm)$/i
 
 export default handler
