@@ -40,8 +40,8 @@ Tu turno *@${room.game.currentTurn.split('@')[0]}*
 
 Escriba *rendirse* para dejar de jugar
 `.trim()
-        if (room.x !== room.o) await conn.sendMessage(room.x, str, m, { contextInfo: { mentionedJid: conn.parseMention(str) }})
-        await conn.sendMessage(room.o, str, m, { contextInfo: { mentionedJid: conn.parseMention(str) }})
+        if (room.x !== room.o) await conn.reply(room.x, str, m, { contextInfo: { mentionedJid: conn.parseMention(str) }})
+        await conn.reply(room.o, str, m, { contextInfo: { mentionedJid: conn.parseMention(str) }})
     } else {
         room = {
             id: 'tictactoe-' + (+new Date),
