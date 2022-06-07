@@ -28,7 +28,7 @@ Degradados: ${sDemote ? sDemote : '×'}
 
 *📌 • Descripción:*
 ${groupMetadata.desc?.toString() || '×'}
-`.trim()
+`
   conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
 
