@@ -1,5 +1,5 @@
 let handler = async (m, { usedPrefix, command }) => {
-let uptime = process.uptime()
+let uptime = await process.uptime()
 let runnya = `\t\t\t\t*∙ ☀️ Runtime ☀️ ∙*
 
 • *Hora:* ${time}
