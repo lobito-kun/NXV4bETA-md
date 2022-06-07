@@ -40,7 +40,8 @@ Tu turno *@${room.game.currentTurn.split('@')[0]}*
 
 Escriba *rendirse* para dejar de jugar
 `.trim()
-        if (room.x !== room.o) await conn.sendMessage(room.x, { text: str, {
+        if (room.x !== room.o) await 
+        await conn.sendMessage(room.x, { text: str, {
             mentions: conn.parseMention(str)
         }, { quoted: m })
         await conn.sendMessage(room.o, { text: str, {
