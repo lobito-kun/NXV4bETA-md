@@ -32,9 +32,9 @@ ${groupMetadata.desc?.toString() || '×'}
   conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
 
-handler.help = ['Infogp']
+handler.help = ['infogp']
 handler.tags = ['group']
-handler.command = /^(infogrupo|groupinfo|infogp)$/i
+handler.command = /^(infogrupo|groupinfo|infogp|infogc)$/i
 
 handler.group = true
 
