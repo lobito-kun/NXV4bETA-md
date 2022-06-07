@@ -35,3 +35,27 @@ handler.tags = ['group']
 handler.command = /^(perfil|profile)$/i
 
 export default handler
+
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
+
+function formatDate(n, locale = 'es-US') {
+  let d = new Date(n)
+  return d.toLocaleDateString(locale, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+}
+
+function formatHour(n, locale = 'en-US') {
+  let d = new Date(n)
+  return d.toLocaleString(locale, {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true
+  })
+}
