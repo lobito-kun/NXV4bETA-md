@@ -3,7 +3,7 @@ const pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || './
 const groupAdmins = participants.filter(p => p.admin)
 const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
 const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
-let text = `\t\t\t‧ 🍭 Lista de Administradores\'as 🍭 ‧
+let text = `\t‧ 🍭 Lista de Administradores\'as 🍭 ‧
 
 *• Grupo:* ${groupMetadata.subject}
 *• Admins:*
