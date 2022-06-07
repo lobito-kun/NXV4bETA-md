@@ -13,6 +13,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.help = ['reportar']
 handler.tags = ['info']
-handler.command = /^(report|reportar)$/i
+handler.command = /^(report|reportar|bug|error)$/i
 
 export default handler
