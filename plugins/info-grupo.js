@@ -23,8 +23,8 @@ ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
 *📬 • Configuración de mensajes:*
 - Bienvenida: ${sWelcome ? sWelcome : '×'}
 - Despedida: ${sBye ? sBye : '×'}
-- Promovidos: ${sPromote ? sPromote : '×'}
-- Degradados: ${sDemote ? sDemote : '×'}
+- Promovido: ${sPromote ? sPromote : '×'}
+- Degradado: ${sDemote ? sDemote : '×'}
 
 *📌 • Descripción:*
 ${groupMetadata.desc?.toString() || '×'}
