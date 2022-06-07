@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
-        await m.reply('*Jugador encontrado!*')
+        m.reply('Compañero encontrado')
         room.o = m.chat
         room.game.playerO = m.sender
         room.state = 'PLAYING'
@@ -40,8 +40,7 @@ Tu turno *@${room.game.currentTurn.split('@')[0]}*
 
 Escriba *rendirse* para dejar de jugar
 `.trim()
-        if (room.x !== room.o) await 
-        await conn.sendMessage(room.x, { text: str, {
+        if (room.x !== room.o) await conn.sendMessage(room.x, { text: str, {
             mentions: conn.parseMention(str)
         }, { quoted: m })
         await conn.sendMessage(room.o, { text: str, {
