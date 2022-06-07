@@ -1,7 +1,8 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `Que fondo de pantalla busco?`
+  if (!text) throw 'Que fondo de pantalla busco?'
+  await conn.reply(m.chat, global.wait, m)
   let res = await fetch(global.API('https://wall.alphacoders.com/api2.0','/get.php', {
     auth: '3e7756c85df54b78f934a284c11abe4e',
     method: 'search',
