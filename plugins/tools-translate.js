@@ -3,16 +3,7 @@ const defaultLang = 'es'
 const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
-    let err = `
-📌 Ejemplo :
-*${usedPrefix + command}* <idioma> [texto]
-${usedPrefix + command} es Hello World
-
-✳️ Lista de idiomas admitidos: 
-
-https://cloud.google.com/translate/docs/languages
-`.trim()
-
+    let err = `Escribe un texto junto al comando para traducir o simplemente etiqueta uno`
     let lang = args[0]
     let text = args.slice(1).join(' ')
     if ((args[0] || '').length !== 2) {
@@ -38,8 +29,9 @@ https://cloud.google.com/translate/docs/languages
     }
 
 }
-handler.help = ['trad <leng> <text>']
+
+handler.help = ['traducir']
 handler.tags = ['tools']
-handler.command = ['translate', 'tl', 'trad', 'tr']
+handler.command = /^(traductor|traducir|traduce|translate|tl|trad|tr)$/i
 
 export default handler
