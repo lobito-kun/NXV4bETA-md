@@ -20,7 +20,8 @@ let handler = async (m, { conn, usedPrefix, command}) => {
  *◦ Link:* wa.me/${who.split`@`[0]}
  *◦ Limite:* ${limit}
  *◦ Nivel:* ${level}
- *◦ Exp nivel:* ${user.exp - min}/${max - user.exp}
+ *◦ Exp:* ${exp}
+ *◦ Exp nivel:* ${user.exp - min}/${user.exp - max}
  *◦ Rango:* ${role}
  *◦ Premium:* ${prem ? 'Si' : 'No'}
  *◦ Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '×'}
