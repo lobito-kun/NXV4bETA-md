@@ -40,12 +40,8 @@ Tu turno *@${room.game.currentTurn.split('@')[0]}*
 
 Escriba *rendirse* para dejar de jugar
 `.trim()
-        if (room.x !== room.o) await conn.sendMessage(room.x, { text: str, {
-            mentions: conn.parseMention(str)
-        }, { quoted: m })
-        await conn.sendMessage(room.o, { text: str, {
-            mentions: conn.parseMention(str)
-        }, { quoted: m })
+        if (room.x !== room.o) await conn.sendMessage(room.x, { text: str, { mentions: conn.parseMention(str) }, { quoted: m })
+        await conn.sendMessage(room.o, { text: str, { mentions: conn.parseMention(str) }, { quoted: m })
     } else {
         room = {
             id: 'tictactoe-' + (+new Date),
@@ -58,9 +54,7 @@ Escriba *rendirse* para dejar de jugar
         
         conn.sendButton(m.chat, `*Esperando segundo jugador*
 
-*• Recompensa:* +4999 Exp`, 'Click para unirte a la partida', ['🎮 Unirse', `${usedPrefix + command} ${text}`], m, {
-            mentions: conn.parseMention(text)
-        })
+*• Recompensa:* +4999 Exp`, 'Click para unirte a la partida', ['🎮 Unirse', `${usedPrefix + command} ${text}`], m, { mentions: conn.parseMention(text) })
 
    conn.game[room.id] = room
     }
