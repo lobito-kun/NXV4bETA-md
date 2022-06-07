@@ -21,10 +21,10 @@ ${del ? '❎' : '✅'} Anti Delete
 ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
 
 *📬 • Configuración de mensajes:*
-Bienvenida: ${sWelcome ? sWelcome : '×'}
-Despedida: ${sBye ? sBye : '×'}
-Promovidos: ${sPromote ? sPromote : '×'}
-Degradados: ${sDemote ? sDemote : '×'}
+- Bienvenida: ${sWelcome ? sWelcome : '×'}
+- Despedida: ${sBye ? sBye : '×'}
+- Promovidos: ${sPromote ? sPromote : '×'}
+- Degradados: ${sDemote ? sDemote : '×'}
 
 *📌 • Descripción:*
 ${groupMetadata.desc?.toString() || '×'}
