@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
   await conn.reply(m.chat, global.wait, m)
   let cosp = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/pack.json`)).data 
   let url = cosp[Math.floor(Math.random() * cosp.length)]
-  conn.sendFile(m.chat, json.result.nowatermark, 'Error.jpg', '*COSPLAY*', m)
+  conn.sendFile(m.chat, url, 'Error.jpg', '*COSPLAY*', m)
 }
 
 handler.help = ['cosplay']
