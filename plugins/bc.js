@@ -4,9 +4,8 @@ let handler = async (m, { conn, text }) => {
   let chats = Object.entries(conn.chats).filter(([_, chat]) => chat.isChats).map(v => v[0])
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
-  conn.reply(m.chat, `Transmision realizada a ${chats.length} chats`, m)
-  for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast|tx/i.test(teks) ? teks : `\t\t\t\t*Anuncio | todos*\n\n${teks}` ), true).catch(_ => _)
-  m.reply('Se transmitió a todos los chats')
+  for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast|tx/i.test(teks) ? teks : `\t\t\t\t*Anuncio | Chats*\n\n${teks}` ), true).catch(_ => _)
+  conn.reply(m.chat, `El anuncio se envió a ${chats.length} chats`, m)
 }
 
 handler.help = ['bc']
