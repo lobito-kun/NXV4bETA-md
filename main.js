@@ -104,16 +104,16 @@ conn.isInit = false
 if (!opts['test']) {
   setInterval(async () => {
     if (global.db.data) await global.db.write().catch(console.error)
-    if (opts['autocleartmp']) try {
+    /*if (opts['autocleartmp']) try {
       clearTmp()
-
-    } catch (e) { console.error(e) }
+    } catch (e) { console.error(e) }*/
   }, 60 * 1000)
 }
+
 if (opts['server']) (await import('./server.js')).default(global.conn, PORT)
 
 
-function clearTmp() {
+/*function clearTmp() {
   const tmp = [tmpdir(), join(__dirname, './tmp')]
   const filename = []
   tmp.forEach(dirname => readdirSync(dirname).forEach(file => filename.push(join(dirname, file))))
@@ -122,7 +122,7 @@ function clearTmp() {
     if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3)) return unlinkSync(file) // 3 minutes
     return false
   })
-}
+}*/
 
 async function connectionUpdate(update) {
   const { connection, lastDisconnect, isNewLogin } = update
