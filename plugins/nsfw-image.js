@@ -41,13 +41,45 @@ case 'h':
   conn.sendFile(m.chat, jsonhentai.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
+case 'pussy':
+  let pwpussy = ["https://meme-api.herokuapp.com/gimme/pussy", "https://meme-api.herokuapp.com/gimme/LegalTeens"] 
+  let nkpussy = pwpussy[Math.floor(Math.random() * pwpussy.length)]
+  let respussy = await fetch(nkpussy)
+  if (!respussy.ok) throw await respussy.text()
+  let jsonpussy = await respussy.json()
+  if (!jsonpussy.url) throw global.error
+  conn.sendFile(m.chat, jsonpussy.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+break
+
+case 'lesbian':
+case 'lesbians':
+case 'lesbianas':
+  let reslesbian = await fetch('https://meme-api.herokuapp.com/gimme/lesbians')
+  if (!reslesbian.ok) throw await reslesbian.text()
+  let jsonlesbian = await reslesbian.json()
+  if (!jsonlesbian.url) throw global.error
+  conn.sendFile(m.chat, jsonlesbian, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+break
+
+case 'boobs':
+case 'boobies':
+case 'tetas':
+  let pwboobs = ["https://meme-api.herokuapp.com/gimme/tits", "https://meme-api.herokuapp.com/gimme/BestTits", "https://meme-api.herokuapp.com/gimme/boobs", "https://meme-api.herokuapp.com/gimme/amazingtits",  "https://meme-api.herokuapp.com/gimme/TinyTits"]
+  let nkboobs = pwboobs[Math.floor(Math.random() * pwboobs.length)]
+  let resboobs = await fetch(nkboobs)
+  if (!resboobs.ok) throw await resboobs.text()
+  let jsonboobs = await resboobs.json()
+  if (!jsonboobs.url) throw global.error
+  conn.sendFile(m.chat, jsonboobs, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+break
+
 default:
  }
 }
 
-handler.help = ['ass', 'cosplay', 'hentai']
+handler.help = ['ass', 'cosplay', 'hentai', 'pussy', 'lesbian', 'boobs']
 handler.tags = ['nsfw']
-handler.command = /^(ass|culos|culo|nalgas|pack|cosplay|h|hentai|hentay)$/i
+handler.command = /^(ass|culos|culo|nalgas|pack|cosplay|h|hentai|hentay|pussy|lesbian|lesbians|lesbianas|boobs|boobies|tetas)$/i
 
 handler.nsfw = true
 handler.register = true
