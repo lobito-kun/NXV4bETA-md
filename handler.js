@@ -494,6 +494,11 @@ export async function handler(chatUpdate) {
                     fail('unreg', m, this)
                     continue
                 }
+                if (plugin.nsfw && m.isGroup && !db.data.chats[m.chat].nsfw) { //Modo nsfw (+18)
+                    fail('nsfw', m, this)
+                    continue
+                }
+
                 m.isCommand = true
                 let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                 if (xp > 200)
@@ -508,6 +513,7 @@ export async function handler(chatUpdate) {
                     this.reply(m.chat, `✳️ nivel requerido ${plugin.level} para usar este comando. \nTu nivel ${_user.level}`, m)
                     continue // If the level has not been reached
                 }
+
                 let extra = {
                     match,
                     usedPrefix,
@@ -722,7 +728,8 @@ global.dfail = (type, m, conn) => {
         admin: '• Esta función es solo para *admins* del grupo',
         botAdmin: '• Para ejecutar esta función debo ser *administradora*',
         unreg: 'Regístrese para usar esta función  Escribiendo:\n\n*/reg nombre.edad*\n\n📌Ejemplo : */reg dylux.16*',
-        restrict: '• Esta característica está *deshabilitada*'
+        restrict: '• Esta característica está *deshabilitada*',
+        nsfw: '• En este grupo está prohibido el contenido +18'
     }[type]
     if (msg) return conn.reply(m.chat, msg.replace('a', 'ɑ'), false, { quoted: m, ephemeralExpiration: 604800 })
 }
