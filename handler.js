@@ -38,146 +38,83 @@ export async function handler(chatUpdate) {
         try {
             // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
-            if (typeof user !== 'object')
-                global.db.data.users[m.sender] = {}
+            if (typeof user !== 'object') global.db.data.users[m.sender] = {}
             if (user) {
-                if (!isNumber(user.exp))
-                    user.exp = 0
-                if (!isNumber(user.limit))
-                    user.limit = 10
-                if (!isNumber(user.lastclaim))
-                    user.lastclaim = 0
-                if (!('registered' in user))
-                    user.registered = false
+                if (!isNumber(user.exp)) user.exp = 0
+                if (!isNumber(user.limit)) user.limit = 10
+                if (!isNumber(user.lastclaim)) user.lastclaim = 0
+                if (!('registered' in user)) user.registered = false
                 if (!user.registered) {
-                    if (!('name' in user))
-                        user.name = m.name
-                    if (!isNumber(user.age))
-                        user.age = -1
-                    if (!isNumber(user.regTime))
-                        user.regTime = -1
+                if (!('name' in user)) user.name = m.name
+                if (!isNumber(user.age)) user.age = -1
+                if (!isNumber(user.regTime)) user.regTime = -1
                 }
-                if (!isNumber(user.afk))
-                    user.afk = -1
-                if (!('afkReason' in user))
-                    user.afkReason = ''
-                if (!('banned' in user))
-                    user.banned = false
-                if (!isNumber(user.warn))
-                    user.warn = 0
-                if (!isNumber(user.level))
-                    user.level = 0
+
+                if (!isNumber(user.afk)) user.afk = -1
+                if (!('afkReason' in user)) user.afkReason = ''
+                if (!('banned' in user)) user.banned = false
+                if (!isNumber(user.warn)) user.warn = 0
+                if (!isNumber(user.level)) user.level = 0
                 if (!user.role) user.role = 'Novato'
-                if (!('autolevelup' in user))
-                    user.autolevelup = true
+                if (!('autolevelup' in user)) user.autolevelup = true
 
-                if (!isNumber(user.money))
-                    user.money = 0
-                if (!isNumber(user.health))
-                    user.health = 100
-                if (!isNumber(user.limit))
-                    user.limit = 0
-                if (!isNumber(user.potion))
-                    user.potion = 0
-                if (!isNumber(user.trash))
-                    user.trash = 0
-                if (!isNumber(user.wood))
-                    user.wood = 0
-                if (!isNumber(user.rock))
-                    user.rock = 0
-                if (!isNumber(user.string))
-                    user.string = 0
-                if (!isNumber(user.petFood))
-                    user.petFood = 0
+                if (!isNumber(user.money)) user.money = 0
+                if (!isNumber(user.health)) user.health = 100
+                if (!isNumber(user.limit)) user.limit = 0
+                if (!isNumber(user.potion)) user.potion = 0
+                if (!isNumber(user.trash)) user.trash = 0
+                if (!isNumber(user.wood)) user.wood = 0
+                if (!isNumber(user.rock)) user.rock = 0
+                if (!isNumber(user.string)) user.string = 0
+                if (!isNumber(user.petFood)) user.petFood = 0
 
-                if (!isNumber(user.emerald))
-                    user.emerald = 0
-                if (!isNumber(user.diamond))
-                    user.diamond = 0
-                if (!isNumber(user.gold))
-                    user.gold = 0
-                if (!isNumber(user.iron))
-                    user.iron = 0
+                if (!isNumber(user.emerald)) user.emerald = 0
+                if (!isNumber(user.diamond)) user.diamond = 0
+                if (!isNumber(user.gold)) user.gold = 0
+                if (!isNumber(user.iron)) user.iron = 0
 
-                if (!isNumber(user.common))
-                    user.common = 0
-                if (!isNumber(user.uncommon))
-                    user.uncommon = 0
-                if (!isNumber(user.mythic))
-                    user.mythic = 0
-                if (!isNumber(user.legendary))
-                    user.legendary = 0
-                if (!isNumber(user.pet))
-                    user.pet = 0
+                if (!isNumber(user.common)) user.common = 0
+                if (!isNumber(user.uncommon)) user.uncommon = 0
+                if (!isNumber(user.mythic)) user.mythic = 0
+                if (!isNumber(user.legendary)) user.legendary = 0
+                if (!isNumber(user.pet)) user.pet = 0
 
-                if (!isNumber(user.horse))
-                    user.horse = 0
-                if (!isNumber(user.horseexp))
-                    user.horseexp = 0
-                if (!isNumber(user.cat))
-                    user.cat = 0
-                if (!isNumber(user.catexp))
-                    user.catexp = 0
-                if (!isNumber(user.fox))
-                    user.fox = 0
-                if (!isNumber(user.foxhexp))
-                    user.foxexp = 0
-                if (!isNumber(user.dog))
-                    user.dog = 0
-                if (!isNumber(user.dogexp))
-                    user.dogexp = 0
+                if (!isNumber(user.horse)) user.horse = 0
+                if (!isNumber(user.horseexp)) user.horseexp = 0
+                if (!isNumber(user.cat)) user.cat = 0
+                if (!isNumber(user.catexp)) user.catexp = 0
+                if (!isNumber(user.fox)) user.fox = 0
+                if (!isNumber(user.foxhexp)) user.foxexp = 0
+                if (!isNumber(user.dog)) user.dog = 0
+                if (!isNumber(user.dogexp)) user.dogexp = 0
 
-                if (!isNumber(user.horselastfeed))
-                    user.horselastfeed = 0
-                if (!isNumber(user.catlastfeed))
-                    user.catlastfeed = 0
-                if (!isNumber(user.foxlastfeed))
-                    user.foxlastfeed = 0
-                if (!isNumber(user.doglastfeed))
-                    user.doglastfeed = 0
+                if (!isNumber(user.horselastfeed)) user.horselastfeed = 0
+                if (!isNumber(user.catlastfeed)) user.catlastfeed = 0
+                if (!isNumber(user.foxlastfeed)) user.foxlastfeed = 0
+                if (!isNumber(user.doglastfeed)) user.doglastfeed = 0
 
-                if (!isNumber(user.armor))
-                    user.armor = 0
-                if (!isNumber(user.armordurability))
-                    user.armordurability = 0
-                if (!isNumber(user.sword))
-                    user.sword = 0
-                if (!isNumber(user.sworddurability))
-                    user.sworddurability = 0
-                if (!isNumber(user.pickaxe))
-                    user.pickaxe = 0
-                if (!isNumber(user.pickaxedurability))
-                    user.pickaxedurability = 0
-                if (!isNumber(user.fishingrod))
-                    user.fishingrod = 0
-                if (!isNumber(user.fishingroddurability))
-                    user.fishingroddurability = 0
+                if (!isNumber(user.armor)) user.armor = 0
+                if (!isNumber(user.armordurability)) user.armordurability = 0
+                if (!isNumber(user.sword)) user.sword = 0
+                if (!isNumber(user.sworddurability)) user.sworddurability = 0
+                if (!isNumber(user.pickaxe)) user.pickaxe = 0
+                if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
+                if (!isNumber(user.fishingrod)) user.fishingrod = 0
+                if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
 
-                if (!isNumber(user.lastclaim))
-                    user.lastclaim = 0
-                if (!isNumber(user.lastadventure))
-                    user.lastadventure = 0
-                if (!isNumber(user.lastfishing))
-                    user.lastfishing = 0
-                if (!isNumber(user.lastdungeon))
-                    user.lastdungeon = 0
-                if (!isNumber(user.lastduel))
-                    user.lastduel = 0
-                if (!isNumber(user.lastmining))
-                    user.lastmining = 0
-                if (!isNumber(user.lasthunt))
-                    user.lasthunt = 0
-                if (!isNumber(user.lastweekly))
-                    user.lastweekly = 0
-                if (!isNumber(user.lastmonthly))
-                    user.lastmonthly = 0
+                if (!isNumber(user.lastclaim)) user.lastclaim = 0
+                if (!isNumber(user.lastadventure)) user.lastadventure = 0
+                if (!isNumber(user.lastfishing)) user.lastfishing = 0
+                if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
+                if (!isNumber(user.lastduel)) user.lastduel = 0
+                if (!isNumber(user.lastmining)) user.lastmining = 0
+                if (!isNumber(user.lasthunt)) user.lasthunt = 0
+                if (!isNumber(user.lastweekly)) user.lastweekly = 0
+                if (!isNumber(user.lastmonthly)) user.lastmonthly = 0
                     
-                    if (!isNumber(user.premium))
-                    user.premium = false
-                if (!isNumber(user.premiumTime))
-                    user.premiumTime = 0
-                if (!isNumber(user.limitjoin))
-                    user.limitjoin = 0
+                if (!isNumber(user.premium)) user.premium = false
+                if (!isNumber(user.premiumTime)) user.premiumTime = 0
+                if (!isNumber(user.limitjoin)) user.limitjoin = 0
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
@@ -257,32 +194,19 @@ export async function handler(chatUpdate) {
             if (typeof chat !== 'object')
                 global.db.data.chats[m.chat] = {}
             if (chat) {
-                if (!('isBanned' in chat))
-                    chat.isBanned = false
-                if (!('welcome' in chat))
-                    chat.welcome = false
-                if (!('detect' in chat))
-                    chat.detect = false
-                if (!('sWelcome' in chat))
-                    chat.sWelcome = ''
-                if (!('sBye' in chat))
-                    chat.sBye = ''
-                if (!('sPromote' in chat))
-                    chat.sPromote = ''
-                if (!('sDemote' in chat))
-                    chat.sDemote = ''
-                if (!('delete' in chat))
-                    chat.delete = true
-                if (!('antiLink' in chat))
-                    chat.antiLink = false
-                if (!('viewonce' in chat))
-                    chat.viewonce = false
-                if (!('antiToxic' in chat))
-                    chat.antiToxic = false
-                if (!('nsfw' in chat))
-                    chat.nsfw = false
-                if (!isNumber(chat.expired))
-                    chat.expired = 0
+                if (!('isBanned' in chat)) chat.isBanned = false
+                if (!('welcome' in chat)) chat.welcome = false
+                if (!('detect' in chat)) chat.detect = false
+                if (!('sWelcome' in chat)) chat.sWelcome = ''
+                if (!('sBye' in chat)) chat.sBye = ''
+                if (!('sPromote' in chat)) chat.sPromote = ''
+                if (!('sDemote' in chat)) chat.sDemote = ''
+                if (!('delete' in chat)) chat.delete = true
+                if (!('antiLink' in chat)) chat.antiLink = false
+                if (!('viewonce' in chat)) chat.viewonce = false
+                if (!('antiToxic' in chat)) chat.antiToxic = false
+                if (!('nsfw' in chat)) chat.nsfw = false
+                if (!isNumber(chat.expired)) chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
