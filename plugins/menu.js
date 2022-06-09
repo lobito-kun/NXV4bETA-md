@@ -158,7 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
     //const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
     
-    let tumbv = fs.readFileSync('./storage/gif/menu.gif')
+    let tumbv = fs.readFileSync('./storage/video/menu.mp4')
     //conn.sendMessage(m.chat, { video: tumbv, caption: text.trim(), gifPlayback: true }, { quoted: m })
     conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] }, { quoted: m })
     /*conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
