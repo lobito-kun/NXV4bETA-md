@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
 *• Info:* Si esta en *negrita* esta bloqueado
 
 
-${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `(bloqueado) ${key}` : key} : ${value.text}`).join('\n\n')}
+${Object.entries(global.db.data.sticker).map(([key, value], index) => `*• ID:* ${value.locked ? `${key} (bloqueado)` : key}\n*• Cmd:* ${value.text}`).join('\n\n')}
 
 `, null, {
         mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a, b) => [...a, ...b], [])
