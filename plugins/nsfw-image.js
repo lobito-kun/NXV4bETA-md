@@ -73,13 +73,21 @@ case 'tetas':
   conn.sendFile(m.chat, jsonboobs, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
+case 'blowjob':
+  let resblowjob = await fetch('https://api.waifu.pics/nsfw/blowjob')
+  if (!resblowjob.ok) throw await resblowjob.text()
+  let jsonblowjob = await resblowjob.json()
+  if (!jsonblowjob.url) throw global.error
+  conn.sendFile(m.chat, jsonblowjob, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+break
+
 default:
  }
 }
 
-handler.help = ['ass', 'cosplay', 'hentai', 'pussy', 'lesbian', 'boobs']
+handler.help = ['ass', 'cosplay', 'hentai', 'pussy', 'lesbian', 'boobs', 'blowjob']
 handler.tags = ['nsfw']
-handler.command = /^(ass|culos|culo|nalgas|pack|cosplay|h|hentai|hentay|pussy|lesbian|lesbians|lesbianas|boobs|boobies|tetas)$/i
+handler.command = /^(ass|culos|culo|nalgas|pack|cosplay|h|hentai|hentay|pussy|lesbian|lesbians|lesbianas|boobs|boobies|tetas|blowjob)$/i
 
 handler.nsfw = true
 handler.register = true
