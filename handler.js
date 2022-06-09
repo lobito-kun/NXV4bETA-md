@@ -713,18 +713,18 @@ Para desactivar esta función, escriba
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '✳️ Este comando solo puede ser utilizado por el *Creador del bot*',
-        owner: '✳️ Este comando solo puede ser utilizado por el *Dueño del Bot*',
-        mods: '✳️  Esta función es solo para *Para moderadores del Bot*',
-        premium: '✳️ Este comando es solo para miembros *Premium*',
-        group: '✳️ ¡Este comando solo se puede usar en grupos!',
-        private: '✳️ Este comando solo se puede usar en el chat *privado del Bot*',
-        admin: '✳️ Este comando es solo para *Admins* del grupo',
-        botAdmin: '✳️ ¡Para usar este comando debo ser *Administrador!*',
+        rowner: '• Esta función solo puede ser utilizado por el *creador* de la bot',
+        owner: '• Esta función solo puede ser utilizado por el *creador* de la bot',
+        mods: '• Esta función es solo para para *moderadores\'as* de la bot',
+        premium: '• Esta función es solo para miembros *premium*',
+        group: '• Esta función solo se puede usar en *grupos*',
+        private: '• Esta función solo se puede usar en el chat *privado* de la bot',
+        admin: '• Esta función es solo para *admins* del grupo',
+        botAdmin: '• Para ejecutar esta función debo ser *administradora*',
         unreg: 'Regístrese para usar esta función  Escribiendo:\n\n*/reg nombre.edad*\n\n📌Ejemplo : */reg dylux.16*',
-        restrict: '¡Esta característica está *deshabilitada*'
+        restrict: '• Esta característica está *deshabilitada*'
     }[type]
-    if (msg) return m.reply(msg)
+    if (msg) return conn.reply(m.chat, msg.replace('a', 'ɑ'), false, { quoted: m, ephemeralExpiration: 604800 })
 }
 
 let file = global.__filename(import.meta.url, true)
