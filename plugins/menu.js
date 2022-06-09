@@ -156,9 +156,9 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
     //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
+    //const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
     
-    let tumbv = fs.readFileSync('./storage/video/menu.mp4')
+    let tumbv = fs.readFileSync('./storage/gif/menu.gif')
     //conn.sendMessage(m.chat, { video: tumbv, caption: text.trim(), gifPlayback: true }, { quoted: m })
     conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] }, { quoted: m })
     /*conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
@@ -167,17 +167,19 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       ['✆ Owner', '/owner']
     ], m)*/
   } catch (e) {
-    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
+    conn.reply(m.chat, 'Lo sentimos, el menú tiene un error.', m)
     throw e
   }
 }
-handler.help = ['help']
+
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú'] 
+handler.command = ['menu', 'comandos', 'menú'] 
 handler.register = true
 handler.exp = 3
 
 export default handler
+
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
