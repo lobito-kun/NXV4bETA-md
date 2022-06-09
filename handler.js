@@ -68,10 +68,23 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.string)) user.string = 0
                 if (!isNumber(user.petFood)) user.petFood = 0
 
+                //Minerales
                 if (!isNumber(user.emerald)) user.emerald = 0
+                if (!isNumber(user.red_diamond)) user.red_diamond = 0
                 if (!isNumber(user.diamond)) user.diamond = 0
                 if (!isNumber(user.gold)) user.gold = 0
                 if (!isNumber(user.iron)) user.iron = 0
+
+                //Frutas
+                if (!isNumber(user.strawberry)) user.strawberry = 0
+                if (!isNumber(user.watermelon)) user.watermelon = 0
+                if (!isNumber(user.grape)) user.grape = 0
+                if (!isNumber(user.kiwi)) user.kiwi = 0
+
+                //Peces
+                if (!isNumber(user.blowfish)) user.blowfish = 0
+                if (!isNumber(user.tropicalfish)) user.tropicalfish = 0
+                if (!isNumber(user.commonfish)) user.commonfish = 0
 
                 if (!isNumber(user.common)) user.common = 0
                 if (!isNumber(user.uncommon)) user.uncommon = 0
@@ -132,6 +145,7 @@ export async function handler(chatUpdate) {
                     role: 'Novato',
                     autolevelup: true,
 
+
                     money: 0,
                     health: 100,
                     limit: 10,
@@ -141,16 +155,31 @@ export async function handler(chatUpdate) {
                     rock: 0,
                     string: 0,
 
+                    //Minerales
                     emerald: 0,
+                    red_diamond: 0,
                     diamond: 0,
                     gold: 0,
                     iron: 0,
+
+                    //Frutas
+                    strawberry: 0,
+                    watermelon: 0,
+                    grape: 0,
+                    kiwi: 0,
+
+                    //Peces
+                    blowfish: 0,
+                    tropicalfish: 0,
+                    commonfish: 0,
+
 
                     common: 0,
                     uncommon: 0,
                     mythic: 0,
                     legendary: 0,
                     pet: 0,
+
 
                     horse: 0,
                     horseexp: 0,
@@ -161,10 +190,12 @@ export async function handler(chatUpdate) {
                     dog: 0,
                     dogexp: 0,
 
+
                     horselastfeed: 0,
                     catlastfeed: 0,
                     foxlastfeed: 0,
                     doglastfeed: 0,
+
 
                     armor: 0,
                     armordurability: 0,
@@ -174,6 +205,7 @@ export async function handler(chatUpdate) {
                     pickaxedurability: 0,
                     fishingrod: 0,
                     fishingroddurability: 0,
+
 
                     lastclaim: 0,
                     lastadventure: 0,
