@@ -22,15 +22,33 @@ case 'nalgas':
   conn.sendFile(m.chat, jsonass.url, 'Error.jpg', `${command.toUpperCase()}`, m)
 break
 
+case 'cosplay':
+case 'pack':
+  let cosp = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/pack.json`)).data 
+  let url = cosp[Math.floor(Math.random() * cosp.length)]
+  conn.sendFile(m.chat, url, 'Error.jpg', `${command.toUpperCase()}`, m)
+break
 
+case 'hentay':
+case 'hentai':
+case 'h':
+  let pwhentai = ["https://api.waifu.pics/nsfw/blowjob", "https://api.waifu.pics/nsfw/neko", "https://api.waifu.pics/nsfw/waifu"] 
+  let nkhentai = pwhentai[Math.floor(Math.random() * pwhentai.length)]
+  let reshentai = await fetch(nkhentai)
+  if (!reshentai.ok) throw await reshentai.text()
+  let jsonhentai = await reshentai.json()
+  if (!jsonhentai.url) throw global.error
+  conn.sendFile(m.chat, jsonhentai.url, 'Error.jpg', `${command.toUpperCase()}`, m)
+break
 
 default:
  }
 }
 
-handler.help = ['ass']
+handler.help = ['ass', 'cosplay', 'hentai']
 handler.tags = ['nsfw']
-handler.command = /^(ass|culos|culo|nalgas)$/i
+handler.command = /^(ass|culos|culo|nalgas|pack|cosplay|h|hentai|hentay)$/i
+
 handler.nsfw = true
 handler.register = true
 
