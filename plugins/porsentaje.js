@@ -9,7 +9,7 @@ switch (type) {
 case 'esgay':
 case 'esgey':
 case 'esgai':
-  conn.reply(m.chat, `*@${who.split`@`[0]} es ${ra} gay 🏳️‍🌈*`.trim(), m, { mentions: [who] })
+  conn.reply(m.chat, `*@${who.split`@`[0]} es ${ra}% gay 🏳️‍🌈*`.trim(), m, { mentions: [who] })
 break
 
 default:
