@@ -17,7 +17,7 @@ default:
 }
 
 handler.help = ['esgay']
-handler.tags = ['random']
+handler.tags = ['fun']
 handler.command = /^(esgay|esgai|esgey)$/i
 
 export default handler
