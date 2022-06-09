@@ -21,7 +21,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
  *◦ Limite:* ${limit}
  *◦ Nivel:* ${level}
  *◦ Exp:* ${exp}
- *◦ Exp nivel:* ${user.exp - min}/${exp}
+ *◦ Exp nivel:* ${user.exp - min}/${xp}
  *◦ Rango:* ${role}
  *◦ Premium:* ${prem ? 'Si' : 'No'}
  *◦ Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '×'}
