@@ -58,7 +58,7 @@ case 'lesbianas':
   if (!reslesbian.ok) throw await reslesbian.text()
   let jsonlesbian = await reslesbian.json()
   if (!jsonlesbian.url) throw global.error
-  conn.sendFile(m.chat, jsonlesbian, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+  conn.sendFile(m.chat, jsonlesbian.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
 case 'boobs':
@@ -70,7 +70,7 @@ case 'tetas':
   if (!resboobs.ok) throw await resboobs.text()
   let jsonboobs = await resboobs.json()
   if (!jsonboobs.url) throw global.error
-  conn.sendFile(m.chat, jsonboobs, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+  conn.sendFile(m.chat, jsonboobs.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
 case 'blowjob':
@@ -78,7 +78,7 @@ case 'blowjob':
   if (!resblowjob.ok) throw await resblowjob.text()
   let jsonblowjob = await resblowjob.json()
   if (!jsonblowjob.url) throw global.error
-  conn.sendFile(m.chat, jsonblowjob, 'Error.jpg', `*${command.toUpperCase()}*`, m)
+  conn.sendFile(m.chat, jsonblowjob.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
 default:
