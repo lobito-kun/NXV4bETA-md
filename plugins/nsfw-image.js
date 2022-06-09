@@ -19,14 +19,14 @@ case 'nalgas':
   if (!resass.ok) throw await resass.text()
   let jsonass = await resass.json()
   if (!jsonass.url) throw global.error
-  conn.sendFile(m.chat, jsonass.url, 'Error.jpg', `${command.toUpperCase()}`, m)
+  conn.sendFile(m.chat, jsonass.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
 case 'cosplay':
 case 'pack':
   let cosp = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/pack.json`)).data 
   let url = cosp[Math.floor(Math.random() * cosp.length)]
-  conn.sendFile(m.chat, url, 'Error.jpg', `${command.toUpperCase()}`, m)
+  conn.sendFile(m.chat, url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
 case 'hentay':
@@ -38,7 +38,7 @@ case 'h':
   if (!reshentai.ok) throw await reshentai.text()
   let jsonhentai = await reshentai.json()
   if (!jsonhentai.url) throw global.error
-  conn.sendFile(m.chat, jsonhentai.url, 'Error.jpg', `${command.toUpperCase()}`, m)
+  conn.sendFile(m.chat, jsonhentai.url, 'Error.jpg', `*${command.toUpperCase()}*`, m)
 break
 
 default:
