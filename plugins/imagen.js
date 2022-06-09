@@ -2,6 +2,7 @@ import { googleImage } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw 'Que imagen quieres que busque?'
+  await conn.reply(m.chat, global.wait, m)
   const res = await googleImage(text)
   conn.sendFile(m.chat, res.getRandom(), 'image.jpg', `✅ Resultado de: *${text}*`, m)
 }
