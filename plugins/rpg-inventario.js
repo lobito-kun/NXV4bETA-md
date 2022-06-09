@@ -1,7 +1,3 @@
-let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
-let fs = require('fs')
-let levelling = require('../lib/levelling')
-
 import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fs from 'fs'
 
