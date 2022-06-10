@@ -46,9 +46,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let box = global.db.data.users[who].box
     let trash = global.db.data.users[who].trash
 
-    let level = global.db.data.users[who].level
     let money = global.db.data.users[who].money
-    let exp = global.db.data.users[who].exp
     
     let { name, exp, limit, lastclaim, registered, regTime, age, level, role } = global.db.data.users[who]
     let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -68,6 +66,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *❤ Vida:* ${healt}
 *💵 Dinero:* ${shortNum(money)}
+*🎴 Limite:* ${limit}
 *⭐ Nivel:* ${level}
 *✨ Exp:* ${exp}
 *🆙️ Exp nivel:* ${user.exp - min}/${xp}
@@ -118,7 +117,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *🍱 Total inv:* ${shortNum(items)} items
 `
-m.reply(reText(inv))
+conn.reply(m.chat, reText(inv), m, { mentions: [who] })
 }
 
 handler.help = ['inventario']
