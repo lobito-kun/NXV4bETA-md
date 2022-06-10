@@ -133,7 +133,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     if (global.db.data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
  
-    let _items = Object.keys(inventory.minerals).map(v => who[v] && `*${invtype(v)}:* ${who[v]}`).filter(v => v).join('\n').trim()
+    const _items = Object.keys(inventory.minerals).map(v => who[v] && `*${invtype(v)}:* ${who[v]}`).filter(v => v).join('\n').trim()
 
     let _ardurability = Math.floor((ardurability * 100) / 5000)
     let _sdurability = Math.floor((sdurability * 100) / 5000)
