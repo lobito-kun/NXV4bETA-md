@@ -124,7 +124,7 @@ handler.help = ['inventario']
 handler.tags = ['rpg']
 handler.command = /^(inventario|inventory|inv)$/i
 
-module.exports = handler
+export default handler
 
 function reText(text) {
 return text.replace(/a/g, 'ɑ')
