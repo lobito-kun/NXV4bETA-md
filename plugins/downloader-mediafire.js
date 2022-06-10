@@ -14,12 +14,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 ▢ *Subido:* ${aploud}
 `.trim()
     m.reply(caption)
-    await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
+    await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
 }
-handler.help = ['mediafire <url>']
+
+handler.help = ['mediafire']
 handler.tags = ['downloader']
 handler.command = ['mediafire', 'mfire'] 
-
-handler.limit = true
 
 export default handler
