@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let user = global.db.data.users[who]
 
-    let healt = global.db.data.users[who].healt
+    let health = global.db.data.users[who].health
     
     let armor = global.db.data.users[who].armor
     let ardurability = global.db.data.users[who].armordurability
@@ -64,7 +64,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
-*❤ Vida:* ${healt}
+*❤ Vida:* ${health}
 *💵 Dinero:* ${shortNum(money)}
 *🎴 Limite:* ${limit}
 *⭐ Nivel:* ${level}
