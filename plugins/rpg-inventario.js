@@ -20,6 +20,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let rdurability = global.db.data.users[who].roddurability
     
     //Minerales
+    let emerald = global.db.data.users[who].emerald
+    let red_diamond = global.db.data.users[who].red_diamond
     let diamond = global.db.data.users[who].diamond
     let gold = global.db.data.users[who].gold
     let iron = global.db.data.users[who].iron
@@ -28,7 +30,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     //Madera
     let wood = global.db.data.users[who].wood
     
-    //Cultivos - frutas
+    //Frutas
     let strawberry = global.db.data.users[who].strawberry
     let watermelon = global.db.data.users[who].watermelon
     let grape = global.db.data.users[who].grape
@@ -91,6 +93,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 \t\t\t\t*乂 I T E M S*
 
 *Minerales*
+*🍀 Esmeralda:* ${emerald}
+*♦️ Diamante rojo:* ${diamond}
 *💎 Diamante:* ${diamond}
 *🪙 Oro:* ${gold}
 *🔩 Hierro:* ${iron}
