@@ -1,6 +1,95 @@
 import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fs from 'fs'
 
+const inventory = {
+  others: {
+    health: true,
+    money: true,
+    exp: true,
+  },
+  minerals: {
+    emerald: '🍀 Esmeralda',
+    red_diamond: '♦️ Diamante rojo',
+    diamond: '💎 Diamante',
+    gold: '🪙 Oro',
+    iron: '🔩 Hierro',
+    stone: '🪨 Piedra'
+  },
+  tools: {
+    armor: {
+      '0': '❌',
+      '1': 'Leather Armor',
+      '2': 'Iron Armor',
+      '3': 'Gold Armor',
+      '4': 'Diamond Armor',
+      '5': 'Emerald Armor',
+      '6': 'Crystal Armor',
+      '7': 'Obsidian Armor',
+      '8': 'Netherite Armor',
+      '9': 'Wither Armor',
+      '10': 'Dragon Armor',
+      '11': 'Hacker Armor'
+    },
+    sword: {
+      '0': '❌',
+      '1': 'Wooden Sword',
+      '2': 'Stone Sword',
+      '3': 'Iron Sword',
+      '4': 'Gold Sword',
+      '5': 'Copper Sword',
+      '6': 'Diamond Sword',
+      '7': 'Emerald Sword',
+      '8': 'Obsidian Sword',
+      '9': 'Netherite Sword',
+      '10': 'Samurai Slayer Green Sword',
+      '11': 'Hacker Sword'
+    },
+    pickaxe: {
+      '0': '❌',
+      '1': 'Wooden Pickaxe',
+      '2': 'Stone Pickaxe',
+      '3': 'Iron Pickaxe',
+      '4': 'Gold Pickaxe',
+      '5': 'Copper Pickaxe',
+      '6': 'Diamond Pickaxe',
+      '7': 'Emerlad Pickaxe',
+      '8': 'Crystal Pickaxe',
+      '9': 'Obsidian Pickaxe',
+      '10': 'Netherite Pickaxe',
+      '11': 'Hacker Pickaxe'
+    },
+    fishingrod: true,
+
+  },
+  crates: {
+    common: true,
+    uncommon: true,
+    mythic: true,
+    legendary: true,
+    pet: true,
+  },
+  pets: {
+    horse: 10,
+    cat: 10,
+    fox: 10,
+    dog: 10,
+  },
+  cooldowns: {
+    lastclaim: {
+      name: 'claim',
+      time: daily.cooldown
+    },
+    lastmonthly: {
+      name: 'monthly',
+      time: monthly.cooldown
+    },
+    lastadventure: {
+      name: 'adventure',
+      time: adventure.cooldown
+    }
+  }
+}
+
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -58,7 +147,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     if (global.db.data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
 
-    
+    let _items = Object.keys(inventory.minerals).map(v => who[v] && `*${v}:* ${who[v]}`).filter(v => v).join('\n').trim()
+
     let _ardurability = Math.floor((ardurability * 100) / 5000)
     let _sdurability = Math.floor((sdurability * 100) / 5000)
     let _pdurability = Math.floor((pdurability * 100) / 5000)
@@ -92,13 +182,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 
 \t\t\t\t*乂 I T E M S*
-${tminerals == 0 ? false : `*Minerales*
-*🍀 Esmeralda:* ${emerald}
-*♦️ Diamante rojo:* ${diamond}
-*💎 Diamante:* ${diamond}
-*🪙 Oro:* ${gold}
-*🔩 Hierro:* ${iron}
-*🪨 Piedra:* ${stone}`}
+
+${_items}
+
 *Frutas*
 *🍓 Fresa:* ${strawberry}
 *🍉 Sandía:* ${watermelon}
