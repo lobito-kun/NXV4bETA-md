@@ -216,8 +216,8 @@ function priceNum(num) {
 return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num).replace('.00', '').replace(/,/g, '.')
 }
 
-function invtype(string) {
-    string = string.toLowerCase()
+function invtype(iv) {
+    let string = iv.toLowerCase()
     let emot = {
       emerald: '🍀 Esmeralda',
       red_diamond: '♦️ Diamante rojo',
