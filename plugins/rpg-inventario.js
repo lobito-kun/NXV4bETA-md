@@ -26,6 +26,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let gold = global.db.data.users[who].gold
     let iron = global.db.data.users[who].iron
     let stone = global.db.data.users[who].stone
+    let tminerals = (emerald + red_diamond + diamond + gold + iron + stone)
     
     //Madera
     let wood = global.db.data.users[who].wood
@@ -91,15 +92,13 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 
 \t\t\t\t*乂 I T E M S*
-
-*Minerales*
+${tminerals == 0 ? false : `*Minerales*
 *🍀 Esmeralda:* ${emerald}
 *♦️ Diamante rojo:* ${diamond}
 *💎 Diamante:* ${diamond}
 *🪙 Oro:* ${gold}
 *🔩 Hierro:* ${iron}
-*🪨 Piedra:* ${stone}
-
+*🪨 Piedra:* ${stone}`}
 *Frutas*
 *🍓 Fresa:* ${strawberry}
 *🍉 Sandía:* ${watermelon}
