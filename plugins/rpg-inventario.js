@@ -73,20 +73,6 @@ const inventory = {
     cat: 10,
     fox: 10,
     dog: 10,
-  },
-  cooldowns: {
-    lastclaim: {
-      name: 'claim',
-      time: daily.cooldown
-    },
-    lastmonthly: {
-      name: 'monthly',
-      time: monthly.cooldown
-    },
-    lastadventure: {
-      name: 'adventure',
-      time: adventure.cooldown
-    }
   }
 }
 
