@@ -169,7 +169,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 \t\t\t\t*乂 I T E M S*
 
-${_items}
+${_items ? `*Minerales*\n${_items}` : ''}
 
 *Frutas*
 *🍓 Fresa:* ${strawberry}
