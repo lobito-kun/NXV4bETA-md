@@ -217,7 +217,7 @@ return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).fo
 }
 
 function invtype(string) {
-    string = string.toLowerCase()
+    let string = string.toLowerCase()
     let emot = {
       emerald: '🍀 Esmeralda',
       red_diamond: '♦️ Diamante rojo',
