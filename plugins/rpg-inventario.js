@@ -8,12 +8,12 @@ const inventory = {
     exp: true,
   },
   minerals: {
-    emerald: '🍀 Esmeralda',
-    red_diamond: '♦️ Diamante rojo',
-    diamond: '💎 Diamante',
-    gold: '🪙 Oro',
-    iron: '🔩 Hierro',
-    stone: '🪨 Piedra'
+    emerald: true,
+    red_diamond: true,
+    diamond: true,
+    gold: true,
+    iron: true,
+    stone: true
   },
   tools: {
     armor: {
@@ -132,8 +132,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     //let invt = fs.readFileSync('./storage/image/inv.png')
     if (global.db.data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
-
-    let _items = Object.keys(inventory.minerals).map(v => who[v] && `*${v}:* ${who[v]}`).filter(v => v).join('\n').trim()
+ 
+    let _items = Object.keys(inventory.minerals).map(v => who[v] && `*${invtype(v)}:* ${who[v]}`).filter(v => v).join('\n').trim()
 
     let _ardurability = Math.floor((ardurability * 100) / 5000)
     let _sdurability = Math.floor((sdurability * 100) / 5000)
@@ -216,3 +216,17 @@ function priceNum(num) {
 return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num).replace('.00', '').replace(/,/g, '.')
 }
 
+function invtype(string) {
+    string = string.toLowerCase()
+    let emot = {
+      emerald: '🍀 Esmeralda',
+      red_diamond: '♦️ Diamante rojo',
+      diamond: '💎 Diamante',
+      gold: '🪙 Oro',
+      iron: '🔩 Hierro',
+      stone: '🪨 Piedra'
+    }
+    let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
+    if (!results.length) return ''
+    else return emot[results[0][0]]
+  }
