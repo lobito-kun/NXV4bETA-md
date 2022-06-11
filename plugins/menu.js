@@ -174,9 +174,9 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu', 'comandos', 'menú'] 
-handler.register = true
-handler.exp = 3
+handler.command = /^(menu|comandos|menú)$/i
+
+handler.restrict = true
 
 export default handler
 
