@@ -464,7 +464,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                   this.sendButton(m.chat, `✳️ Tus diamantes se agotaron \n use el siguiente comando para comprar más diamantes \n*${usedPrefix}buy* <cantidad> \n*${usedPrefix}buyall*`, igfg, null, [['Buy', `${usedPrefix}buy`], ['Buy All', `${usedPrefix}buyall`]], m)
+                    m.reply(`*🧃 Yɑ no tienes mɑs límites escribɑ ${usedPrefix}buylimit pɑrɑ comprɑr mɑs*`)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
@@ -519,7 +519,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if (m.limit)
-                        m.reply(+m.limit + '  💎 utilizado')
+                        m.reply(`*🧃 Menos ${m.limit <= 1 ? 'un límite' : `${m.limit} límites`} por utilizɑr estɑ función*`)
                 }
                 break
             }
