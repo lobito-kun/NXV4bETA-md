@@ -686,7 +686,7 @@ global.dfail = (type, m, conn) => {
         admin: '• Esta función es solo para *admins* del grupo',
         botAdmin: '• Para ejecutar esta función debo ser *administradora*',
         unreg: 'Regístrese para usar esta función  Escribiendo:\n\n*/reg nombre.edad*\n\n📌Ejemplo : */reg dylux.16*',
-        restrict: '• Esta característica está *deshabilitada*',
+        restrict: '• Esta función está *deshabilitada*',
         nsfw: '• En este grupo está prohibido el contenido +18'
     }[type]
     if (msg) return conn.reply(m.chat, msg.replace('a', 'ɑ').replace('á', 'ά'), false, { quoted: m, ephemeralExpiration: 604800 })
