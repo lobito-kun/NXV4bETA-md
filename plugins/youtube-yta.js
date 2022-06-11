@@ -1,4 +1,4 @@
-let limit = 27
+let limit = 7
 
 import fetch from 'node-fetch'
 import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
