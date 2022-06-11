@@ -12,7 +12,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 *• Duración:* ${durationH}
 *• Visitas:* ${viewH}
 *• Publicado:* ${publishedTime}
-*• Url:* ${_url}`
+*• Url:* ${url}`
   conn.sendButton(m.chat, teksyt.replace('a', 'ɑ').replace('á', 'ά'), 'elija un formato de descarga', thumbnail, [
     ['Audio 🎶', `${usedPrefix}fgmp3 ${url} yes`],
     ['Vídeo 🎥', `${usedPrefix}fgmp4 ${url} yes`]
