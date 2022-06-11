@@ -11,16 +11,18 @@ generateWAMessageFromContent(m.chat, {
 text: c || ''
 }
 }, {
-quoted: m,
+quoted: false,
 userJid: conn.user.id
 }),
 text || q.text, conn.user.jid, { mentions: users }
 )
 await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
 }
+
 handler.help = ['notify', 'hidetag']
 handler.tags = ['group']
-handler.command = ['hidetag', 'notify'] 
+handler.command = /^(hidetag|notify|tag|htag)$/i
+
 handler.group = true
 handler.admin = true
 
