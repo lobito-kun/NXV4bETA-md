@@ -235,7 +235,7 @@ export async function handler(chatUpdate) {
                 if (!('sBye' in chat)) chat.sBye = ''
                 if (!('sPromote' in chat)) chat.sPromote = ''
                 if (!('sDemote' in chat)) chat.sDemote = ''
-                if (!('delete' in chat)) chat.delete = true
+                if (!('delete' in chat)) chat.delete = false
                 if (!('antiLink' in chat)) chat.antiLink = false
                 if (!('viewonce' in chat)) chat.viewonce = false
                 if (!('antiToxic' in chat)) chat.antiToxic = false
@@ -254,8 +254,8 @@ export async function handler(chatUpdate) {
                     antiLink: false,
                     viewonce: false,
                     useDocument: true,
-                    antiToxic: true,
-                    nsfw: true, 
+                    antiToxic: false,
+                    nsfw: false, 
                     expired: 0,
                 }
             let settings = global.db.data.settings[this.user.jid]
