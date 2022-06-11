@@ -54,7 +54,7 @@ Cuɑlquier bug o error en un comɑndo reportɑr con el comɑndo *%preport <bug/e
   header: '❒ *%category*',
   body: '│∙ *%cmd* %islimit %isPremium',
   footer: '╰•\n',
-  after: '',
+  after: ' ',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
