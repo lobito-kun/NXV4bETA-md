@@ -19,9 +19,9 @@ text || q.text, conn.user.jid, { mentions: users }
 await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
 }
 
-handler.help = ['notify', 'hidetag']
+handler.help = ['hidetag']
 handler.tags = ['group']
-handler.command = /^(hidetag|notify|tag|htag)$/i
+handler.command = /^(opengumuman|oannounce|ohiddentag|hidetag|notificar|noti|notify|notifi)$/i
 
 handler.group = true
 handler.admin = true
