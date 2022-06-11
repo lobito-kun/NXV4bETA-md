@@ -11,7 +11,7 @@ generateWAMessageFromContent(m.chat, {
 text: c || ''
 }
 }, {
-quoted: false,
+quoted: m,
 userJid: conn.user.id
 }),
 text || q.text, conn.user.jid, { mentions: users }
