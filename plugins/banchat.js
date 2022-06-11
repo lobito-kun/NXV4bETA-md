@@ -1,13 +1,13 @@
 let handler = async (m, { participants }) => {
- //if (participants.map(v=>v.jid).includes(global.conn.user.jid)) {
- global.db.data.chats[m.chat].isBanned = true
- m.reply('Se desactivo la Bot en este grupo')
- //} else m.reply('Aquí hay un número de host...')
+  let chat = global.db.data.chats[m.chat]
+  if (chat.isBanned) return m.reply('Este grupo ya está muteado!')
+  chat.isBanned = true
+  m.reply('*🔇 La bot a sido desactivada en este grupo*')
 }
 
 handler.help = ['banchat']
 handler.tags = ['owner']
-handler.command = ['banchat', 'chatoff'] 
+handler.command = /^(banchat|chatoff)$/i
 
 handler.owner = true
 
