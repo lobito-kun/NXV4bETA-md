@@ -15,9 +15,7 @@ handler.help = ['work']
 handler.tags = ['xp']
 handler.command = ['work', 'w', 'trabajar']
 
-
-handler.fail = null
-handler.exp = 0
+handler.restrict = true
 
 export default handler
 
