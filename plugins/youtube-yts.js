@@ -28,4 +28,6 @@ handler.help = ['ytsearch <🔍>']
 handler.tags = ['tools']
 handler.command = ['ytsearch', 'yts'] 
 
+plugin.restrict = true
+
 export default handler
