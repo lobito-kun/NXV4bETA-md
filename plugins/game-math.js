@@ -29,9 +29,11 @@ _📌Ejemplo : ${usedPrefix+command} normal_
         }, math.time)
     ]
 }
-handler.help = ['Mates <modo>']
+handler.help = ['mates']
 handler.tags = ['game']
 handler.command = ['mates', 'mate', 'matemáticas', 'math'] 
+
+handler.restrict = true
 
 
 let modes = {
