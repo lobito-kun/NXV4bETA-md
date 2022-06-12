@@ -418,6 +418,10 @@ export async function handler(chatUpdate) {
                     fail('owner', m, this)
                     continue
                 }
+                if (plugin.restrict && !(isROwner || isOwner)) { //Comando restringido
+                    fail('restrict', m, this)
+                    continue
+                }
                 if (plugin.rowner && !isROwner) { // Real Owner
                     fail('rowner', m, this)
                     continue
