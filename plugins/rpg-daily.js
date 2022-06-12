@@ -16,6 +16,7 @@ handler.help = ['daily']
 handler.tags = ['xp']
 handler.command = ['daily', 'claim'] 
 
+handler.restrict = true
 
 export default handler
 
