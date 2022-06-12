@@ -128,6 +128,8 @@ handler.help = ['inventario']
 handler.tags = ['rpg']
 handler.command = /^(inventario|inventory|inv)$/i
 
+handler.restrict = true
+
 export default handler
 
 function reText(text) {
