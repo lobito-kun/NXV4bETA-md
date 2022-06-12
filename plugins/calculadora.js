@@ -24,7 +24,7 @@ let handler = async (m, { conn, text }) => {
     console.log(val)
     let result = (new Function('return ' + val))()
     if (!result) throw result
-    m.reply(`*${format}* = _${result}_`)
+    m.reply(`*${format}* = ${result}`)
   } catch (e) {
     if (e == undefined) throw 'Ingrese una ecuación junto al comando\n\nSímbolos compatibles -, +, *, /, ×, ÷, π, e, (, )'
     throw 'Formato incorrecto, solo 0-9 y símbolo -, +, *, /, ×, ÷, π, e, (, ) que puedes usar'
