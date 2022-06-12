@@ -39,6 +39,7 @@ handler.help = ['ytmp4']
 handler.tags = ['downloader']
 handler.command = /^(ytmp4|fgmp4)$/i
 
-handler.limit = true
+handler.restrict = true
+//handler.limit = true
 
 export default handler
