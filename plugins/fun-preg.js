@@ -20,4 +20,6 @@ handler.help = ['pregunta']
 handler.tags = ['fun']
 handler.command = ['pregunta', 'preg'] 
 
+handler.restrict = true
+
 export default handler
