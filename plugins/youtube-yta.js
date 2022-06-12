@@ -36,6 +36,7 @@ handler.help = ['ytmp3']
 handler.tags = ['downloader']
 handler.command = /^(ytmp3|fgmp3)$/i
 
-handler.limit = true
+plugin.restrict = true
+//handler.limit = true
 
 export default handler
