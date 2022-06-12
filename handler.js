@@ -693,7 +693,7 @@ global.dfail = (type, m, conn) => {
         restrict: '• Esta función está *deshabilitada*',
         nsfw: '• En este grupo está prohibido el contenido +18'
     }[type]
-    if (msg) return conn.reply(m.chat, msg.replace('a', 'ɑ').replace('á', 'ά'), false, { quoted: m, ephemeralExpiration: 604800 })
+    if (msg) return conn.reply(m.chat, msg.replace(/a/g, 'ɑ').replace(/á/g, 'ά'), false, { quoted: m, ephemeralExpiration: 604800 })
 }
 
 let file = global.__filename(import.meta.url, true)
