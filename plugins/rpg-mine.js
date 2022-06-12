@@ -15,8 +15,7 @@ handler.help = ['minar']
 handler.tags = ['xp']
 handler.command = ['minar', 'miming', 'mine'] 
 
-handler.fail = null
-handler.exp = 0
+handler.restrict = true
 
 export default handler
 
