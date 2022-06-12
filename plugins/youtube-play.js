@@ -23,7 +23,7 @@ handler.help = ['play']
 handler.tags = ['downloader']
 handler.command = /^(play|playvid|play2)$/i
 
-plugin.restrict = true
+handler.restrict = true
 
 export default handler
 
