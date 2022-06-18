@@ -11,8 +11,8 @@ let handler = async (m, { conn, text } ) => {
   conn.reply(m.chat, `El anuncio se envío a *${groups.length} grupos*!`, m)
 }
 
-handler.command = ['test']
-handler.tags = ['owner']
+//handler.command = ['test']
+//handler.tags = ['owner']
 handler.help = /^(test)$/i
 
 export default handler
