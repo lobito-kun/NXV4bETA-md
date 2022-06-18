@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
   for (let id of chats) {
   await conn.sendMessage(id, { text: teks }, { quoted: fakegif })
   }
-  conn.reply(m.chat, `El anuncio se envío a *${groups.length} chats*!`, m)
+  conn.reply(m.chat, `El anuncio se envío a *${chats.length} chats*!`, m)
 }
 
 handler.help = ['bc']
