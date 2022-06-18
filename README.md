@@ -153,7 +153,7 @@
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=g4tito&layout=compact&theme=chartreuse-dark)
 
 ---------
- [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
+ [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/FG98F.png?size=100)](https://github.com/FG98F)
 ----|----
-[Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
+[Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/FG98F)
 Recodificador | Creɑdor
