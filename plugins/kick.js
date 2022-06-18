@@ -1,16 +1,11 @@
 import { areJidsSameUser } from '@adiwajshing/baileys'
 
 let handler = async (m, { conn, participants }) => {
-    let users = m.mentionedJid.filter(u => !areJidsSameUser(u, conn.user.id))
-    let kickedUser = []
-    for (let user of users)
-        if (user.endsWith('@s.whatsapp.net') && !(participants.find(v => areJidsSameUser(v.id, user)) || { admin: true }).admin) {
-            const res = await conn.groupParticipantsUpdate(m.chat, [user], 'remove')
-            kickedUser.concat(res)
-            await delay(1 * 1000)
-        }
-    m.reply(`Se eliminó a ${kickedUser.map(v => '@' + v.split('@')[0])}`, null, { mentions: kickedUser })
-
+  let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
+  await conn.groupParticipantsUpdate(m.chat, [user], 'remove')
+  m.reply(`Se eliminó a *@${user.split('@')[0]}*`)
+  let owr = m.chat.split`-`[0]
+  if (user.startsWith(owr)) return m.reply('No puedo eliminarlo\'a por que el creó el grupo')
 }
 
 handler.help = ['kick']
@@ -22,6 +17,3 @@ handler.group = true
 handler.botAdmin = true
 
 export default handler
-
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
