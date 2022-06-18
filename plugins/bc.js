@@ -1,16 +1,19 @@
 import { randomBytes } from 'crypto'
 
 let handler = async (m, { conn, text }) => {
+  if (!text) throw 'Ingrese un texto para enviar el anuncio a todos los grupos'
   let chats = Object.entries(conn.chats).filter(([_, chat]) => chat.isChats).map(v => v[0])
-  let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
-  let teks = text ? text : cc.text
-  for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast|tx/i.test(teks) ? teks : `\t\t\t\t*Anuncio | Chats*\n\n${teks}` ), true).catch(_ => _)
-  conn.reply(m.chat, `El anuncio se envió a ${chats.length} chats`, m)
+  let fakegif = { key: {participant: `0@s.whatsapp.net`, ...("6289643739077-1613049930@g.us" ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title": 'lolibot', "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': 'Broadcast 🐈', 'jpegThumbnail': false }}}
+  let teks = `\t\t\t\t*Anuncio | grupos*\n\n${text}`
+  for (let id of chats) {
+  await conn.sendMessage(m.chat, { text: teks, mentions: (await conn.groupMetadata(`${id}`)).participants.map(v => v.id) }, { quoted: fakegif })
+  }
+  conn.reply(m.chat, `El anuncio se envío a *${groups.length} chats*!`, m)
 }
 
 handler.help = ['bc']
 handler.tags = ['owner']
-handler.command = /^(broadcast|bc|tx)$/i
+handler.command = /^(broadcast|bc)$/i
 
 handler.owner = true
 
