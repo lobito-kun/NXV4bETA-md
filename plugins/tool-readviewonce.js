@@ -1,9 +1,8 @@
-
 let { downloadContentFromMessage } = (await import('@adiwajshing/baileys'));
 
 let handler = async (m, { conn }) => {
-    if (!m.quoted) throw 'where\'s message?'
-    if (m.quoted.mtype !== 'viewOnceMessage') throw '✳️ Eso no es un mensaje de viewOnce'
+    if (!m.quoted) throw 'Etiqueta un mensaje que se pueda ver solo una vez'
+    if (m.quoted.mtype !== 'viewOnceMessage') throw 'Eso no es un mensaje que se pueda ver solo una vez'
     let msg = m.quoted.message
     let type = Object.keys(msg)[0]
     let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
@@ -21,6 +20,6 @@ let handler = async (m, { conn }) => {
 handler.help = ['readvo']
 handler.tags = ['tools']
 
-handler.command = ['readviewonce', 'read', 'ver', 'readvo'] 
+handler.command = /^(readviewonce|read|ver|readvo|rvo)$/i
 
 export default handler
