@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
   let fakegif = { key: {participant: `0@s.whatsapp.net`, ...("6289643739077-1613049930@g.us" ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title": 'lolibot', "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': 'Broadcast 🐈', 'jpegThumbnail': false }}}
   let teks = `\t\t\t\t*Anuncio | grupos*\n\n${text}`
   for (let id of chats) {
-  await conn.sendMessage(m.chat, { text: teks, mentions: (await conn.groupMetadata(`${id}`)).participants.map(v => v.id) }, { quoted: fakegif })
+  await conn.sendMessage(m.chat, { text: teks }, { quoted: fakegif })
   }
   conn.reply(m.chat, `El anuncio se envío a *${groups.length} chats*!`, m)
 }
