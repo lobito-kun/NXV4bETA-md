@@ -1,8 +1,8 @@
 console.log('Iniciando...')
 
-const { join, dirname } = require('path'
+const { join, dirname } = require('path')
 const { createRequire } = require('module')
-const { fileURLToPath } = require('url'
+const { fileURLToPath } = require('url')
 const { setupMaster, fork } = require('cluster')
 const { watchFile, unwatchFile } = require('fs')
 const cfonts = require('cfonts')
