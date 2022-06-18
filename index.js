@@ -1,13 +1,13 @@
-console.log('✅ Iniciando...')
+console.log('Iniciando...')
 
-import { join, dirname } from 'path'
-import { createRequire } from "module";
-import { fileURLToPath } from 'url'
-import { setupMaster, fork } from 'cluster'
-import { watchFile, unwatchFile } from 'fs'
-import cfonts from 'cfonts';
-import { createInterface } from 'readline'
-import yargs from 'yargs'
+const { join, dirname } = require('path'
+const { createRequire } = require('module')
+const { fileURLToPath } = require('url'
+const { setupMaster, fork } = require('cluster')
+const { watchFile, unwatchFile } = require('fs')
+const cfonts = require('cfonts')
+const { createInterface } = require('readline')
+const yargs = require('yargs')
 
 // https://stackoverflow.com/a/50052194
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -16,12 +16,12 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('DyLux\nWhatsApp Bot', {
+say('WhatsApp Bot', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-say(`'${name}' By @fg98._`, {
+say(`by gatito`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
@@ -61,7 +61,7 @@ function start(file) {
   })
   p.on('exit', (_, code) => {
     isRunning = false
-    console.error('❎ Ocurrió un error inesperado:', code)
+    console.error('Ocurrió un error inesperado:', code)
     if (code === 0) return
     watchFile(args[0], () => {
       unwatchFile(args[0])
