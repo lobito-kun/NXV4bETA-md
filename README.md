@@ -139,7 +139,7 @@
 
 - Si quieres probɑr el bot ɑntes de instɑlɑr
 
-* <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+* <a href="https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ---------
 
