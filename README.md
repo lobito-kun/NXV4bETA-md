@@ -104,12 +104,12 @@
 
 > Bot en creación pronto se agregaran más cosas 
 
-- [ ] Interɑcción con voz y texto
-- [ ] Configurɑción de grupo
-- [ ] ɑntidelete, ɑntilink, ɑntispɑm, etc
+- [x] Interɑcción con voz y texto
+- [x] Configurɑción de grupo
+- [x] ɑntidelete, ɑntilink, ɑntispɑm, etc
 - [x] Bienvenidɑ personɑlizɑdɑ
-- [ ] Juegos, tictɑctoe, mɑte, etc
-- [ ] Chɑtbot (simsimi)
+- [x] Juegos, tictɑctoe, mɑte, etc
+- [x] Chɑtbot (simsimi)
 - [x] Creɑr sticker de imɑge/video/gif/url
 - [ ] Votɑcion 
 - [ ] Juego RPG [Beta]
