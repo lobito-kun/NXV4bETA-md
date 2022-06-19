@@ -1,9 +1,4 @@
 import fetch from 'node-fetch'
-
-/**
- * @type {import('@adiwajshing/baileys')}
- */
-
 const { getBinaryNodeChild, getBinaryNodeChildren } = (await import('@adiwajshing/baileys')).default
 
 let handler = async (m, { conn, text, participants }) => {
@@ -48,7 +43,7 @@ let handler = async (m, { conn, text, participants }) => {
 }
 
 handler.help = ['add']
-handler.tags = ['group']
+handler.tags = ['adm']
 handler.command = /^(add|añadir|oadd)$/i
 
 handler.admin = true
