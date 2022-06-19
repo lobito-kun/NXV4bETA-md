@@ -11,7 +11,7 @@ let handler = async (m, { conn, text } ) => {
   title: '作成されたボット',
   body: 'By gɑtito ⾕',
   thumbnail: miniurl,
-  sourceUrl: 'https://chat.whatsapp.com/J3WPEgZkRVmLgj7WQlwBKU'
+  sourceUrl: 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo'
   }}})
 }
 
