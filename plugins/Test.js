@@ -1,5 +1,6 @@
 import MessageType from '@adiwajshing/baileys'
 import axios from 'axios'
+import fetch from 'node-fetch'
 import fs from 'fs'
 
 let handler = async (m, { conn, text } ) => {
