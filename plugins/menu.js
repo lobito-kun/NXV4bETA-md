@@ -30,7 +30,7 @@ const defaultMenu = {
   before: `
 *꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷*
 
-Holɑ *%name 👋🏻*, %greeting
+Holɑ *%taguser 👋🏻*, %greeting
 
 🏆 Rango : *%role*
 🧿 Nivel : *%level* 
@@ -135,7 +135,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let replace = {
       '%': '%',
       p: _p, uptime, muptime,
-      user: m.sender.split("@s.whatsapp.net")[0],
+      taguser: m.sender.split("@s.whatsapp.net")[0],
       me: conn.getName(conn.user.jid),
       npmname: _package.name,
       npmdesc: _package.description,
