@@ -1,144 +1,66 @@
-import fs from 'fs'
-import path from 'path'
-import moment from 'moment-timezone'
-import {
-  hostname,
-  totalmem,
-  freemem,
-  platform
-} from 'os'
-import {
-  cpu
-} from 'node-os-utils'
-import { 
-sizeFormatter 
-} from 'human-readable'
-
-let format = sizeFormatter({
-std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
-decimalPlaces: 2,
-keepTrailingZeroes: false,
-render: (literal, symbol) => `${literal} ${symbol}B`,
-})
-let cpuPer
-let p1 = cpu.usage().then(cpuPercentage => {
-    cpuPer = cpuPercentage
-}).catch(() => {
-    cpuPer = NotDetect
-})
-
-let handler = async (m, { conn, usedPrefix: _p }) => {
-  await Promise.all([p1])
+import { promises } from 'fs'
+import { join } from 'path'
+import fetch from 'node-fetch'
+import { xpRange } from '../lib/levelling.js'
 let tags = {
-      'main': 'MAIN', 
-      'anime': 'ANIME', 
-      'admin': `ADMIN ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
-      'group': 'GROUP',
-      'absen': 'ABSENT',
-      'vote': 'VOTING',
-      'anonymous': 'ANONYMOUS CHAT', 
-      'audio': 'VOICE CHARGES', 
-      'downloader': 'DOWNLOADER',
-      'database': 'DATABASE',
-      'edukasi': 'EDUCATION', 
-      'fun': 'FUN',
-      'game': 'GAME',
-      'xp': 'EXP & LIMIT',
-      'info': 'INFO',
-      'internet': 'INTERNET',
-      'islamic': 'ISLAMIC',
-      'jadibot': 'BOT',
-      'kerang': 'MAGIC SHELL',
-      'news': 'NEWS', 
-      'nulis': 'WRITE & LOGO',
-      'maker': 'PHOTO & VIDEO MAKER', 
-      'nsfw': 'NSFW',
-      'dewasa': 'MATURE', 
-      'premium': 'PREMIUM',
-      'quotes': 'QUOTES',
-      'rpg': 'RPG', 
-      'random': 'RANDOM',
-      'sticker': 'STICKER',
-      'tools': 'TOOLS',
-      'update': 'UPDATE',
-      'owner': 'OWNER',
-      'advanced': 'ADVANCED',
-      'host': 'HOST'
-  }
-
-const defaultMenu = {
-  before: `*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷*
-  
-
-               *﹝ ʙᴏᴛ ɪɴғᴏ ﹞*
-*✘⃟💕 Name : %namabot*
-*✘⃟💕 Number : %nobot*
-*✘⃟💕 Prefix : [ multi prefix ]*
-*✘⃟💕 Owner :  %oname*
-
-               *﹝ ᴛɪᴍᴇ ɪɴғᴏ ﹞*
-*✘⃟🗞️ Date : %week %weton, %date M*
-*✘⃟🗞️ Date - islamic : %dateIslamic*
-*✘⃟🗞️ WIB : %wib* 
-*✘⃟🗞️ WITA : %wita* 
-*✘⃟🗞️ WIT : %wit*
-
-               *﹝ sᴇʀᴠᴇʀ ɪɴғᴏ ﹞* 
-*✘⃟💻 HostName : ${hostname()}*
-*✘⃟💻 Platform : ${platform()}*
-*✘⃟💻 CPU : ${cpuPer}%*
-*✘⃟💻 CPU Core : ${cpu.count()} Core*
-*✘⃟💻 Ram : ${format(totalmem() - freemem())} / ${format(totalmem())}*
-*✘⃟💻 Runtime : %uptime ( %muptime )*
-
-               *﹝ ᴄᴏᴍᴍᴀɴᴅ ɪɴғᴏ ﹞* 
-*✘⃟🎋 Command total : %totalcmd*
-*✘⃟🎋 Command hit : %all*
-*✘⃟🎋 Command success : %sall*
-
-               *﹝ ᴇᴠᴇɴᴛ ɪɴғᴏ ﹞*
-*✘⃟🌹 ${global.Evn}*
-*✘⃟🌹 ${global.timeEvn}*
-%readmore`.trimStart(),
-  header: '   〝 *%category* 〞   \n',
-  body: '  ✘⃟-͓ͯ҈҈҈҉҉҉҉҈҈҈҈҈҉҉҉҉҈҈҈҉҉҉҈҈҈҉҉҉҈҈҈҈҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҉҈҈҈҈҈҈҈̫̫   *%cmd* %isLimit %isPremium',
-  footer: '\n',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
-`
+  'main': 'ACERCA DE',
+  'game': 'JUEGOS',
+  'xp': 'NIVEL & ECONOMIA',
+  'rg': 'REGISTRO',
+  'sticker': 'STICKER',
+   'img': 'IMAGEN',
+  'group': 'GRUPO',
+  'nable': 'EN/DISABLE OPCIONES', 
+  'premium': 'PREMIUM',
+  'nime': 'ANIME',
+  'downloader': 'DESCARGAS',
+  'tools': 'TOOLS',
+  'fun': 'FUN',
+  'database': 'DATABASE',
+  'nsfw': 'NSFW +18', 
+  'owner': 'OWNER', 
+  'advanced': 'AVANZADO',
 }
+const defaultMenu = {
+  before: `
+  ────  *DyLux  ┃ ᴮᴼᵀ*  ────
 
+👋🏻 _Hola_ *%name*
+
+🏆 Rango : *%role*
+🧿 Nivel : *%level* 
+👥 Usuarios : %totalreg
+─────────────
+▢ Crea tu propio bot 
+• https://youtu.be/jeXHB0IIzCM
+▢ Descarga *FGWhatsApp*
+• https://fgmods.epizy.com
+─────────────
+%readmore
+Ⓟ = Premium
+ⓓ = Diamantes
+-----  -----  -----  -----  -----
+  ≡ *LISTA DE MENUS*
+`.trimStart(),
+  header: '┌─⊷ *%category*',
+  body: '▢ %cmd %islimit %isPremium',
+  footer: '└───────────\n',
+  after: `
+`,
+}
+let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
-let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-//info cmd
-let sortedCmd = Object.entries(global.db.data.stats).map(([key, value]) => {
-  return { ...value, name: key }
-  }).map(toNumber('total')).sort(sort('total'))
-  
-  let all = 0;
-  let sall = 0;
-  for (let i of sortedCmd){
-  all += i.total
-  sall += i.success
-  }
-    let totalcmd = Object.values(global.plugins).length
-    let namabot = conn.user.name
-    let oname = await conn.getName(owner[0]+'@s.whatsapp.net')
-    let nobot = parseInt(conn.user.jid)
-    let name = conn.getName(m.sender)
+    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
+    let { exp, limit, level, role } = global.db.data.users[m.sender]
+    let { min, xp, max } = xpRange(level, global.multiplier)
+    let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
-    let locale = 'id'
-    let weton = [
-      'Pahing', 
-      'Pon', 
-      'Wage', 
-      'Kliwon', 
-      'Legi'
-    ][Math.floor(d / 84600000) % 5]
-    let wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
-    let wita = moment.tz('Asia/Makassar').format("HH:mm:ss")
-    let wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
+    let locale = 'es'
+    // d.getTimeZoneOffset()
+    // Offset -420 is 18.00
+    // Offset    0 is  0.00
+    // Offset  420 is  7.00
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
@@ -166,6 +88,8 @@ let sortedCmd = Object.entries(global.db.data.stats).map(([key, value]) => {
     }
     let muptime = clockString(_muptime)
     let uptime = clockString(_uptime)
+    let totalreg = Object.keys(global.db.data.users).length
+    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
     let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
       return {
         help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
@@ -173,118 +97,77 @@ let sortedCmd = Object.entries(global.db.data.stats).map(([key, value]) => {
         prefix: 'customPrefix' in plugin,
         limit: plugin.limit,
         premium: plugin.premium,
-        url: plugin.text,
-        text: plugin.text,
-        number: plugin.number,
-        options: plugin.opsions,
         enabled: !plugin.disabled,
       }
     })
-    let groups = {}
-    for (let tag in tags) {
-      groups[tag] = []
-      for (let plugin of help)
-        if (plugin.tags && plugin.tags.includes(tag))
-          if (plugin.help) groups[tag].push(plugin)
-      // for (let tag of plugin.tags)
-      //   if (!(tag in tags)) tags[tag] = tag
-    }
-    // for (let plugin of help)
-      // if (plugin && 'tags' in plugin)
-        // for (let tag of plugin.tags)
-         // if (!(tag in tags) && tag) tags[tag] = tag
+    for (let plugin of help)
+      if (plugin && 'tags' in plugin)
+        for (let tag of plugin.tags)
+          if (!(tag in tags) && tag) tags[tag] = tag
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || defaultMenu.before
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
-    let footer = conn.menu.footer || defaultMenu.footer 
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let footer = conn.menu.footer || defaultMenu.footer
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
-        before,
-        ...Object.keys(tags).map(tag => {
-          return header.replace(/%category/g, tags[tag]) + '\n' + [
-            ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
-              return menu.help.map(help => {
-                return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                  .replace(/%isLimit/g, menu.limit ? `${lIm}` : '')
-                  .replace(/%isPremium/g, menu.premium ? `${pRm}` : '')
-                  .trim()
-              }).join('\n')
-            }),
-            footer
-          ].join('\n')
-        }),
-        after
-      ].join('\n')
-    text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
+      before,
+      ...Object.keys(tags).map(tag => {
+        return header.replace(/%category/g, tags[tag]) + '\n' + [
+          ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
+            return menu.help.map(help => {
+              return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
+                .replace(/%islimit/g, menu.limit ? '(ⓓ)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
+                .trim()
+            }).join('\n')
+          }),
+          footer
+        ].join('\n')
+      }),
+      after
+    ].join('\n')
+    let text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
     let replace = {
       '%': '%',
-      p: _p, 
-      totalcmd,
-      all,
-      sall,
-      oname,
-      nobot,
-      namabot,
-      name,
-      uptime, 
-      muptime,
-      wit, 
-      wita, 
-      wib, 
-      week,
-      weton,
-      date,
-      dateIslamic,
-      readmore: readMore,
-      npmname: package.name,
-      npmdesc: package.description,
-      version: package.version,
-      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      
+      p: _p, uptime, muptime,
+      me: conn.getName(conn.user.jid),
+      npmname: _package.name,
+      npmdesc: _package.description,
+      version: _package.version,
+      exp: exp - min,
+      maxexp: xp,
+      totalexp: exp,
+      xp4levelup: max - exp,
+      github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
+      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    conn.sendHydrated(m.chat, text, `               ⳼  ʙᴏᴛ ᴜsᴀɢᴇ ɪɴғᴏ  ⳹
+  //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
+const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
     
-    ${lIm} : Free Users Using Limit 
-    ${pRm} : Premium Users Only 
-    ${uRl} : Needed Url
-    ${tXt} : Needed Text 
-    ${nUm} : Needed Number
-    ${oPs} : Options
-    `, mediaMenu, uRlx, dTux, null, null, bTnx, m, { asLocation: true})
-      
-   } catch (e) {
+    conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
+      ['ꨄ︎ Apoyar', '/donate'],
+      ['⏍ Info', '/botinfo'],
+      ['✆ Owner', '/owner']
+    ], m)
+  } catch (e) {
+    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
   }
 }
 
-handler.help = ['menu', 'help', '?']
-handler.tags = ['info']
-handler.command = /^(menu|help|\?)$/i
+handler.help = ['help']
+handler.tags = ['main']
+handler.command = ['menu', 'help', 'menú'] 
 
-module.exports = handler
+export default handler
 
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
-
-function pRandom(items){
-  return items[Math.floor(Math.random() * items.length)];
-}
-
-function sort(property, ascending = true) {
-  if (property) return (...args) => args[ascending & 1][property] - args[!ascending & 1][property]
-  else return (...args) => args[ascending & 1] - args[!ascending & 1]
-}
-
-function toNumber(property, _default = 0) {
-  if (property) return (a, i, b) => {
-      return { ...b[i], [property]: a[property] === undefined ? _default : a[property] }
-  }
-  else return a => a === undefined ? _default : a
-}
 
 function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
