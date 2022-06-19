@@ -4,7 +4,7 @@ import fs from 'fs'
 
 let handler = async (m, { conn, text } ) => {
   let url = 'https://wallpapercave.com/mwp/wp5580868.jpg'
-  conn.sendButton(m.chat, `*Test button*`, '-', url, [['Owner', '.owner'],['Info', '.info']], false, { 
+  conn.sendButton(m.chat, `*Test button*`, '-', url, [['Owner', '.owner'],['Info', '.info']], false, { quoted: m, 
     contextInfo: { externalAdReply: {
     title: 'Test',
     body: '-', 
