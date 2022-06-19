@@ -42,12 +42,12 @@ const defaultMenu = {
 -----  -----  -----  -----  -----
   ≡ *LISTA DE MENUS*
 `.trimStart(),
-  header: '┌─⊷ *%category*',
-  body: '▢ %cmd %islimit %isPremium',
-  footer: '└───────────\n',
-  after: `
-`,
+  header: '❒ *%category*',
+  body: '│∙ %cmd %islimit %isPremium',
+  footer: '╰•\n',
+  after: '',
 }
+
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
@@ -117,8 +117,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(ⓓ)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
+                .replace(/%islimit/g, menu.limit ? '(limite)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(premium)' : '')
                 .trim()
             }).join('\n')
           }),
