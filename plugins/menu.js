@@ -41,7 +41,7 @@ const defaultMenu = {
 ⓓ = Diamantes
 -----  -----  -----  -----  -----
   ≡ *LISTA DE MENUS*
-`,
+`.trimStart(),
   header: '┌─⊷ *%category*',
   body: '▢ %cmd %islimit %isPremium',
   footer: '└───────────\n',
