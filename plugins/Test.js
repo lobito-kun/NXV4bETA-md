@@ -15,7 +15,7 @@ let handler = async (m, { conn, text } ) => {
     mediaUrl: 'https://youtu.be/S8ivHgSumeg'
   }}})
 
-  conn.reply(m.chat, `*Test url*`, { quoted: m, 
+  conn.reply(m.chat, `*Test url*`, false, { quoted: m, 
     contextInfo: { externalAdReply: {
     title: 'Test', 
     body: '-', 
