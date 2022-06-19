@@ -1,60 +1,52 @@
 import { promises } from 'fs'
 import { join } from 'path'
-import fs from 'fs'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
-
 let tags = {
-  'main': 'Menu 🧇',
-  'rpg': 'Juego - RPG 🌋',
-  'game': 'Juegos 🎮',
-  'xp': 'Exp & limite ✨',
-  'sticker': 'Stickers 🧩',
-  'quotes': 'Citas 💌',
-  'adm': 'Admins 😎',
-  'group': 'Grupos 👥',
-  'premium': 'Premiun 👑',
-  'internet': 'Internet 📶',
-  'random': 'Random 🍥',
-  'nsfw': 'Nsfw 🔞',
-  'anonymous': 'Chat - anónimo 🕵️‍♂️',
-  'maker': 'Logo - maker 🎨',
-  'audio': 'Audio 🔊',
-  'downloader': 'Descargas 📥',
-  'tools': 'Ajustes ⚙️',
-  'fun': 'Diverción 🎡',
-  'database': 'Almacenamiento 📂',
-  'vote': 'Votación 🗳️',
-  'jadibot': 'Jadi - bot 🤖',
-  'owner': 'Creador 🐈',
-  'host': 'Host 📡',
-  'advanced': 'Abanzado 💠',
-  'info': 'Info 📍',
-  '': 'Sin - categoría 🏵️',
+  'main': 'ACERCA DE',
+  'game': 'JUEGOS',
+  'xp': 'NIVEL & ECONOMIA',
+  'rg': 'REGISTRO',
+  'sticker': 'STICKER',
+   'img': 'IMAGEN',
+  'group': 'GRUPO',
+  'nable': 'EN/DISABLE OPCIONES', 
+  'premium': 'PREMIUM',
+  'nime': 'ANIME',
+  'downloader': 'DESCARGAS',
+  'tools': 'TOOLS',
+  'fun': 'FUN',
+  'database': 'DATABASE',
+  'nsfw': 'NSFW +18', 
+  'owner': 'OWNER', 
+  'advanced': 'AVANZADO',
 }
 const defaultMenu = {
-  before: `Holɑ *@%user 👋*, %greeting
+  before: `
+  ────  *DyLux  ┃ ᴮᴼᵀ*  ────
 
-*• Biografíɑ:* %bio
+👋🏻 _Hola_ *%name*
 
-🍬 *Nombre:* Lolibot
-🍬 *Versión:* 7.0.0
-🍬 *Prefijo:* 「 *%p* 」
-🍬 *Batería:* %batery
-🍬 *Estado:* %batery2
-🍬 *Lenguɑje:* JavaScript
-🍬 *Libreria:* Baileys
-🍬 *Comandos:* %comand Totɑl
-
-*• Fechɑ:* %date
-*• Horɑ:* %time
-
-Cuɑlquier bug o error en un comɑndo reportɑr con el comɑndo *%preport <bug/error>
+🏆 Rango : *%role*
+🧿 Nivel : *%level* 
+👥 Usuarios : %totalreg
+─────────────
+▢ Crea tu propio bot 
+• https://youtu.be/jeXHB0IIzCM
+▢ Descarga *FGWhatsApp*
+• https://fgmods.epizy.com
+─────────────
+%readmore
+Ⓟ = Premium
+ⓓ = Diamantes
+-----  -----  -----  -----  -----
+  ≡ *LISTA DE MENUS*
+`.trimStart(),
+  header: '┌─⊷ *%category*',
+  body: '▢ %cmd %islimit %isPremium',
+  footer: '└───────────\n',
+  after: `
 `,
-  header: '❒ *%category*',
-  body: '│∙ *%cmd* %islimit %isPremium',
-  footer: '╰•\n',
-  after: ' ',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
@@ -125,8 +117,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(limite)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '(ⓓ)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
                 .trim()
             }).join('\n')
           }),
@@ -143,8 +135,6 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       npmname: _package.name,
       npmdesc: _package.description,
       version: _package.version,
-      comand: Object.values(global.plugins).filter( (v) => v.help && v.tags ).length,
-      greeting: saludo,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
@@ -155,31 +145,26 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    //const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
+  //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
+const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
     
-    let tumbv = fs.readFileSync('./storage/video/menu.mp4')
-    //conn.sendMessage(m.chat, { video: tumbv, caption: text.trim(), gifPlayback: true }, { quoted: m })
-    conn.sendMessage(m.chat, { video: tumbv, gifPlayback: true, gifAttribution: 2, caption: text.trim(), footer: '⺋⺋⺋', templateButtons: [{ quickReplyButton: { displayText: '☘️ Info', id: `${_p}info` }}, { quickReplyButton: { displayText: '🐈 Creador', id: `${_p}creador` }} ] }, { quoted: m })
-    /*conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
+    conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
       ['ꨄ︎ Apoyar', '/donate'],
       ['⏍ Info', '/botinfo'],
       ['✆ Owner', '/owner']
-    ], m)*/
+    ], m)
   } catch (e) {
-    conn.reply(m.chat, 'Lo sentimos, el menú tiene un error.', m)
+    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
   }
 }
-
-handler.help = ['menu']
+handler.help = ['help']
 handler.tags = ['main']
-handler.command = /^(menu|comandos|menú)$/i
-
-handler.restrict = true
+handler.command = ['menu', 'help', 'menú'] 
+handler.register = true
+handler.exp = 3
 
 export default handler
-
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
@@ -190,33 +175,3 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
-
-var ase = new Date();
-var waktoonyabro = ase.getHours();
-switch(waktoonyabro){
- case 0: waktoonyabro = `que tengas una linda noche 🌙`; break;
- case 1: waktoonyabro = `que tengas una linda noche 💤`; break;
- case 2: waktoonyabro = `que tengas una linda noche 🦉`; break;
- case 3: waktoonyabro = `que tengas una linda mañana ✨`; break;
- case 4: waktoonyabro = `que tengas una linda mañana 💫`; break;
- case 5: waktoonyabro = `que tengas una linda mañana 🌅`; break;
- case 6: waktoonyabro = `que tengas una linda mañana 🌄`; break;
- case 7: waktoonyabro = `que tengas una linda mañana 🌅`; break;
- case 8: waktoonyabro = `que tengas una linda mañana 💫`; break;
- case 9: waktoonyabro = `que tengas una linda mañana ✨`; break;
- case 10: waktoonyabro = `que tengas un lindo dia 🌞`; break;
- case 11: waktoonyabro = `que tengas un lindo dia 🌨`; break;
- case 12: waktoonyabro = `que tengas un lindo dia ❄`; break;
- case 13: waktoonyabro = `que tengas un lindo dia 🌤`; break;
- case 14: waktoonyabro = `que tengas una linda tarde 🌇`; break;
- case 15: waktoonyabro = `que tengas una linda tarde 🥀`; break;
- case 16: waktoonyabro = `que tengas una linda tarde 🌹`; break;
- case 17: waktoonyabro = `que tengas una linda tarde 🌆`; break;
- case 18: waktoonyabro = `que tengas una linda noche 🌙`; break;
- case 19: waktoonyabro = `que tengas una linda noche 🌃`; break;
- case 20: waktoonyabro = `que tengas una linda noche 🌌`; break;
- case 21: waktoonyabro = `que tengas una linda noche 🌃`; break;
- case 22: waktoonyabro = `que tengas una linda noche 🌙`; break;
- case 23: waktoonyabro = `que tengas una linda noche 🌃`; break;
- }
-var saludo = "" + waktoonyabro;
