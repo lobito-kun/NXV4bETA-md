@@ -3,14 +3,14 @@ import axios from 'axios'
 import fs from 'fs'
 
 let handler = async (m, { conn, text } ) => {
-  let url = 'https://wallpapercave.com/mwp/wp5580868.jpg'
+  let url = await(await fetch('https://wallpapercave.com/mwp/wp5580868.jpg')).buffer()
   conn.sendButton(m.chat, `*Test button*`, '-', url, [['Owner', '.owner'],['Info', '.info']], false, { quoted: m, 
     contextInfo: { externalAdReply: {
     title: 'Test', 
     body: '-', 
     mediaType: '2', 
     previewType: 'VIDEO', 
-    thumbnail: false, 
+    thumbnail: url, 
     mediaUrl: 'https://youtu.be/S8ivHgSumeg'
   }}})
 
