@@ -10,7 +10,7 @@ let handler = async (m, { conn, text } ) => {
   mediaUrl: '',
   title: '作成されたボット',
   body: 'By gɑtito ⾕',
-  thumbnail: imgmenu,
+  thumbnail: miniurl,
   sourceUrl: 'https://chat.whatsapp.com/J3WPEgZkRVmLgj7WQlwBKU'
   }}})
 }
