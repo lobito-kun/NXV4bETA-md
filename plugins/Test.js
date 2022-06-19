@@ -8,7 +8,7 @@ let handler = async (m, { conn, text } ) => {
   showAdAttribution: true,
   mediaType: 'VIDEO',
   mediaUrl: '',
-  title: 'あなたは私のすべてです',
+  title: '作成されたボット',
   body: 'By gɑtito ⾕',
   thumbnail: miniurl,
   sourceUrl: 'https://chat.whatsapp.com/J3WPEgZkRVmLgj7WQlwBKU'
