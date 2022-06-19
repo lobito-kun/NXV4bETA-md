@@ -30,7 +30,7 @@ const defaultMenu = {
   before: `
 *꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷*
 
-Holɑ *%taguser 👋🏻*, %greeting
+Holɑ *@%taguser 👋🏻*, %greeting
 
 🏆 Rango : *%role*
 🧿 Nivel : *%level* 
