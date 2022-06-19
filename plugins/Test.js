@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import fs from 'fs'
 
 let handler = async (m, { conn, text } ) => {
-  conn.sendButton(m.chat, `*Test button*`, '-', imgmenu, [['Speedtest', '.ping'], ['Owner', '.owner']], false, { quoted: m, contextInfo: { externalAdReply: {
+  conn.sendButton(m.chat, `*Test button*`, 'Creɑted by gɑtito ⾕', imgmenu, [['Info 🧃', '.ping'], ['Creador 🍭', '.owner']], false, { quoted: m, contextInfo: { externalAdReply: {
   showAdAttribution: true,
   mediaType: 'VIDEO',
   mediaUrl: '',
