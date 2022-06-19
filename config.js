@@ -1,4 +1,5 @@
 import { watchFile, unwatchFile } from 'fs'
+import fs from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
@@ -45,6 +46,9 @@ global.fgsc = 'https://github.com/FG98F/dylux-fg'
 global.fgyt = 'https://youtube.com/fg98f'
 
 global.multiplier = 69 // Cuanto más alto, más difícil subir de nivel
+
+
+global.imgmenu = fs.readFileSync('./storage/image/menu.jpg')
 
 
 let file = fileURLToPath(import.meta.url)
