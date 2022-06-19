@@ -48,7 +48,7 @@ global.fgyt = 'https://youtube.com/fg98f'
 global.multiplier = 69 // Cuanto más alto, más difícil subir de nivel
 
 
-global.imgmenu = fs.readFileSync('./storage/image/menu.jpg')
+//global.imgmenu = fs.readFileSync('./storage/image/menu.jpg')
 
 
 let file = fileURLToPath(import.meta.url)
