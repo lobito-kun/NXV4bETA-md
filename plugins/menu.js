@@ -66,9 +66,10 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
       for (let menu of groups[tag]) {
-        //for (let help of menu)
-          //_text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
-      //}
+       let menuu = menu.help
+        for (let help of menuu)
+          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
+      }
       _text += footer + '\n'
     }
     _text += after
