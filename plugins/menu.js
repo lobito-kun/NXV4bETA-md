@@ -37,12 +37,11 @@ const defaultMenu = {
 ▢ Descarga *FGWhatsApp*
 • https://fgmods.epizy.com
 ─────────────
-%readmore
 Ⓟ = Premium
 ⓓ = Diamantes
 -----  -----  -----  -----  -----
   ≡ *LISTA DE MENUS*
-`.trimStart(),
+`,
   header: '┌─⊷ *%category*',
   body: '▢ %cmd %islimit %isPremium',
   footer: '└───────────\n',
