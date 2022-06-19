@@ -4,7 +4,7 @@ function handler(m) {
 }
 
 handler.help = ['creador']
-handler.tags = ['main']
+handler.tags = ['info']
 handler.command = /^(owner|creator|creador|dueño)$/i
 
 export default handler
