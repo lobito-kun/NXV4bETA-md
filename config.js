@@ -49,6 +49,7 @@ global.multiplier = 69 // Cuanto más alto, más difícil subir de nivel
 
 
 global.imgmenu = fs.readFileSync('./storage/image/menu.jpg')
+global.miniurl = fs.readFileSync('./storage/image/miniurl.jpg')
 
 
 let file = fileURLToPath(import.meta.url)
