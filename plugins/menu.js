@@ -2,6 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
+
 let tags = {
   'main': 'ACERCA DE',
   'game': 'JUEGOS',
@@ -146,13 +147,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
   //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
-    
-    conn.sendHydrated(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, 'https://youtube.com/fg98f', 'YouTube', null, null, [
-      ['ꨄ︎ Apoyar', '/donate'],
-      ['⏍ Info', '/botinfo'],
-      ['✆ Owner', '/owner']
-    ], m)
+  //const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
+  conn.sendButton(m.chat, text.trim(), 'Creɑted by gɑtito ⾕', imgmenu, [['Info 🧃', '.ping'], ['Creador 🍭', '.owner']], false, { quoted: m, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: '', title: '作成されたボット', body: 'By gɑtito ⾕', thumbnail: miniurl, sourceUrl: 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}})
   } catch (e) {
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
