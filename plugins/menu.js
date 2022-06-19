@@ -9,6 +9,7 @@ let tags = {
   'game': 'Juegos 🎮',
   'exp': 'Exp & limite ✨',
   'sticker': 'Stickers 🧩',
+  'maker': 'Logo - maker 🎨',
   'random': 'Random 🍥',
   'adm': 'Admins 😎',
   'group': 'Grupos 👥', 
