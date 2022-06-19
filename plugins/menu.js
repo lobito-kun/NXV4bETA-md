@@ -4,24 +4,25 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'ACERCA DE',
-  'game': 'JUEGOS',
-  'xp': 'NIVEL & ECONOMIA',
-  'rg': 'REGISTRO',
-  'sticker': 'STICKER',
-   'img': 'IMAGEN',
-  'group': 'GRUPO',
-  'nable': 'EN/DISABLE OPCIONES', 
-  'premium': 'PREMIUM',
-  'nime': 'ANIME',
-  'downloader': 'DESCARGAS',
-  'tools': 'TOOLS',
-  'fun': 'FUN',
-  'database': 'DATABASE',
-  'nsfw': 'NSFW +18', 
-  'owner': 'OWNER', 
-  'advanced': 'AVANZADO',
+  'main': 'Menu 🧇',
+  'rpg': 'Juego - RPG 🌋',
+  'game': 'Juegos 🎮',
+  'exp': 'Exp & limite ✨',
+  'sticker': 'Stickers 🧩',
+  'random': 'Random 🍥',
+  'adm': 'Admins 😎',
+  'group': 'Grupos 👥', 
+  'premium': 'Premiun 👑',
+  'downloader': 'Descargas 📥',
+  'tools': 'Ajustes ⚙️',
+  'fun': 'Diverción 🎡',
+  'database': 'Almacenamiento 📂',
+  'nsfw': 'Nsfw 🔞',
+  'owner': 'Creador 🐈',
+  'info': 'Info 📍',
+  'advanced': 'Abanzado 💠',
 }
+
 const defaultMenu = {
   before: `
   ────  *DyLux  ┃ ᴮᴼᵀ*  ────
@@ -43,7 +44,7 @@ const defaultMenu = {
   ≡ *LISTA DE MENUS*
 `.trimStart(),
   header: '❒ *%category*',
-  body: '│∙ %cmd %islimit %isPremium',
+  body: '│∙ *%cmd* %islimit %isPremium',
   footer: '╰•\n',
   after: '',
 }
