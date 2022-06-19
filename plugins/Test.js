@@ -3,8 +3,7 @@ import axios from 'axios'
 import fs from 'fs'
 
 let handler = async (m, { conn, text } ) => {
-  let girl = (await axios.get(`https://raw.githubusercontent.com/FG98F/team-fg/main/img/girl.json`)).data
-  let url = pickRandom(girl)
+  let url = 'https://wallpapercave.com/mwp/wp5580868.jpg'
   conn.sendButton(m.chat, 'Test', '-', url, [['Info', `.info`], ['Owner', `.owner`]], m)
 }
 
