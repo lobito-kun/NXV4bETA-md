@@ -1,4 +1,5 @@
 import MessageType from '@adiwajshing/baileys'
+import axios from 'axios'
 import fs from 'fs'
 
 let handler = async (m, { conn, text } ) => {
