@@ -1,4 +1,4 @@
-import MessageType from '@adiwajshing/baileys'
+/*import MessageType from '@adiwajshing/baileys'
 import axios from 'axios'
 import fetch from 'node-fetch'
 import fs from 'fs'
@@ -32,4 +32,4 @@ handler.command = ['test']
 handler.tags = ['owner']
 handler.help = /^(test)$/i
 
-export default handler
+export default handler*/
