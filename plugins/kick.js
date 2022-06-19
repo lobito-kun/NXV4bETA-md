@@ -9,7 +9,7 @@ let handler = async (m, { conn, participants }) => {
 }
 
 handler.help = ['kick']
-handler.tags = ['group']
+handler.tags = ['adm']
 handler.command = /^(kick|ban|echar|hechar)$/i
 
 handler.admin = true
