@@ -52,9 +52,9 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
-      for (let menu of help)
-        if (menu.tags && menu.tags.includes(tag))
-          if (menu.help) groups[tag].push(menu)
+      for (let main of help)
+        if (main.tags && main.tags.includes(tag))
+          if (main.help) groups[tag].push(main)
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `${conn.getName(conn.user.jid)} • Bot\n\nHai, %name!\n*%exp XP*\n*%limit Limit*\n*%week %weton, %date*\n*%time*\n_Uptime: %uptime\n%readmore`
