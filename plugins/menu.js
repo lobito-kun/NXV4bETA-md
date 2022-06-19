@@ -152,7 +152,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
   //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
   //const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
-  await conn.sendButton(m.chat, text.trim(), 'Creɑted by gɑtito ⾕', imgmenu, [['Info 🧃', '.ping'], ['Creador 🍭', '.owner']], false, { quoted: m, contextInfo: { externalAdReply: { mentionedJid: [m.sender], showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: '', title: '作成されたボット', body: 'By gɑtito ⾕', thumbnail: miniurl, sourceUrl: 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}})
+  await conn.sendButton(m.chat, text.trim(), 'Creɑted by gɑtito ⾕', imgmenu, [['Info 🧃', '.ping'], ['Creador 🍭', '.owner']], false, { quoted: m, contextInfo: { mentions: conn.parseMention(text.trim()), externalAdReply: { showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: '', title: '作成されたボット', body: 'By gɑtito ⾕', thumbnail: miniurl, sourceUrl: 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}})
   } catch (e) {
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
