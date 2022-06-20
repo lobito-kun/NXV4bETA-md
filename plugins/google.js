@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
     const fetch = (await import('node-fetch')).default
     let full = /g$/i.test(command)
     let text = args.join` `
-    if (!text) throw '*⛌ Ingrese lo que quiere buscar en Google*\n\n*• Ejemplo:*\n- ${usedPrefix + command}google minecraft'
+    if (!text) throw `*⛌ Ingrese lo que quiere buscar en Google*\n\n*• Ejemplo:*\n- ${usedPrefix + command}google minecraft`
     await conn.reply(m.chat, global.wait, m)
     let url = 'https://google.com/search?q=' + encodeURIComponent(text)
     let search = await googleIt(text)
