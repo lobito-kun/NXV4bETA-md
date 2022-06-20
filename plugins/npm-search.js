@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import fs from 'fs'
 
 let handler = async (m, { text, usedPrefix, command }) => {
   if (!text) throw `*⛌ Ingrese lo que quiere buscar en Npm*\n\n*• Ejemplo:*\n- ${usedPrefix + command} baileys`
@@ -9,7 +10,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
   let txt = objects.map(({ package: pkg }) => {
     return `*• Nombre:* ${pkg.name}\n*• Versión:* v${pkg.version}\n*• Link:* ${pkg.links.npm}\n*• Descripción:* ${pkg.description}`
   }).join`\n\n╶\n\n`
-  m.reply(txt)
+  let imgnpm = fs.readFileSync('./storage/image/npm.jpg')
+  await conn.sendFile(m.chat, imgnpm, 'Error.jpg', txt, m)
 }
 
 handler.help = ['npm']
