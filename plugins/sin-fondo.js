@@ -13,6 +13,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 handler.help = ['sinfondo']
 handler.tags = ['tools']
-handler.command = /^(sinfondo|removebg)bg$/i
+handler.command = /^(sinfondo|removebg)$/i
 
 export default handler
