@@ -41,8 +41,8 @@ Holɑ *%taguser 👋🏻*, %greeting
 ▢ Descarga *FGWhatsApp*
 • https://fgmods.epizy.com
 ─────────────
-Ⓟ = Premium
-ⓓ = Diamantes
+Ⓟ = Premium ˃
+ⓓ = Diamantes ˂
 -----  -----  -----  -----  -----
   ≡ *LISTA DE MENUS*
 `.trimStart(),
@@ -121,8 +121,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(limite)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '˂' : '')
+                .replace(/%isPremium/g, menu.premium ? '˃' : '')
                 .trim()
             }).join('\n')
           }),
