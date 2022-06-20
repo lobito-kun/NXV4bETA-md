@@ -18,17 +18,18 @@ _📌Ejemplo : ${usedPrefix+command} normal_
 `.trim()
     
   let id = m.chat
-    if (id in conn.math) return conn.reply(m.chat, '⚠️ Todavía hay preguntas sin respuesta en este chat', conn.math[id][0])
+    if (id in conn.math) return conn.reply(m.chat, 'Todavía hay preguntas sin responder en este chat', conn.math[id][0])
     let math = genMath(mode)
     conn.math[id] = [
-        await conn.reply(m.chat, `▢ CUANTO ES *${math.str}*=\n\n_Tiempo:_ ${(math.time / 1000).toFixed(2)} segundos\n\n🎁 Recompensa : ${math.bonus} XP`, m),
+        await conn.reply(m.chat, `Cuanto es el resultado de *${math.str}*?\n\n*• Tiempo:* ${(math.time / 1000).toFixed(2)} segundos\n*• Bono:* +${math.bonus} Exp`, m),
         math, 4,
         setTimeout(() => {
-            if (conn.math[id]) conn.reply(m.chat, `⏳ Se acabó el tiempo!\nLa respuesta es : *${math.result}*`, conn.math[id][0])
+            if (conn.math[id]) conn.reply(m.chat, `*Se acabó el tiempo!*\nRespuesta: ${math.result}`, conn.math[id][0])
       delete conn.math[id]
         }, math.time)
     ]
 }
+
 handler.help = ['mates']
 handler.tags = ['game']
 handler.command = ['mates', 'mate', 'matemáticas', 'math'] 
