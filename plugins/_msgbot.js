@@ -5,7 +5,7 @@ import fetch from 'node-fetch'
 
 let handler = m => m
 
-export async function before(m, { conn, command }) {
+handler.before = async function(m, { conn, command }) {
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
 
 await m.reply('Test')
