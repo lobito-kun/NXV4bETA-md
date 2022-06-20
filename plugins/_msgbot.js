@@ -8,6 +8,8 @@ let handler = m => m
 export async function before(m, { conn, command }) {
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
 
+await m.reply('Test')
+
 let audio1A = /onichan|senpai|sempai|yamete|onii-chan|oni-chan/i
 let audio1B = audio1A.exec(m.text)
 
