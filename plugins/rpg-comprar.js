@@ -58,7 +58,7 @@ let _rod = global.db.data.users[m.sender].rod
 let rod = (_rod == 0 ? Rod1 : '')
 let crod = (_rod == 0 ? 'normal' : '')
 
-let imgshop = fs.readFileSync('./storage/image/shop.png')
+let imgshop = false //fs.readFileSync('./storage/image/shop.png')
 
 if (!text) return m.reply(`*• Ingrese un ítem o herrmient pr comprr*\n\n*Ejemplo de uso:*\n1. ${usedPrefix + command} <ítem>\n2. ${usedPrefix + command} pico\n\nEscribe *${usedPrefix}tienda* pr ver l list de ítems`)
 
