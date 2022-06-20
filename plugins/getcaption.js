@@ -7,6 +7,7 @@ let handler = async (m, { conn }) => {
 	else caption = m.quoted.text
 	m.reply(caption, m.chat, { mentions: conn.parseMention(caption) })
 }
+
 handler.help = ['getcaption']
 handler.tags = ['tools']
 handler.command = /^(getcaption)$/i
