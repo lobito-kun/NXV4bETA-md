@@ -1,6 +1,3 @@
-let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
-let fs = require('fs')
-
 //Pico
 const Pickaxe1 = 175000 //Madera
 const Pickaxe2 = 225000 //Piedra
