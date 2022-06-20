@@ -12,10 +12,12 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let username = conn.getName(who)
   let prem = global.prems.includes(who.split`@`[0])
   let sn = createHash('md5').update(who).digest('hex')
+  let bio = await conn.fetchStatus(who)
   let str = `\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
 
  *◦ Nombre:* ${username}
  *◦ Tag:* @${who.replace(/@.+/, '')}
+ *◦ Tag:* ${bio.status ? bio.status : '×'}
  *◦ Numero:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
  *◦ Link:* wa.me/${who.split`@`[0]}
  *◦ Limite:* ${limit}
