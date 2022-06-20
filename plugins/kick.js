@@ -1,7 +1,6 @@
-import { areJidsSameUser } from '@adiwajshing/baileys'
-
 let handler = async (m, { conn, participants }) => {
   let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
+  if (user == undefined) throw 'Etiqueta a alguien del grupo para eliminarlo'
   let owr = m.chat.split`-`[0]
   if (user.startsWith(owr)) return await m.reply('No puedo eliminarlo\'a por que el creó el grupo')
   conn.groupParticipantsUpdate(m.chat, [user], 'remove')
