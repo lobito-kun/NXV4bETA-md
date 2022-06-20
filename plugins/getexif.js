@@ -11,6 +11,15 @@ let handler = async (m) => {
  }
 }
 
+/*handler.help = ['<']
+handler.tags = ['advanced']
+handler.customPrefix = /^[<] /
+handler.command = new RegExp
+
+handler.owner = true
+
+export default handler*/
+
 handler.help = ['getexif']
 handler.tags = ['sticker']
 handler.command = /^(getexif|infosticker|infostick)$/i
