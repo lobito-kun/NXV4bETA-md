@@ -13,9 +13,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 			array.push({ exists: false, jid: result })
 		}
 	}
-	let txt = '• Registered\n\n' + array.filter(v => v.exists)
-		.map(v => `No: wa.me/${v.jid.split('@')[0]}\nBio: ${v.status || ''}\nDate: ${formatDate(v.setAt)}`).join('\n\n')
-	+ '\n\n• Unregister\n\n' + array.filter(v => !v.exists).map(v => v.jid.split('@')[0]).join('\n')
+	let txt = '*Registrados*\n\n' + array.filter(v => v.exists)
+		.map(v => `*• Nro*: wa.me/${v.jid.split('@')[0]}\n*• Bio:* ${v.status || '×'}\n*• Fecha:* ${formatDate(v.setAt)}`).join('\n\n')
+	+ '\n\n*No registrados*\n\n' + array.filter(v => !v.exists).map(v => v.jid.split('@')[0]).join('\n')
 	m.reply(txt)
 }
 handler.command = /^nowa$/i
