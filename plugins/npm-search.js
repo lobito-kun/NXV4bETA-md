@@ -1,18 +1,19 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw 'Input Query'
+  if (!text) throw `*⛌ Ingrese lo que quiere buscar en Npm*\n\n*• Ejemplo:*\n- ${usedPrefix + command} baileys`
+  conn.reply(m.chat, global.wait, m)
   let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
   let { objects } = await res.json()
-  if (!objects.length) throw `Query "${text}" not found :/`
+  if (!objects.length) throw `No se encontró *${text}* en npm`
   let txt = objects.map(({ package: pkg }) => {
-    return `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_`
-  }).join`\n\n`
+    return `*• Nombre:* ${pkg.name}\n*• Versión:* v${pkg.version}\n*• Link:* ${pkg.links.npm}\n*• Descripción:* ${pkg.description}`
+  }).join`\n\n╶\n\n`
   m.reply(txt)
 }
 
-handler.help = ['npmsearch']
+handler.help = ['npm']
 handler.tags = ['search']
-handler.command = /^(npmjs|npmsearch|npms)$/i
+handler.command = /^(npmjs|npmsearch|npms|npm)$/i
 
 export default handler
