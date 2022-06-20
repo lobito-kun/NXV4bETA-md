@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let txt = `\t\t\t*∙ 🔊 Música encontrado 🔊 ∙*\n\n*• Titulo:* ${title}${artists ? `\n*• Artists:* ${artists.map(v => v.name).join(', ')}` : ''}`
   txt += `${album ? `\n*• Album:* ${album.name}` : ''}${genres ? `\n*• Genero:* ${genres.map(v => v.name).join(', ')}` : ''}\n`
   txt += `*• Fecha de lanzamiento:* ${release_date}`
-  conn.reply(m.chat, txt.trim(), m)
+  conn.reply(m.chat, txt, m)
   } else throw `🏷️ Etiqueta un audio o video de poca duración con el comando *${usedPrefix + command}* para ver que música contiene`
 }
 
