@@ -3,8 +3,6 @@ let handler = async (m, { conn, participants }) => {
   let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
   let owr = m.chat.split`-`[0]
   if (user.includes(owr)) return m.reply('No puedo eliminarlo\'a por que el creó el grupo')
-  let adm = participants.filter(p => p.admin)
-  if (user.includes(adm)) return m.reply('No puedo eliminarlo\'a por que es un admin del grupo')
   conn.groupParticipantsUpdate(m.chat, [user], 'remove')
   m.reply(`Se eliminó a *@${user.split('@')[0]}*`, null, { mentions: [user] })
 }
