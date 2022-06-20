@@ -1,5 +1,5 @@
-let handler = async (m, { conn, text }) => {
-  if (!text) throw 'Ingrese un texto junto al comando'
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  if (!text) throw `*⛌ Ingrese un texto para convertir en (... Leer más)*\n\n*• Ejemplo:*\n- ${usedPrefix + command} Hola|xd`
   let [l, r] = text.split`|`
   if (!l) l = ''
   if (!r) r = ''
