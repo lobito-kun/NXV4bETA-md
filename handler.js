@@ -70,7 +70,7 @@ export async function handler(chatUpdate) {
 
                 //Minerales
                 if (!isNumber(user.emerald)) user.emerald = 0
-                if (!isNumber(user.red_diamond)) user.red_diamond = 0
+                if (!isNumber(user.reddiamond)) user.reddiamond = 0
                 if (!isNumber(user.diamond)) user.diamond = 0
                 if (!isNumber(user.gold)) user.gold = 0
                 if (!isNumber(user.iron)) user.iron = 0
@@ -86,6 +86,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.blowfish)) user.blowfish = 0
                 if (!isNumber(user.tropicalfish)) user.tropicalfish = 0
                 if (!isNumber(user.commonfish)) user.commonfish = 0
+                if (!isNumber(user.crab)) user.crab = 0
 
                 if (!isNumber(user.common)) user.common = 0
                 if (!isNumber(user.uncommon)) user.uncommon = 0
@@ -158,7 +159,7 @@ export async function handler(chatUpdate) {
 
                     //Minerales
                     emerald: 0,
-                    red_diamond: 0,
+                    reddiamond: 0,
                     diamond: 0,
                     gold: 0,
                     iron: 0,
@@ -171,10 +172,10 @@ export async function handler(chatUpdate) {
                     kiwi: 0,
 
                     //Peces
-                    blowfish: 0,
-                    tropicalfish: 0,
                     commonfish: 0,
-
+                    tropicalfish: 0,
+                    blowfish: 0,
+                    crab: 0,
 
                     common: 0,
                     uncommon: 0,
