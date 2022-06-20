@@ -32,7 +32,7 @@ _📌Ejemplo : ${usedPrefix+command} normal_
 
 handler.help = ['mates']
 handler.tags = ['game']
-handler.command = ['mates', 'mate', 'matemáticas', 'math'] 
+handler.command = /^(mates|mate|matemáticas|math)$/i
 
 handler.restrict = true
 
