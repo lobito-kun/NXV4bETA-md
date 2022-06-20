@@ -1,7 +1,6 @@
 let handler = async (m, { conn, participants }) => {
+  if (m.mentionedJid || m.quoted) throw 'Etiqueta a alguien del grupo para eliminarlo'
   let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
-  await m.reply(`${JSON.stringify(user, null, 1)}`)
-  if (user == null) throw 'Etiqueta a alguien del grupo para eliminarlo'
   let owr = m.chat.split`-`[0]
   if (user.startsWith(owr)) return await m.reply('No puedo eliminarlo\'a por que el creó el grupo')
   conn.groupParticipantsUpdate(m.chat, [user], 'remove')
