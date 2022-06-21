@@ -114,7 +114,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.sworddurability)) user.sworddurability = 0
                 if (!isNumber(user.pickaxe)) user.pickaxe = 0
                 if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
-                if (!isNumber(user.fishingrod)) user.fishingrod = 0
+                if (!isNumber(user.rod)) user.fishingrod = 0
                 if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
 
                 if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -206,7 +206,7 @@ export async function handler(chatUpdate) {
                     sworddurability: 0,
                     pickaxe: 0,
                     pickaxedurability: 0,
-                    fishingrod: 0,
+                    rod: 0,
                     fishingroddurability: 0,
 
 
