@@ -58,8 +58,6 @@ let _rod = global.db.data.users[m.sender].rod
 let rod = (_rod == 0 ? Rod1 : '')
 let crod = (_rod == 0 ? 'normal' : '')
 
-let imgshop = false //fs.readFileSync('./storage/image/shop.png')
-
 if (!text) return m.reply(`*• Ingrese un ítem o herrmient pr comprr*\n\n*Ejemplo de uso:*\n1. ${usedPrefix + command} <ítem>\n2. ${usedPrefix + command} pico\n\nEscribe *${usedPrefix}tienda* pr ver l list de ítems`)
 
 let type = (args[0] || ' ').toLowerCase()
@@ -89,7 +87,7 @@ case 'espada':
       if (global.db.data.users[m.sender].sword == 5) return conn.reply(m.chat, 'Tu *espada* esta al nivel máximo', m)
       if (global.db.data.users[m.sender].money > sword * 1) {
        	global.db.data.users[m.sender].sword += 1
-           global.db.data.users[m.sender].sworddurability += sworddurability * 1
+           global.db.data.usersñ[m.sender].sworddurability += sworddurability * 1
            global.db.data.users[m.sender].money -= sword * 1
            conn.reply(m.chat, `Compraste una espada de *${csword}* por ${sword} de dinero` ,m)
           } else conn.reply(m.chat, `No tienes suficiente dinero para comprar el espada de *${csword}* que cuesta ${sword} de dinero`, m)
@@ -111,8 +109,8 @@ case 'caña':
        	global.db.data.users[m.sender].rod += 1
            global.db.data.users[m.sender].roddurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
            global.db.data.users[m.sender].money -= rod * 1
-           conn.reply(m.chat, `Compraste una caña *${crod}* por ${rod} de dinero` ,m)
-           } else conn.reply(m.chat, `No tienes suficiente dinero para comprar una caña *${crod}* que cuesta ${rod} de dinero`, m)
+           conn.reply(m.chat, `Compraste una caña *${crod}* por *$${rod}*` ,m)
+          } else conn.reply(m.chat, `Necesitas *$${rod}* para comprar la caña *${crod}*`, m)
       break
 
     default:
