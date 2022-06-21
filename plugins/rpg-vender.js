@@ -60,7 +60,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'todo':
   case 'todos':
   case 'all':
-      if ((user.commonfish + user.blowfish + user.tropicalfish) * 1 == 0) {
+      if ((user.commonfish + user.blowfish + user.tropicalfish) * 1 >= 0) {
       	user.commonfish -= user.commonfish * 1
       	user.tropicalfish -= user.tropicalfish * 1
       	user.blowfish -= user.blowfish * 1
