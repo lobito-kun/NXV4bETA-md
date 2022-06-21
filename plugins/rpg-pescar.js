@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let ca = (rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : '')
   let word = (pickRandom(['un rio 🚣‍♀', 'el mar ⛵', 'en una playa 🏖️']))
 
-  let type = (' ').toLowerCase() 
+  let type = (text).toLowerCase() 
   switch (type) {
   case 'mar profundo':
   case 'en mar profundo':
