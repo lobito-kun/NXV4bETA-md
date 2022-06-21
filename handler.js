@@ -204,10 +204,17 @@ export async function handler(chatUpdate) {
                     armordurability: 0,
                     sword: 0,
                     sworddurability: 0,
+
+
+                    //Herramientas
+                    mininglevel: 0,
                     pickaxe: 0,
                     pickaxedurability: 0,
+
+                    fishinglevel: 0,
                     rod: 0,
                     roddurability: 0,
+
 
 
                     lastclaim: 0,
