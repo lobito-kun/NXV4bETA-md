@@ -112,8 +112,12 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.armordurability)) user.armordurability = 0
                 if (!isNumber(user.sword)) user.sword = 0
                 if (!isNumber(user.sworddurability)) user.sworddurability = 0
+
+                //Herramientas
+                if (!isNumber(user.mininglevel)) user.mininglevel = 0
                 if (!isNumber(user.pickaxe)) user.pickaxe = 0
                 if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
+                if (!isNumber(user.fishinglevel)) user.fishinglevel = 0
                 if (!isNumber(user.rod)) user.rod = 0
                 if (!isNumber(user.roddurability)) user.roddurability = 0
 
@@ -210,7 +214,6 @@ export async function handler(chatUpdate) {
                     mininglevel: 0,
                     pickaxe: 0,
                     pickaxedurability: 0,
-
                     fishinglevel: 0,
                     rod: 0,
                     roddurability: 0,
