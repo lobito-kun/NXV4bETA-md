@@ -1,4 +1,4 @@
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   if (!text) throw `Elige un lugar de pesca`
   let user = global.db.data.users[m.sender]
   let rod = global.db.data.users[m.sender].rod
@@ -56,9 +56,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.help = ['pescar']
 handler.tags = ['rpg']
-
 handler.command = /^(pescar|fishing)$/i
-handler.disabled = false
 
 export default handler
 
