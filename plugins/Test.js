@@ -46,50 +46,6 @@ contextInfo: {
 "sourceUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}} 
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
 
-const message = {
-            document: imgmenu,
-            jpegThumbnail: imgmenu,
-            fileName: '𝗧 𝗜 𝗠 𝗘 : ',
-            mimetype: 'application/vnd.ms-excel',
-            fileLength: '99999999999999',
-            pageCount: 777,
-            caption: '*Test button 2*',
-            footer: '-',
-            templateButtons: [
-                {
-                    urlButton: {
-                        displayText: `Lolibot`,
-                        url: 'https://simple-api-lord-bot.herokuapp.com/'
-                    }
-                },
-                {
-                    urlButton: {
-                        displayText: '💌 Group Official',
-                        url: 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo'
-                    }
-                },
-                {
-                    quickReplyButton: {
-                        displayText: '🌹 Owner',
-                        id: '.owner'
-                    }
-                },
-                {
-                    quickReplyButton: {
-                        displayText: '🐾 Speed',
-                        id: '.ping'
-                    }
-                },
-                {
-                    quickReplyButton: {
-                        displayText: '📮 Donasi',
-                        id: '.donasi'
-                    }
-                },
-            ]
-        }
-        await conn.sendMessage(m.chat, message, { quoted: m })
-
 }
 
 handler.command = ['test']
