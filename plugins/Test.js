@@ -13,7 +13,8 @@ let handler = async (m, { conn, text } ) => {
   title: '作成されたボット',
   body: 'By gɑtito ⾕',
   thumbnail: miniurl,
-  sourceUrl: 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo'
+  sourceUrl: 'ɑ
+'
   }}})*/
 
 
@@ -41,7 +42,7 @@ contextInfo: {
 "previewType": "VIDEO",
 "thumbnail": miniurl,
 "mediaUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo',
-"sourceUrl": 'https://creɑted by gɑtito' }}} 
+"sourceUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}} 
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
 
 }
