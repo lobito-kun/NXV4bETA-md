@@ -41,7 +41,7 @@ contextInfo: {
 "previewType": "VIDEO",
 "thumbnail": miniurl,
 "mediaUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo',
-"sourceUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}} 
+"sourceUrl": 'https://github.com' }}} 
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
 
 }
