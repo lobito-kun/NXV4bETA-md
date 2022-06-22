@@ -23,7 +23,8 @@ const buttons = [
 { buttonId: `.creador`, buttonText: { displayText: 'Creador 🍭' }, type: 1 }, ]
 
 let buttonMessage = {
-"document": imgmenu, 
+"image": imgmenu,
+"document": { url: "https://wa.me/51940617554"}, 
 "fileName": '𝕷𝖔𝖑𝖎𝖇𝖔𝖙 - 𝕺𝖋𝖎𝖈𝖎𝖆𝖑™.⁖⃟•᭄', 
 "mimetype": 'application/vnd.ms-excel',
 "jpegThumbnail": imgmenu,
