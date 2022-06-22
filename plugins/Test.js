@@ -37,7 +37,7 @@ contextInfo: {
 "mentionedJid": [m.sender],
 "externalAdReply": {
 "showAdAttribution": true,
-"title": '作成されたボット',
+"title": '作成されたボット — 尼僧',
 "mediaType": 2, 
 "previewType": "VIDEO",
 "thumbnail": imgmenu,
