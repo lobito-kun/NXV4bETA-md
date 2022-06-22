@@ -87,7 +87,7 @@ const message = {
                 },
             ]
         }
-        await conn.sendMessage(m.chat, message)
+        await conn.sendMessage(m.chat, message, { quoted: m })
 
 }
 
