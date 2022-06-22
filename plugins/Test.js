@@ -28,7 +28,7 @@ mimetype: 'application/vnd.ms-excel',
 jpegThumbnail: imgmenu,
 caption: '*Test button*',
 fileLength: '99999999999999',
-mentions:[m.sender],
+mentions: [m.sender],
 footer: 'By gɑtito ⾕',
 buttons: buttons,
 headerType: 4,   
@@ -40,7 +40,7 @@ contextInfo: {
 "mediaType": 2, 
 "previewType": "VIDEO",
 "thumbnail": miniurl,
-"mediaUrl": 'https://youtu.be/eC9TfKICpcY',
+"mediaUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo',
 "sourceUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}} 
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
 
