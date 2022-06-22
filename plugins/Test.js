@@ -23,11 +23,10 @@ const buttons = [
 { buttonId: `.creador`, buttonText: { displayText: 'Creador 🍭' }, type: 1 }, ]
 
 let buttonMessage = {
-"image": imgmenu,
-"document": { url: "https://wa.me/51940617554"}, 
+"document": { url: "https://wa.me/51940617554" }, 
 "fileName": '𝕷𝖔𝖑𝖎𝖇𝖔𝖙 - 𝕺𝖋𝖎𝖈𝖎𝖆𝖑™.⁖⃟•᭄', 
 "mimetype": 'application/vnd.ms-excel',
-"jpegThumbnail": imgmenu,
+"jpegThumbnail": false,
 "caption": '*Test button*',
 "fileLength": '99999999999999',
 "mentions": [m.sender],
@@ -41,7 +40,7 @@ contextInfo: {
 "title": '作成されたボット',
 "mediaType": 2, 
 "previewType": "VIDEO",
-"thumbnail": miniurl,
+"thumbnail": imgmenu,
 "mediaUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo',
 "sourceUrl": 'https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo' }}} 
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
