@@ -32,9 +32,12 @@ const defaultMenu = {
 
 Holɑ *%taguser 👋🏻*, %greeting
 
-🏆 Rango : *%role*
-🧿 Nivel : *%level* 
-👥 Usuarios : %totalreg
+
+\t\t\t\`\`\`I N F O  -  U S E R\`\`\`
+₊˚⌗ > *Rango* : *%role
+₊˚⌗ > *Nivel* : %level
+₊˚⌗ > *Usuarios* : %totalreg
+
 ─────────────
 ▢ Crea tu propio bot 
 • https://youtu.be/jeXHB0IIzCM
