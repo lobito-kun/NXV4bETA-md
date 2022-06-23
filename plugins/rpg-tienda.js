@@ -85,10 +85,7 @@ ${tt}∙ Roble:    $10${tt}`
 let note = `*Nota:* Al comprar una herramienta se suben de nivel de madera hasta el diamante
 
 *No puedes comprar una herramienta en especifico*`
-let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb })
-gbutsan = [{ buttonId: `${usedPrefix}inv`, buttonText: { displayText: 'Inventario 🎒' }, type: 1 }, { buttonId: `${usedPrefix}energía`, buttonText: { displayText: 'Energía ⚡' }, type: 1 }]
-gbuttonan = { imageMessage: menux.message.imageMessage, contentText: shop, footerText: note, buttons: gbutsan, headerType: 4 }
-await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 750, isForwarded: true }, quoted: m })
+conn.sendButton(m.chat, shop, note, tumb, [['Energía ⚡', '.energia'], ['Inventario 🎒', '.inv']], m)
 }
 
 handler.help = ['tienda']
