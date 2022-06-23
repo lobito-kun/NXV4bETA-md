@@ -60,9 +60,9 @@ Lolita bot remastered by *%wasp*
 
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
-  header: '‧╭─►  ‧₊˚ 「- *%category* 」 ⇢ ๑\n',
+  header: '‧╭─►  ‧₊˚ 「- *%category* 」 ⇢ ๑',
   body: '⁚│ ‧ %cmd\n',
-  footer: '‧╰───────✧\n╶',
+  footer: '‧╰──────✧\n╶',
   after: '',
 }
 
