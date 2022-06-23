@@ -30,6 +30,7 @@ const defaultMenu = {
   before: `
 *꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
+
 “ Holɑ *%taguser 👋🏻*, %greeting ”
 
 
@@ -38,7 +39,7 @@ const defaultMenu = {
 ₊˚⌗ > *Nivel* : %level
 ₊˚⌗ > *Usuarios* : %totalreg
 
-₊˚⌗ > *Remastered:* 
+₊˚⌗ > *Remastered:* %wasp
 ─────────────
 ▢ Crea tu propio bot 
 • https://youtu.be/jeXHB0IIzCM
@@ -47,7 +48,10 @@ const defaultMenu = {
 ─────────────
 Ⓟ = Premium ˄
 ⓓ = Limites ˄
------  -----  -----  -----  -----
+
+Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+
+\t\t\t\`\`\`C O M A N D O S\`\`\`
   ≡ *LISTA DE MENUS*
 `.trimStart(),
   header: '❒ *%category*',
@@ -140,6 +144,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       '%': '%',
       p: _p, uptime, muptime,
       taguser: '@' + m.sender.split("@s.whatsapp.net")[0],
+      wasp: '@0',
       me: conn.getName(conn.user.jid),
       npmname: _package.name,
       npmdesc: _package.description,
