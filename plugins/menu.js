@@ -39,15 +39,27 @@ const defaultMenu = {
 ₊˚⌗ > *Nivel* : %level
 ₊˚⌗ > *Usuarios* : %totalreg
 
-₊˚⌗ > *Remastered:* %wasp
-─────────────
-▢ Crea tu propio bot 
-• https://youtu.be/jeXHB0IIzCM
-▢ Descarga *FGWhatsApp*
-• https://fgmods.epizy.com
-─────────────
-Ⓟ = Premium ˄
-ⓓ = Limites ˄
+₊˚⌗ > *xxx* : xxx
+₊˚⌗ > *xxx* : xxx
+₊˚⌗ > *xxx* : xxx
+₊˚⌗ > *xxx* : xxx
+
+₊˚⌗ > *Remastered: : %wasp
+
+%level
+%limit
+%name
+%weton
+%week
+%date
+%dateIslamic
+%time
+%totalreg
+%rtotalreg
+
+%npmname
+%npmdesc
+%version
 
 Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 
