@@ -55,7 +55,7 @@ const defaultMenu = {
 ₊˚⌗ > *Licencia* : %license
 
 
-˗ˏˋ Lolita bot remastered by *%wasp* ˎˊ˗
+Lolita bot remastered by *%wasp*
 
 Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 
