@@ -62,7 +62,7 @@ Lolita bot remastered by *%wasp*
 `.trimStart(),
   header: '‧╭─►  ‧₊˚ 「- *%category* 」 ⇢ ๑',
   body: '⁚│ ‧ %cmd\n',
-  footer: '₊╰──────✧\n╶',
+  footer: '‧╰──────₊✧\n╶',
   after: '',
 }
 
