@@ -54,7 +54,7 @@ const defaultMenu = {
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
   header: '\n\n*%category*\n',
-  body: '\`\`\`∙ %cmd\n\`\`\`',
+  body: '∙ \`\`\`%cmd\n\`\`\`',
   footer: '\n',
   after: '',
 }
