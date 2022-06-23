@@ -36,6 +36,7 @@ const defaultMenu = {
 
 \t\t\t\`\`\`I N F O  -  U S E R\`\`\`
 ₊˚⌗ > *Nombre* : %name
+₊˚⌗ > *Exp* : %totalexp
 ₊˚⌗ > *Limite* : %limit
 ₊˚⌗ > *Rango* : %role
 ₊˚⌗ > *Nivel* : %level
@@ -54,7 +55,7 @@ const defaultMenu = {
 ₊˚⌗ > *Licencia* : %license
 
 
-“ Remastered by %wasp ”
+˗ˏˋ Lolita bot remastered by *%wasp* ˎˊ˗
 
 Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 
