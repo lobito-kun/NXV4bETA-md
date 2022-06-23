@@ -35,31 +35,22 @@ const defaultMenu = {
 
 
 \t\t\t\`\`\`I N F O  -  U S E R\`\`\`
+₊˚⌗ > *Nombre* : %name
+₊˚⌗ > *Limite* : %limit
 ₊˚⌗ > *Rango* : %role
 ₊˚⌗ > *Nivel* : %level
+
+ \t\t\t\`\`\`I N F O  -  B O T\`\`\`
 ₊˚⌗ > *Usuarios* : %totalreg
+₊˚⌗ > *Regs* : %rtotalreg
+₊˚⌗ > *Hora* : %time
 
-₊˚⌗ > *xxx* : xxx
-₊˚⌗ > *xxx* : xxx
-₊˚⌗ > *xxx* : xxx
-₊˚⌗ > *xxx* : xxx
+ \t\t\t\`\`\`I N F O  -  N P M\`\`\`
+₊˚⌗ > *Nombre* : %npmname
+₊˚⌗ > *Descrip* : %npmdesc
+₊˚⌗ > *Versión* : %version
 
-₊˚⌗ > *Remastered: : %wasp
-
-%level
-%limit
-%name
-%weton
-%week
-%date
-%dateIslamic
-%time
-%totalreg
-%rtotalreg
-
-%npmname
-%npmdesc
-%version
+“ Remastered by %wasp ”
 
 Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 
