@@ -1,7 +1,7 @@
 {
     "name": "lolibot-md",
     "version": "1.2.5",
-    "description": "Customizable WhatsApp Bot",
+    "description": "WhatsApp Bot",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -28,7 +28,7 @@
     ],
     "homepage": "https://github.com/FG98F/dylux-fg",
     "author": {
-        "name": "FG98"
+        "name": "g4tito"
     },
     "repository": {
         "type": "git",
