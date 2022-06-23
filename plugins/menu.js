@@ -41,12 +41,12 @@ const defaultMenu = {
 ₊˚⌗ > *Rango* : %role
 ₊˚⌗ > *Nivel* : %level
 
-    \t\t\t\`\`\`I N F O  -  B O T\`\`\`
+⠀\t\t\t\`\`\`I N F O  -  B O T\`\`\`
 ₊˚⌗ > *Usuarios* : %totalreg
 ₊˚⌗ > *Regs* : %rtotalreg
 ₊˚⌗ > *Hora* : %time
 
-    \t\t\t\`\`\`I N F O  -  N P M\`\`\`
+⠀\t\t\t\`\`\`I N F O  -  N P M\`\`\`
 ₊˚⌗ > *Nombre* : %npmname
 ₊˚⌗ > *Descrip* : %npmdesc
 ₊˚⌗ > *Versión* : %version
