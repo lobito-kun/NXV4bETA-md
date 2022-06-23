@@ -30,11 +30,11 @@ const defaultMenu = {
   before: `
 *꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
-Holɑ *%taguser 👋🏻*, %greeting
+“ Holɑ *%taguser 👋🏻*, %greeting ”
 
 
 \t\t\t\`\`\`I N F O  -  U S E R\`\`\`
-₊˚⌗ > *Rango* : *%role
+₊˚⌗ > *Rango* : %role
 ₊˚⌗ > *Nivel* : %level
 ₊˚⌗ > *Usuarios* : %totalreg
 
