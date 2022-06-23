@@ -49,10 +49,9 @@ const defaultMenu = {
 Ⓟ = Premium ˄
 ⓓ = Limites ˄
 
-Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 
-\t\t\t\`\`\`C O M A N D O S\`\`\`
-  ≡ *LISTA DE MENUS*
+\t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
   header: '❒ *%category*',
   body: '│∙ *%cmd* %islimit %isPremium',
