@@ -30,7 +30,6 @@ const defaultMenu = {
   before: `
 *꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
-
 “ Holɑ *%taguser 👋🏻*, %greeting ”
 
 
@@ -61,9 +60,9 @@ Lolita bot remastered by *%wasp*
 
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
-  header: '*%category*\n',
-  body: '%cmd\n',
-  footer: '\n',
+  header: '‧╭─►  ‧₊˚ 「- *%category* 」 ⇢ ๑\n',
+  body: '⁚│ ‧ %cmd\n',
+  footer: '‧╰───────✧\n╶',
   after: '',
 }
 
