@@ -94,6 +94,5 @@ await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextI
 handler.help = ['tienda']
 handler.tags = ['rpg']
 handler.command = /^(store|tienda|shop)$/i
-handler.group = true
 
-module.exports = handler
+export default handler
