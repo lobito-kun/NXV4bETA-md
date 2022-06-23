@@ -45,7 +45,7 @@ const defaultMenu = {
 ₊˚⌗ > *Usuarios* : %totalreg
 ₊˚⌗ > *Regs* : %rtotalreg
 ₊˚⌗ > *Hora* : %time
-
+                         TEST
  \t\t\t\`\`\`I N F O  -  N P M\`\`\`
 ₊˚⌗ > *Nombre* : %npmname
 ₊˚⌗ > *Descrip* : %npmdesc
