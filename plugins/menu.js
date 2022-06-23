@@ -49,6 +49,10 @@ const defaultMenu = {
 ₊˚⌗ > *Nombre* : %npmname
 ₊˚⌗ > *Descrip* : %npmdesc
 ₊˚⌗ > *Versión* : %version
+₊˚⌗ > *Main* : %npmmain
+₊˚⌗ > *Autor* : %author
+₊˚⌗ > *Licencia* : %license
+
 
 “ Remastered by %wasp ”
 
@@ -149,8 +153,11 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       wasp: '@0',
       me: conn.getName(conn.user.jid),
       npmname: _package.name,
-      npmdesc: _package.description,
       version: _package.version,
+      npmdesc: _package.description,
+      npmmain: _package.main,
+      author: _package.author.name,
+      license: _package.license,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
