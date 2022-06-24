@@ -1,28 +1,24 @@
-const free = 5000
-const prem = 20000
+const free = 1000
+const prem = 2000
 
 let handler = async (m, { isPrems }) => {
-  let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `🎁 *Ya recogiste tu recompensa diaria*\n\n🕚 Vuelve en *${msToTime(time - new Date())}* `
-  global.db.data.users[m.sender].exp += isPrems ? prem : free
-  m.reply(`
-🎁 *RECOMPENSA DIARIA*
-
-▢ *Has recibido:*
-🆙 *XP* : +${isPrems ? prem : free}`)
-  global.db.data.users[m.sender].lastclaim = new Date * 1
+  let user = global.db.data.users[m.sender]
+  let time = user.lastclaim + 86400000
+  if (new Date - user.lastclaim < 86400000) throw `Espere *${stime(time - new Date())}* para volver a reclamar`
+  user.money += isPrems ? prem : free
+  user.lastclaim = new Date * 1
+  user.common += 1
+  m.reply(`Has reclamado *$${isPrems ? prem : free}* más una caja comun`)
 }
-handler.help = ['daily']
-handler.tags = ['xp']
-handler.command = ['daily', 'claim'] 
 
-handler.restrict = true
+handler.help = ['reclamar']
+handler.tags = ['xp']
+handler.command = /^(daily|claim|reclamar)$/i
 
 export default handler
 
 
-
-function msToTime(duration) {
+/*function msToTime(duration) {
   var milliseconds = parseInt((duration % 1000) / 100),
     seconds = Math.floor((duration / 1000) % 60),
     minutes = Math.floor((duration / (1000 * 60)) % 60),
@@ -33,5 +29,5 @@ function msToTime(duration) {
   seconds = (seconds < 10) ? "0" + seconds : seconds
 
   return hours + " Horas " + minutes + " Minutos"
-}
+}*/
 
