@@ -88,12 +88,13 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.commonfish)) user.commonfish = 0
                 if (!isNumber(user.crab)) user.crab = 0
 
+                //Cajas
                 if (!isNumber(user.common)) user.common = 0
-                if (!isNumber(user.uncommon)) user.uncommon = 0
+                if (!isNumber(user.rare)) user.rare = 0
                 if (!isNumber(user.mythic)) user.mythic = 0
                 if (!isNumber(user.legendary)) user.legendary = 0
-                if (!isNumber(user.pet)) user.pet = 0
 
+                if (!isNumber(user.pet)) user.pet = 0
                 if (!isNumber(user.horse)) user.horse = 0
                 if (!isNumber(user.horseexp)) user.horseexp = 0
                 if (!isNumber(user.cat)) user.cat = 0
@@ -181,13 +182,14 @@ export async function handler(chatUpdate) {
                     blowfish: 0,
                     crab: 0,
 
+                    //Cajas
                     common: 0,
-                    uncommon: 0,
+                    rare: 0,
                     mythic: 0,
                     legendary: 0,
+
+
                     pet: 0,
-
-
                     horse: 0,
                     horseexp: 0,
                     cat: 0,
