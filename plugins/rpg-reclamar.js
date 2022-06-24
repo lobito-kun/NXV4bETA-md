@@ -8,7 +8,7 @@ let handler = async (m, { isPrems }) => {
   user.money += isPrems ? prem : free
   user.lastclaim = new Date * 1
   user.common += 1
-  m.reply(`Has reclamado *$${isPrems ? prem : free}* más una caja comun`)
+  m.reply(`Has reclamado *$${isPrems ? prem : free}* y una caja *comun*`)
 }
 
 handler.help = ['reclamar']
