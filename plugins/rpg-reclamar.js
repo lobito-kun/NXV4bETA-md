@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       user.lastclaim = new Date * 1
       m.reply(`Has reclamado *$${isPrems ? prem : free}* y una caja *comun*`)
   } else {
-      m.reply(`Espere *${timers}* para volver a reclamar')
+      m.reply(`Espere *${timers}* para volver a reclamar`)
   }
 }
 
