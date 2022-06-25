@@ -27,13 +27,14 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   case '1':
     if (rod > 0) {
     if (user.roddurability > 99) {
+    if (user.level >= 5) throw 'Minimo nivel 5 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
-        user.blowfish += blowfish * 1 
-        user.tropicalfish += tropicalfish * 1 
-        user.commonfish += commonfish * 1 
         user.roddurability -= durability * 1
-        user.exp += exp * 1
+        user.commonfish += commonfish * 1 
+        user.tropicalfish += tropicalfish * 1 
+        user.blowfish += blowfish * 1 
+        user.exp += exp * 1 
     let teks = `
 *Pescaste en ${mr.m1}*
 
@@ -56,13 +57,14 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   case '2':
     if (rod > 0) {
     if (user.roddurability > 99) {
+    if (user.level >= 10) throw 'Minimo nivel 10 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
-        user.lastfishing = new Date * 1
-        user.blowfish += blowfish * 1 
-        user.tropicalfish += tropicalfish * 1 
+        user.lastfishing = new Date * 1 
+        user.roddurability -= durability * 1 
         user.commonfish += commonfish * 1 
-        user.roddurability -= durability * 1
-        user.exp += exp * 1
+        user.tropicalfish += tropicalfish * 1 
+        user.crab += crab * 1 
+        user.exp += exp * 1 
     let teks = `
 *Pescaste en ${mr.m2}*
 
@@ -83,7 +85,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   break
 
   case '3':
-    if (rod == 2) {
+    if (rod > 0) {
+    if (user.level >= 20) throw 'Minimo nivel 20 para pescar en esta zona'
     if (user.roddurability > 99) {
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
@@ -108,12 +111,13 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply('Necesitas una caña *antigua* para pescar en esta zona')
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
   break
 
   case '4':
-    if (rod == 2) {
+    if (rod > 0) {
     if (user.roddurability > 99) {
+    if (user.level >= 30) throw 'Minimo nivel 30 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
         user.blowfish += blowfish * 1 
@@ -137,12 +141,13 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply('Necesitas una caña *antigua* para pescar en esta zona')
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
   break
 
   case '5':
-    if (rod == 3) {
+    if (rod > 0) {
     if (user.roddurability > 99) {
+    if (user.level >= 40) throw 'Minimo nivel 40 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
         user.blowfish += blowfish * 1 
@@ -166,7 +171,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply('Necesitas una caña *corupta* para pescar en esta zona')
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`')
   break
 
   default:
@@ -183,4 +188,4 @@ export default handler
 
 function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)]
-} 
+}
