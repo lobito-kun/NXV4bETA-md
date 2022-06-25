@@ -18,7 +18,8 @@ import fs from 'fs'
     locust: true,
     shrimp: true,
     squid: true,
-    octopus: true,
+    octopus: true
+  }
   }
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
