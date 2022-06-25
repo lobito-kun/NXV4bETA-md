@@ -171,7 +171,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`')
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
   break
 
   default:
