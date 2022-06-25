@@ -1,6 +1,6 @@
 
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-  let isEnable = /true|enable|(turn)?on|1/i.test(command)
+  let isEnable = /true|activar|enable|(turn)?on|1/i.test(command)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
@@ -210,12 +210,11 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 `.trim())
       throw false
   }
-  m.reply(`
-✅ *${type}* Se *${isEnable ? 'Activó' : 'Desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'para este chat'}
-`.trim())
+  m.reply(`👁️‍🗨️ La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'para este chat'}`)
 }
+
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['nable']
-handler.command = ['enable', 'disable', 'on', 'off', '1', '0'] 
+handler.command = ['enable', 'disable', 'on', 'off', '1', '0', 'activar', 'desactivar'] 
 
 export default handler
