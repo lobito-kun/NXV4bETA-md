@@ -61,7 +61,7 @@ Lolita bot remastered by *%wasp*
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
   header: '‧─►  ‧₊˚ 「- *%category* 」 ⇢ ๑',
-  body: '₊❏❜ ⋮ %cmd\n',
+  body: '₊❏❜ ⋮  *%cmd*\n',
   footer: '‧╶',
   after: '',
 }
@@ -181,7 +181,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   }
 }
 
-handler.help = ['help']
+handler.help = ['menu']
 handler.tags = ['main']
 handler.command = ['menu', 'help', 'menú'] 
 
