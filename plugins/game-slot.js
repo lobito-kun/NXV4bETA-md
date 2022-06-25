@@ -1,10 +1,6 @@
 
 let handler = async (m, { args, usedPrefix, command }) => {
-    let fa = `
-Cuanto quieres apostar? 
-
-📌 Ejemplo :
-*${usedPrefix + command}* 100`.trim()
+    let fa = `*⛌ Ingrese la cantidad de dinero que desea apostar*\n\n*• Ejemplo:*\n- ${usedPrefix + command} 500\n\n[ mínimo $100 ]`
     if (!args[0]) throw fa
     if (isNaN(args[0])) throw fa
     let apuesta = parseInt(args[0])
@@ -13,7 +9,7 @@ Cuanto quieres apostar?
     let unwin = Math.ceil(apuesta / 2)
     let user = global.db.data.users[m.sender]
     let time = user.lastslot + 3000
-    if (new Date - user.lastslot < 3000) throw `Espere ${stime(time - new Date())}`
+    if (new Date - user.lastslot < 3000) throw `Espere *${stime(time - new Date())}*`
     if (apuesta < 100) throw '✳️ Mínimo de la apuesta es *100 de Dinero*'
     if (user.money < apuesta) {
         throw `✳️ Tu *Dinero* no es suficiente`
@@ -43,13 +39,13 @@ Cuanto quieres apostar?
     }
     let end;
     if (a == b && b == c) {
-        end = `Ganaste *+$${win2}*`
+        end = `Ganaste\n*+$${win2}*`
         user.money += win2 * 1
     } else if (a == b || a == c || b == c) {
-        end = `Casi ganas *+$${win}*`
+        end = `Casi ganas\n*+$${win}*`
         user.money += win * 1
     } else {
-        end = `Perdiste *-$${unwin}*`
+        end = `Perdiste\n*-$${unwin}*`
         user.money -= unwin * 1
     }
     user.lastslot = new Date * 1
@@ -68,19 +64,3 @@ handler.tags = ['game']
 handler.command = /^(slot|girar)$/i
 
 export default handler
-
-
-function msToTime(duration) {
-    var milliseconds = parseInt((duration % 1000) / 100),
-        seconds = Math.floor((duration / 1000) % 60),
-        minutes = Math.floor((duration / (1000 * 60)) % 60),
-        hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
-
-    hours = (hours < 10) ? "0" + hours : hours
-    minutes = (minutes < 10) ? "0" + minutes : minutes
-    seconds = (seconds < 10) ? "0" + seconds : seconds
-
-    return minutes + " m " + seconds + " s "
-}
-
-
