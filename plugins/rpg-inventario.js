@@ -113,10 +113,17 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *🆙️ Exp nivel:* ${user.exp - min}/${xp}
 
 
-*👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}  *${_ardurability}%*
-*🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}  *${_sdurability}%*
-*⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}  *${_pdurability}%*
-*🎣 Caña de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}  *${_rdurability}*
+*👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
+*🎗 Durabilidad:* ${_ardurability}%
+
+*🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
+*🎗 Durabilidad:* ${_sdurability}%
+
+*⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
+*🎗 Durabilidad:* ${_pdurability}%
+
+*🎣 Caña de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}
+*🎗 Durabilidad:* ${_rdurability}%
 
 
 \t\t\t\t*乂 I T E M S*
