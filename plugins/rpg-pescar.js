@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let commonfish = (rod == 1 ? Math.floor(Math.random() * (50 - 60) + 60) + 1 : '')
   let exp = (rod == 1 ? Math.floor(Math.random() * (300 - 400) + 400) + 1 : '')
   let durability = (Math.floor(Math.random() * (50 - 100) + 100) + 1)
-  let ca = (rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : '')
+  let ca = (rod == 0 ? 'no tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'antigua' : '' || rod == 3 ? 'corupta' : '' )
   let word = (pickRandom(['un rio 🚣‍♀', 'el mar ⛵', 'en una playa 🏖️']))
 
   let mr = {
@@ -83,7 +83,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   break
 
   case '3':
-    if (rod > 0) {
+    if (rod == 2) {
     if (user.roddurability > 99) {
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
@@ -108,11 +108,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+    } else m.reply('Necesitas una caña *antigua* para pescar en esta zona')
   break
 
   case '4':
-    if (rod > 0) {
+    if (rod == 2) {
     if (user.roddurability > 99) {
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
@@ -137,11 +137,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+    } else m.reply('Necesitas una caña *antigua* para pescar en esta zona')
   break
 
   case '5':
-    if (rod > 0) {
+    if (rod == 3) {
     if (user.roddurability > 99) {
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
@@ -166,7 +166,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.reply(m.chat, teks, m)
     } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
     } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
-    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+    } else m.reply('Necesitas una caña *corupta* para pescar en esta zona')
   break
 
   default:
