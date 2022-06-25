@@ -43,11 +43,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   
 let infobt = `*E S T A D O*
 
-• *${groupsIn.length}* Chats de grupo
-• *${groupsIn.length}* Gropos unidos
-• *${groupsIn.length - groupsIn.length}* Grupos abandonados
-• *${chats.length - groupsIn.length}* Chats privados
-• *${chats.length}* Total Chats
+[ *${groupsIn.length}* ] Chats de grupo
+[ *${groupsIn.length}* ] Gropos unidos
+[ *${groupsIn.length - groupsIn.length}* ] Grupos abandonados
+[ *${chats.length - groupsIn.length}* ] Chats privados
+[ *${chats.length}* ] Total Chats
 
 
 *Uso de memoria - NodeJS*
