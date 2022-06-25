@@ -79,9 +79,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}  *${_pdurability}%*
 
 *🎣 Cañas de pescar*
-*‧ Normal:* ${rod > 0 ? 'no tiene' : 'si tiene'  *${_rdurability}%*
-*‧ Antigua:* ${rod > 1 ? 'no tiene' : 'si tiene'  *${_rdurability}%*
-*‧ Corrupta:* ${rod > 2 ? 'no tiene' : 'si tiene'  *${_rdurability}%*
+*‧ Normal:* ${rod > 0 ? 'no tiene' : 'si tiene'}  *${_rdurability}%*
+*‧ Antigua:* ${rod > 1 ? 'no tiene' : 'si tiene'}  *${_rdurability}%*
+*‧ Corrupta:* ${rod > 2 ? 'no tiene' : 'si tiene'}  *${_rdurability}%*
 
 
 \t\t\t\t*乂 I T E M S*
