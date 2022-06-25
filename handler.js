@@ -221,10 +221,8 @@ export async function handler(chatUpdate) {
 
 
                     //Herramientas
-                    mininglevel: 0,
                     pickaxe: 0,
                     pickaxedurability: 0,
-                    fishinglevel: 0,
                     rod: 0,
                     roddurability: 0,
 
