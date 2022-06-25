@@ -10,6 +10,12 @@ import fs from 'fs'
     iron: true,
     stone: true
   },
+  fruits: {
+    strawberry: true,
+    watermelon: true,
+    grape: true,
+    kiwi: true
+  },
   fishes: {
     commonfish: true,
     tropicalfish: true,
@@ -87,6 +93,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     const minerals = Object.keys(inventory.minerals).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fishes = Object.keys(inventory.fishes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const fruits = Object.keys(inventory.fruits).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -109,17 +116,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 
 \t\t\t\t*乂 I T E M S*
-
-${minerals ? `*Minerales*\n${minerals}` : ''}
-
-*Frutas*
-*🍓 Fresa:* ${strawberry}
-*🍉 Sandía:* ${watermelon}
-*🍇 Uva:* ${grape}
-*🥝 Kiwi:* ${kiwi}
-
-${fishes ? `*Peces*\n${fishes}` : ''}
-
+${minerals ? `\n\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}
 *Otros items*
 *🪵 Madera:* ${wood}
 *🧪 Poción:* ${potion}
@@ -166,6 +163,11 @@ const rpg = {
       gold: '🪙 Oro',
       iron: '🔩 Hierro',
       stone: '🪨 Piedra',
+
+      strawberry: '🍓 Fresa',
+      watermelon: '🍉 Sandía',
+      grape: '🍇 Uva',
+      kiwi: '🥝 Kiwi',
 
       commonfish: '🐟 Pez común',
       tropicalfish: '🐠 Pez tropical',
