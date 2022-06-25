@@ -70,7 +70,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   
     //let invt = fs.readFileSync('./storage/image/inv.png')
     if (global.db.data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
-    let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
+    //let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
  
     let _ardurability = Math.floor((ardurability * 100) / 5000)
     let _sdurability = Math.floor((sdurability * 100) / 5000)
@@ -135,9 +135,9 @@ ${items}
 *📦 Caja:* ${box}
 *🗑️ Basura:* ${trash}
 *🧰 Cofre:* ${chest}
-
-*🍱 Total inv:* ${shortNum(items)} items
 `
+//*🍱 Total inv:* ${shortNum(items)} items
+
 conn.reply(m.chat, reText(inv), m, { mentions: [who] })
 }
 
