@@ -1,6 +1,20 @@
 import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fs from 'fs'
 
+  const inventory = {
+  items: {
+    potion: true,
+    trash: true,
+    wood: true,
+    rock: true,
+    string: true,
+    emerald: true,
+    diamond: true,
+    gold: true,
+    iron: true,
+  }
+  }
+
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -64,6 +78,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let _adurability = Math.floor((adurability * 100) / 5000)
     let _rdurability = Math.floor((rdurability * 100) / 5000)
 
+    const items = Object.keys(inventory.items).map(v => user[v] && `*${global.rpg.emoticon(v)}${v}:* ${user[v]}`).filter(v => v).join('\n').trim()
+
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
 *❤ Vida:* ${health}
@@ -85,6 +101,13 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 
 \t\t\t\t*乂 I T E M S*
+
+${items ? `
+*📍 Items*
+${items}
+*🎒 Total Items:* ${Object.keys(inventory.items).map(v => user[v]).reduce((a, b) => a + b, 0)} items` : ''}
+
+
 
 *Minerales*
 *🍀 Esmeralda:* ${emerald}
@@ -139,4 +162,41 @@ return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "sh
 
 function priceNum(num) {
 return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num).replace('.00', '').replace(/,/g, '.')
+}
+
+global.rpg = {
+  emoticon(string) {
+    string = string.toLowerCase()
+    let emot = {
+      level: '🧬',
+      limit: '🌌',
+      health: '❤️',
+      exp: '✉️',
+      money: '💵',
+      potion: '🥤',
+      diamond: '💎',
+      common: '📦',
+      uncommon: '🎁',
+      mythic: '🗳️',
+      legendary: '🗃️',
+      pet: '🎁',
+      trash: '🗑',
+      armor: '🥼',
+      sword: '⚔️',
+      wood: '🪵',
+      rock: '🪨',
+      string: '🕸️',
+      horse: '🐎',
+      cat: '🐈',
+      dog: '🐕',
+      fox: '🦊',
+      petFood: '🍖',
+      iron: '⛓️',
+      gold: '👑',
+      emerald: '💚'
+    }
+    let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
+    if (!results.length) return ''
+    else return emot[results[0][0]]
+  }
 }
