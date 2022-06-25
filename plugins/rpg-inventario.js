@@ -78,7 +78,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let _adurability = Math.floor((adurability * 100) / 5000)
     let _rdurability = Math.floor((rdurability * 100) / 5000)
 
-    const items = Object.keys(inventory.items).map(v => user[v] && `*${global.rpg.emoticon(v)}${v}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const items = Object.keys(inventory.items).map(v => user[v] && `*${rpg.emoticon(v)}${v}:* ${user[v]}`).filter(v => v).join('\n').trim()
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -164,7 +164,7 @@ function priceNum(num) {
 return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num).replace('.00', '').replace(/,/g, '.')
 }
 
-global.rpg = {
+const rpg = {
   emoticon(string) {
     string = string.toLowerCase()
     let emot = {
