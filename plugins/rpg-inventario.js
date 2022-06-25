@@ -9,7 +9,16 @@ import fs from 'fs'
     gold: true,
     iron: true,
     stone: true
-  }
+  },
+  fishes: {
+    commonfish: true,
+    tropicalfish: true,
+    blowfish: true,
+    crab: true,
+    locust: true,
+    shrimp: true,
+    squid: true,
+    octopus: true,
   }
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
@@ -76,6 +85,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let _rdurability = Math.floor((rdurability * 100) / 5000)
 
     const minerals = Object.keys(inventory.minerals).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const fishes = Object.keys(inventory.fishes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -107,10 +117,7 @@ ${minerals ? `*Minerales*\n${minerals}` : ''}
 *🍇 Uva:* ${grape}
 *🥝 Kiwi:* ${kiwi}
 
-*Peces*
-*🐠 Tropical:* ${tropicalfish}
-*🐡 Globo:* ${blowfish}
-*🐟 Comun:* ${commonfish}
+${fishes ? `*Peces*\n${fishes}` : ''}
 
 *Otros items*
 *🪵 Madera:* ${wood}
@@ -157,7 +164,16 @@ const rpg = {
       diamond: '💎 Diamante',
       gold: '🪙 Oro',
       iron: '🔩 Hierro',
-      stone: '🪨 Piedra'
+      stone: '🪨 Piedra',
+
+      commonfish: '🐟 Pez común',
+      tropicalfish: '🐠 Pez tropical',
+      blowfish: '🐡 Pez globo',
+      crab: '🦀 Cangrejo',
+      locust: '🦞 Langosta',
+      shrimp: '🦐 Camaron',
+      squid: '🦑 Calamar',
+      octopus: '🐙 Pulpo'
     }
     let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
     if (!results.length) return ''
