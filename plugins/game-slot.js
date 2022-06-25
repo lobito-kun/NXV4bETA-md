@@ -12,8 +12,8 @@ Cuanto quieres apostar?
     let win = Math.ceil(apuesta * 2)
     let unwin = Math.ceil(apuesta / 2)
     let user = global.db.data.users[m.sender]
-    let time = users.lastslot + 3000
-    if (new Date - users.lastslot < 3000) throw `Espere ${stime(time - new Date())}`
+    let time = user.lastslot + 3000
+    if (new Date - user.lastslot < 3000) throw `Espere ${stime(time - new Date())}`
     if (apuesta < 100) throw '✳️ Mínimo de la apuesta es *100 de Dinero*'
     if (user.money < apuesta) {
         throw `✳️ Tu *Dinero* no es suficiente`
@@ -65,7 +65,7 @@ ${x[2]} : ${y[2]} : ${z[2]}
 
 handler.help = ['slot']
 handler.tags = ['game']
-handler.command = ['slot']
+handler.command = /^(slot|girar)$/i
 
 export default handler
 
