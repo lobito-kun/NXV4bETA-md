@@ -52,7 +52,7 @@ Cuanto quieres apostar?
         end = `Perdiste *-$${unwin}*`
         user.money -= unwin * 1
     }
-    users.lastslot = new Date * 1
+    user.lastslot = new Date * 1
     return await m.reply(
 `🎰 | *SLOTS* 
 ──────
