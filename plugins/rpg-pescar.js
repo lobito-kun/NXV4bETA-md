@@ -14,11 +14,17 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let ca = (rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : '')
   let word = (pickRandom(['un rio 🚣‍♀', 'el mar ⛵', 'en una playa 🏖️']))
 
+  let = mr = {
+  m1: '1',
+  m2: '2',
+  m3: '3',
+  m4: '4',
+  m5: '5',
+  }
+
   let type = (text).toLowerCase() 
   switch (type) {
-  case 'mar profundo':
-  case 'en mar profundo':
-  case 'en el mar profundo':
+  case '1':
     if (rod > 0) {
     if (user.roddurability > 99) {
     if (new Date - user.lastfishing > 180000) {
@@ -29,14 +35,14 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
         user.roddurability -= durability * 1
         user.exp += exp * 1
     let teks = `
-*Pescaste en el ⛵ mar profundo*
+*Pescaste en ${mr.m1}*
 
 *🎣 Caña:* ${ca}
 
 *Obtienes:*
-◦ Pez globo: ${blowfish}
-◦ Pez tropical: ${tropicalfish}
 ◦ Pez comun: ${commonfish}
+◦ Pez tropical: ${tropicalfish}
+◦ Pez globo: ${blowfish}
 ◦ Exp: ${exp}
 
 *Durabilidad:* [ *-${durability}* ]
@@ -47,7 +53,121 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
   break
 
+  case '2':
+    if (rod > 0) {
+    if (user.roddurability > 99) {
+    if (new Date - user.lastfishing > 180000) {
+        user.lastfishing = new Date * 1
+        user.blowfish += blowfish * 1 
+        user.tropicalfish += tropicalfish * 1 
+        user.commonfish += commonfish * 1 
+        user.roddurability -= durability * 1
+        user.exp += exp * 1
+    let teks = `
+*Pescaste en ${mr.m2}*
 
+*🎣 Caña:* ${ca}
+
+*Obtienes:*
+◦ Pez comun: ${blowfish}
+◦ Pez tropical: ${tropicalfish}
+◦ Cangrejo: ${commonfish}
+◦ Exp: ${exp}
+
+*Durabilidad:* [ *-${durability}* ]
+`.trim()
+    conn.reply(m.chat, teks, m)
+    } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
+    } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+  break
+
+  case '3':
+    if (rod > 0) {
+    if (user.roddurability > 99) {
+    if (new Date - user.lastfishing > 180000) {
+        user.lastfishing = new Date * 1
+        user.blowfish += blowfish * 1 
+        user.tropicalfish += tropicalfish * 1 
+        user.commonfish += commonfish * 1 
+        user.roddurability -= durability * 1
+        user.exp += exp * 1
+    let teks = `
+*Pescaste en ${mr.m3}*
+
+*🎣 Caña:* ${ca}
+
+*Obtienes:*
+◦ Pez comun: ${blowfish}
+◦ Cangrejo: ${tropicalfish}
+◦ Langosta: ${commonfish}
+◦ Exp: ${exp}
+
+*Durabilidad:* [ *-${durability}* ]
+`.trim()
+    conn.reply(m.chat, teks, m)
+    } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
+    } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+  break
+
+  case '4':
+    if (rod > 0) {
+    if (user.roddurability > 99) {
+    if (new Date - user.lastfishing > 180000) {
+        user.lastfishing = new Date * 1
+        user.blowfish += blowfish * 1 
+        user.tropicalfish += tropicalfish * 1 
+        user.commonfish += commonfish * 1 
+        user.roddurability -= durability * 1
+        user.exp += exp * 1
+    let teks = `
+*Pescaste en ${mr.m4}*
+
+*🎣 Caña:* ${ca}
+
+*Obtienes:*
+◦ Cangrejo: ${blowfish}
+◦ Langosta: ${tropicalfish}
+◦ Camaron: ${commonfish}
+◦ Exp: ${exp}
+
+*Durabilidad:* [ *-${durability}* ]
+`.trim()
+    conn.reply(m.chat, teks, m)
+    } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
+    } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+  break
+
+  case '5':
+    if (rod > 0) {
+    if (user.roddurability > 99) {
+    if (new Date - user.lastfishing > 180000) {
+        user.lastfishing = new Date * 1
+        user.blowfish += blowfish * 1 
+        user.tropicalfish += tropicalfish * 1 
+        user.commonfish += commonfish * 1 
+        user.roddurability -= durability * 1
+        user.exp += exp * 1
+    let teks = `
+*Pescaste en ${mr.m5}*
+
+*🎣 Caña:* ${ca}
+
+*Obtienes:*
+◦ Pez comun: ${blowfish}
+◦ Calamar: ${tropicalfish}
+◦ Pulpo: ${commonfish}
+◦ Exp: ${exp}
+
+*Durabilidad:* [ *-${durability}* ]
+`.trim()
+    conn.reply(m.chat, teks, m)
+    } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
+    } else m.reply(`Repara tu caña de pescar, escribiendo ${usedPrefix}reparar caña`)
+    } else m.reply(`Todavía no tienes una caña de pescar, compralo escribiendo ${usedPrefix}comprar caña`)
+  break
 
   default:
   return m.reply(`La zona *${args[0]}* no esta en el mapa!`)
