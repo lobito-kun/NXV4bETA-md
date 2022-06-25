@@ -1,4 +1,3 @@
-
 let handler = async (m, { args, usedPrefix, command }) => {
     let fa = `*⛌ Ingrese la cantidad de dinero que desea apostar*\n\n*• Ejemplo:*\n- ${usedPrefix + command} 500\n\n[ mínimo $100 ]`
     if (!args[0]) throw fa
@@ -10,9 +9,9 @@ let handler = async (m, { args, usedPrefix, command }) => {
     let user = global.db.data.users[m.sender]
     let time = user.lastslot + 3000
     if (new Date - user.lastslot < 3000) throw `Espere *${stime(time - new Date())}*`
-    if (apuesta < 100) throw '✳️ Mínimo de la apuesta es *100 de Dinero*'
+    if (apuesta < 100) throw 'Mínimo $100 para apostar'
     if (user.money < apuesta) {
-        throw `✳️ Tu *Dinero* no es suficiente`
+        throw 'No tienes suficiente dinero para apostar'
     }
 
     let emojis = ["🍎", "🍓", "🍉", "🍋", "🍊", "🍐", "🍇"];
