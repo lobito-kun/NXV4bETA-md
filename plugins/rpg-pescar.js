@@ -27,7 +27,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   case '1':
     if (rod > 0) {
     if (user.roddurability > 99) {
-    if (user.level >= 5) throw 'Minimo nivel 5 para pescar en esta zona'
+    if (user.level <= 5) throw 'Minimo nivel 5 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
         user.roddurability -= durability * 1
@@ -57,7 +57,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   case '2':
     if (rod > 0) {
     if (user.roddurability > 99) {
-    if (user.level >= 10) throw 'Minimo nivel 10 para pescar en esta zona'
+    if (user.level <= 10) throw 'Minimo nivel 10 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1 
         user.roddurability -= durability * 1 
@@ -86,7 +86,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
   case '3':
     if (rod > 0) {
-    if (user.level >= 20) throw 'Minimo nivel 20 para pescar en esta zona'
+    if (user.level <= 20) throw 'Minimo nivel 20 para pescar en esta zona'
     if (user.roddurability > 99) {
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
@@ -117,7 +117,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   case '4':
     if (rod > 0) {
     if (user.roddurability > 99) {
-    if (user.level >= 30) throw 'Minimo nivel 30 para pescar en esta zona'
+    if (user.level <= 30) throw 'Minimo nivel 30 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
         user.blowfish += blowfish * 1 
@@ -147,7 +147,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   case '5':
     if (rod > 0) {
     if (user.roddurability > 99) {
-    if (user.level >= 40) throw 'Minimo nivel 40 para pescar en esta zona'
+    if (user.level <= 40) throw 'Minimo nivel 40 para pescar en esta zona'
     if (new Date - user.lastfishing > 180000) {
         user.lastfishing = new Date * 1
         user.blowfish += blowfish * 1 
