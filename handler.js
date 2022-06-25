@@ -87,6 +87,10 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.tropicalfish)) user.tropicalfish = 0
                 if (!isNumber(user.commonfish)) user.commonfish = 0
                 if (!isNumber(user.crab)) user.crab = 0
+                if (!isNumber(user.locust)) user.locust = 0
+                if (!isNumber(user.shrimp)) user.shrimp = 0
+                if (!isNumber(user.squid)) user.squid = 0
+                if (!isNumber(user.octopus)) user.octopus = 0
 
                 //Cajas
                 if (!isNumber(user.common)) user.common = 0
