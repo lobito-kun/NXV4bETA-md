@@ -25,6 +25,12 @@ import fs from 'fs'
     shrimp: true,
     squid: true,
     octopus: true
+  },
+  crates: {
+    common: true,
+    rare: true,
+    mythic: true,
+    legendary: true
   }
   }
 
@@ -94,6 +100,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     const minerals = Object.keys(inventory.minerals).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fishes = Object.keys(inventory.fishes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fruits = Object.keys(inventory.fruits).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const crates = Object.keys(inventory.crates).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
+
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -108,11 +116,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}  *${_ardurability}%*
 *🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}  *${_sdurability}%*
 *⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}  *${_pdurability}%*
-*🎣 Cañas de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}
+*🎣 Caña de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}  *${_rdurability}*
 
 
 \t\t\t\t*乂 I T E M S*
-${minerals ? `\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}
+${minerals ? `\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}${crates ? `\n\n*Cajas*\n${crates}` : ''}
 
 *Otros items*
 *🪵 Madera:* ${wood}
@@ -173,7 +181,11 @@ const rpg = {
       locust: '🦞 Langosta',
       shrimp: '🦐 Camaron',
       squid: '🦑 Calamar',
-      octopus: '🐙 Pulpo'
+      octopus: '🐙 Pulpo',
+      common: '📦 Comun',
+      rare: '🥡 Rara',
+      mythic: '🎁 Epica',
+      legendary: '🧰 Legendaria'
     }
     let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
     if (!results.length) return ''
