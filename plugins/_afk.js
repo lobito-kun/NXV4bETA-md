@@ -1,5 +1,6 @@
 export function before(m) {
     let user = global.db.data.users[m.sender]
+    let reason = user.afkReason || ''
     if (user.afk > -1) {
         conn.reply(m.chat, `\t\t*😴 Dejaste de estar AFK*
 
@@ -18,7 +19,6 @@ Durante *${stime(new Date - user.afk)}*`, m, { mentions: [m.sender] })
         let afkTime = user.afk
         if (!afkTime || afkTime < 0)
             continue
-        let reason = user.afkReason || ''
         conn.reply(m.chat, `\t\t*😴 El usuario que mencionas está AFK*
 
 • Usuario: @${jid.split('@')[0]}
