@@ -41,27 +41,22 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let neww = performance.now()
   let speed = neww - old
   
-let infobt = `
-≡ *INFO BOT*
-  
-*ESTADO*
-▢ *${groupsIn.length}* Chats de grupo
-▢ *${groupsIn.length}* Gropos unidos
-▢ *${groupsIn.length - groupsIn.length}* Grupos abandonados
-▢ *${chats.length - groupsIn.length}* Chats privados
-▢ *${chats.length}* Total Chats
+let infobt = `*E S T A D O*
+
+• *${groupsIn.length}* Chats de grupo
+• *${groupsIn.length}* Gropos unidos
+• *${groupsIn.length - groupsIn.length}* Grupos abandonados
+• *${chats.length - groupsIn.length}* Chats privados
+• *${chats.length}* Total Chats
 
 
-*≡  NodeJS Uso de memoria*
-${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
-`
-conn.sendHydrated(m.chat, infobt, igfg, '', 'https://github.com/FG98F/dylux-fg', 'Script', null, null, [
-      ['ꨄ︎ Apoyar', `${usedPrefix}donar`],
-      ['⌬ Grupos', `${usedPrefix}gpdylux`],
-      ['✆ Owner', `${usedPrefix}fgowner`]
-    ], m)
+*Uso de memoria - NodeJS*
+${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}`
+conn.reply(m.chat, infobt, false, { quoted: m, contextInfo: { externalAdReply: { title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: miniurl, sourceUrl:`` }, mentionedJid: [m.sender] } })
 }
-handler.help = ['Info']
+
+handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['info', 'infobot', 'botinfo']
+handler.command = /^(info|infobot|botinfo)$/i
+
 export default handler
