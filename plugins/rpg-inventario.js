@@ -126,9 +126,7 @@ ${minerals ? `\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruit
 *🪵 Madera:* ${wood}
 *🧪 Poción:* ${potion}
 *🌱 Semilla:* ${seed}
-*📦 Caja:* ${box}
 *🗑️ Basura:* ${trash}
-*🧰 Cofre:* ${chest}
 `
 //*🍱 Total inv:* ${shortNum(items)} items
 
