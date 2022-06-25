@@ -116,7 +116,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 
 \t\t\t\t*乂 I T E M S*
-${minerals ? `\n\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}
+${minerals ? `\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}
 *Otros items*
 *🪵 Madera:* ${wood}
 *🧪 Poción:* ${potion}
