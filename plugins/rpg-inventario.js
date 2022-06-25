@@ -180,6 +180,7 @@ const rpg = {
       shrimp: '🦐 Camaron',
       squid: '🦑 Calamar',
       octopus: '🐙 Pulpo',
+
       common: '📦 Comun',
       rare: '🥡 Rara',
       mythic: '🎁 Epica',
