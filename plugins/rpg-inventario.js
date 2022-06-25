@@ -3,15 +3,12 @@ import fs from 'fs'
 
   const inventory = {
   minerals: {
-    potion: true,
-    trash: true,
-    wood: true,
-    rock: true,
-    string: true,
     emerald: true,
+    reddiamond: true,
     diamond: true,
     gold: true,
     iron: true,
+    stone: true
   }
   }
 
@@ -102,7 +99,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 \t\t\t\t*乂 I T E M S*
 
-${items ? `*Minerales*\n${minerals}` : ''}
+${minerals ? `*Minerales*\n${minerals}` : ''}
 
 *Frutas*
 *🍓 Fresa:* ${strawberry}
