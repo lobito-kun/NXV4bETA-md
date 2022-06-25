@@ -3,7 +3,7 @@ let handler = async (m, { text }) => {
   if (text.length > 300) return m.reply('El texto es demasiɑdo largo mínimo 300 caracteres')
   user.afk = + new Date
   user.afkReason = text
-  conn.reply(m.chat, `\t\t*😴 Ahora estas afk*\n\n• Usuario: @${m.sender.split('@')[0]}\n• Razon: ${text ? ': ' + text : '×'}`, m, { mentions: [m.sender] })
+  conn.reply(m.chat, `\t\t*😴 Ahora estas AFK*\n\n• Usuario: @${m.sender.split('@')[0]}\n• Razon: ${text ? ': ' + text : '×'}`, m, { mentions: [m.sender] })
 }
 
 handler.help = ['afk']
