@@ -57,10 +57,10 @@ global.stime = function clockString(seconds) {
   var h = Math.floor((seconds / (1000 * 60 * 60)) % 24);
   var m = Math.floor((seconds / (1000 * 60)) % 60);
   var s = Math.floor((seconds / 1000) % 60);
-  var dDisplay = d > 0 ? d + (d == 1 ? " dia," : " Dias,") : "";
-  var hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
-  var mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
-  var sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
+  var dDisplay = d > 0 ? "0" + d + (d == 1 ? " dia," : " Dias,") : "";
+  var hDisplay = h > 0 ? "0" + h + (h == 1 ? " hora, " : " Horas, ") : "";
+  var mDisplay = m > 0 ? "0" + m + (m == 1 ? " minuto, " : " Minutos, ") : "";
+  var sDisplay = s > 0 ? "0" + s + (s == 1 ? " segundo" : " Segundos") : "";
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
 
