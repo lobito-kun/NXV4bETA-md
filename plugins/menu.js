@@ -61,7 +61,7 @@ Lolita bot remastered by *%wasp*
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
   header: '•\t➜ ꒰ ❛ *%category*',
-  body: '₊❏❜ ⋮  *%cmd*\n',
+  body: '₊❏❜ ⋮  %cmd\n',
   footer: '╶',
   after: '',
 }
