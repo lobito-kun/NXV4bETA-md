@@ -39,13 +39,13 @@ let handler = async (m, { args, usedPrefix, command }) => {
     }
     let end;
     if (a == b && b == c) {
-        end = `Ganaste\n*+$${win2}*`
+        end = `Ganaste\n\t*+$${win2}*`
         user.money += win2 * 1
     } else if (a == b || a == c || b == c) {
-        end = `Casi ganas\n*+$${win}*`
+        end = `Casi ganas\n\t*+$${win}*`
         user.money += win * 1
     } else {
-        end = `Perdiste\n*-$${unwin}*`
+        end = `Perdiste\n\t*-$${unwin}*`
         user.money -= unwin * 1
     }
     user.lastslot = new Date * 1
