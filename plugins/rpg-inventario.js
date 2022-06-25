@@ -108,15 +108,12 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}  *${_ardurability}%*
 *🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}  *${_sdurability}%*
 *⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}  *${_pdurability}%*
-
-*🎣 Cañas de pescar*
-*‧ Normal:* ${rod > 0 ? 'no tiene' : 'si tiene'}  *${_rdurability}%*
-*‧ Antigua:* ${rod > 1 ? 'no tiene' : 'si tiene'}  *${_rdurability}%*
-*‧ Corrupta:* ${rod > 2 ? 'no tiene' : 'si tiene'}  *${_rdurability}%*
+*🎣 Cañas de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}
 
 
 \t\t\t\t*乂 I T E M S*
 ${minerals ? `\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}
+
 *Otros items*
 *🪵 Madera:* ${wood}
 *🧪 Poción:* ${potion}
