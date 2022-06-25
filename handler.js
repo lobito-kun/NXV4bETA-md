@@ -181,6 +181,10 @@ export async function handler(chatUpdate) {
                     tropicalfish: 0,
                     blowfish: 0,
                     crab: 0,
+                    locust: 0,
+                    shrimp: 0,
+                    squid: 0,
+                    octopus: 0,
 
                     //Cajas
                     common: 0,
