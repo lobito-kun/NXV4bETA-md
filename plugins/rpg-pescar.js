@@ -15,11 +15,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let word = (pickRandom(['un rio 🚣‍♀', 'el mar ⛵', 'en una playa 🏖️']))
 
   let mr = {
-  m1: '1',
-  m2: '2',
-  m3: '3',
-  m4: '4',
-  m5: '5',
+  m1: 'zona 1',
+  m2: 'zona 2',
+  m3: 'zona 3',
+  m4: 'zona 4',
+  m5: 'zona 5',
   }
 
   let type = (text).toLowerCase() 
