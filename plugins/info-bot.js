@@ -44,15 +44,15 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 let infobt = `*E S T A D O*
 
 - *${groupsIn.length}* Chats de grupo
-- *${groupsIn.length}* Gropos unidos
+- *${groupsIn.length}* Grupos unidos
 - *${groupsIn.length - groupsIn.length}* Grupos abandonados
 - *${chats.length - groupsIn.length}* Chats privados
-- *${chats.length}* Total Chats
+- *${chats.length}* Chats totales
 
 
 *Uso de memoria - NodeJS*
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}`
-conn.reply(m.chat, infobt, false, { quoted: m, contextInfo: { externalAdReply: { title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: miniurl, sourceUrl:`` }, mentionedJid: [m.sender] } })
+conn.reply(m.chat, infobt, m, { contextInfo: { externalAdReply: { mediaUrl: false, mediaType: 1, description: false, title: '↷✦╎Info - Bot╎💌˖ ⸙',body: false, previewType: 0, thumbnail: miniurl, sourceUrl: ''}}})
 }
 
 handler.help = ['info']
