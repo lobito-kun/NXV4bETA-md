@@ -2,7 +2,7 @@ import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fs from 'fs'
 
   const inventory = {
-  items: {
+  minerals: {
     potion: true,
     trash: true,
     wood: true,
@@ -78,7 +78,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let _adurability = Math.floor((adurability * 100) / 5000)
     let _rdurability = Math.floor((rdurability * 100) / 5000)
 
-    const items = Object.keys(inventory.items).map(v => user[v] && `*${rpg.emoticon(v)}${v}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const minerals = Object.keys(inventory.minerals).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -102,20 +102,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 \t\t\t\t*乂 I T E M S*
 
-${items ? `
-*📍 Items*
-${items}
-*🎒 Total Items:* ${Object.keys(inventory.items).map(v => user[v]).reduce((a, b) => a + b, 0)} items` : ''}
-
-
-
-*Minerales*
-*🍀 Esmeralda:* ${emerald}
-*♦️ Diamante rojo:* ${diamond}
-*💎 Diamante:* ${diamond}
-*🪙 Oro:* ${gold}
-*🔩 Hierro:* ${iron}
-*🪨 Piedra:* ${stone}
+${items ? `*Minerales*\n${minerals}` : ''}
 
 *Frutas*
 *🍓 Fresa:* ${strawberry}
@@ -168,32 +155,12 @@ const rpg = {
   emoticon(string) {
     string = string.toLowerCase()
     let emot = {
-      level: '🧬',
-      limit: '🌌',
-      health: '❤️',
-      exp: '✉️',
-      money: '💵',
-      potion: '🥤',
-      diamond: '💎',
-      common: '📦',
-      uncommon: '🎁',
-      mythic: '🗳️',
-      legendary: '🗃️',
-      pet: '🎁',
-      trash: '🗑',
-      armor: '🥼',
-      sword: '⚔️',
-      wood: '🪵',
-      rock: '🪨',
-      string: '🕸️',
-      horse: '🐎',
-      cat: '🐈',
-      dog: '🐕',
-      fox: '🦊',
-      petFood: '🍖',
-      iron: '⛓️',
-      gold: '👑',
-      emerald: '💚'
+      emerald: '🍀 Esmeralda',
+      reddiamond: '♦️ Diamante rojo',
+      diamond: '💎 Diamante',
+      gold: '🪙 Oro',
+      iron: '🔩 Hierro',
+      stone: '🪨 Piedra'
     }
     let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
     if (!results.length) return ''
