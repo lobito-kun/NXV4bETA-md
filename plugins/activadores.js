@@ -188,25 +188,25 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) return m.reply(`
-≡ Lista de Opciones
-┌─⊷ *LISTA*
-▢ welcome 
-▢ delete 
-▢ public 
-▢ antilink
-▢ nsfw
-▢ antidelete
-▢ autolevelup 
-▢ detect 
-▢ document 
-▢ restrict 
-▢ autoread 
-▢ solopv
-▢ sologp
-└─────────────
-*📌 Ejemplo :*
-*${usedPrefix}enable* welcome
-*${usedPrefix}disable* welcome
+*⛌ Ingrese una opción para habilitar o deshabilitar*
+
+*≡ Lista de opciones*
+- welcome 
+- delete 
+- public 
+- antilink
+- nsfw
+- antidelete
+- autolevelup 
+- detect 
+- document 
+- restrict 
+- autoread 
+- solopv
+- sologp
+
+*• Ejemplo:*
+- ${usedPrefix + command} welcome
 `.trim())
       throw false
   }
