@@ -1,4 +1,3 @@
-
 import { sticker } from '../lib/sticker.js'
 import MessageType from '@adiwajshing/baileys'
 import { EmojiAPI } from 'emoji-api' 
@@ -10,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
 *${usedPrefix + command}* <tipo> <emoji>
 
 📌 Ejemplo :
-*${usedPrefix + command}* fa 😎
+*${usedPrefix + command}* fa 
 
 ┌─⊷ *TIPOS* 
 ▢ wha = whatsapp 
@@ -145,8 +144,9 @@ Solo puede usar 1 emoji, preste atención a los espacios`
     }
   }
 }
-handler.help = ['emoji <tipo> <emoji>']
+
+handler.help = ['emoji']
 handler.tags = ['sticker'] 
-handler.command = ['emoji', 'smoji', 'semoji']
+handler.command = /^(emoji|smoji|semoji)$/i
 
 export default handler
