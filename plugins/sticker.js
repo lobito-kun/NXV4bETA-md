@@ -6,13 +6,12 @@ import { webp2png } from '../lib/webp2mp4.js'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
   try {
-  	
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || q.mediaType || ''
     if (/webp|image|video/g.test(mime)) {
-      if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('Máximo 10 segundos')
+      if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('El vídeo debe durar máximo 10 segundos')
       let img = await q.download?.()
-      if (!img) throw `✳️ Responde a una imagen o video con*${usedPrefix + command}*`
+      if (!img) throw `Etiqueta una imagen o video con el comando *${usedPrefix + command}* para convertirlo a sticker`
       let out
       try {
         stiker = await sticker(img, false, global.packname, global.author)
@@ -39,11 +38,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     else throw 'La conversión ha fallado, intenta enviar primero *imagen/video/gif* y luego responde con el comando'
   }
 }
+
 handler.help = ['sticker']
 handler.tags = ['sticker']
-handler.command = ['s', 'sticker', 'stiker'] 
+handler.command = /^(s|sticker|stiker)$/i
 
 export default handler
+
 
 const isUrl = (text) => {
   return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
