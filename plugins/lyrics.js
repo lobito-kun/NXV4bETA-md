@@ -16,8 +16,8 @@ Link:  ${result.link}
 `.trim())
 }
 
-handler.help = ['Lyrics'].map(v => v + '')
+handler.help = ['lyrics']
 handler.tags = ['tools']
-handler.command = ['letra', 'lyrics', 'letras'] 
+handler.command = /^(letra|lyrics|letras)$/i
 
 export default handler
