@@ -241,7 +241,37 @@ export async function handler(chatUpdate) {
                     
                     premium: false,
                     premiumTime: 0,
-                    limitjoin: 0,
+                    limitjoin: 0
+
+         minerals: {
+                    tin: 0,
+                    copper: 0,
+                    iron: 0,
+                    salt: 0,
+                    coal: 0,
+                    silver: 0,
+                    crimsteel: 0,
+                    gold: 0,
+                    pink_salt: 0,
+                    mythan: 0,
+                    sandstone: 0,
+                    cobalt: 0,
+                    varaxium: 0,
+                    black_salt: 0,
+                    magic: 0
+                    },
+          pickaxes: {
+                    bronze: 0,
+                    iron: 0,
+                    steel: 0,
+                    crimsteel: 0,
+                    mythan: 0,
+                    cobalt: 0,
+                    varaxite: 0,
+                    magic: 0,
+                    umbral: 0,
+                    ancient: 0
+                    }
                 }
             let chat = global.db.data.chats[m.chat]
             if (typeof chat !== 'object')
