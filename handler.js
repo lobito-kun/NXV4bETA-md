@@ -241,7 +241,7 @@ export async function handler(chatUpdate) {
                     
                     premium: false,
                     premiumTime: 0,
-                    limitjoin: 0
+                    limitjoin: 0,
 
          minerals: {
                     tin: 0,
