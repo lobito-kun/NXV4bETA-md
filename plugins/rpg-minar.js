@@ -21,7 +21,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 *⛏️ Pico:* normal
 `.trim()
     m.reply(m1)
-    users.lastmiming = new Date * 1
+    user.lastmiming = new Date * 1
   break
 
   }
