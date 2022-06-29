@@ -258,7 +258,7 @@ export async function handler(chatUpdate) {
                     cobalt: 0,
                     varaxium: 0,
                     black_salt: 0,
-                    magic: 0
+                    magic: 0,
                     },
           pickaxes: {
                     bronze: 0,
@@ -270,7 +270,7 @@ export async function handler(chatUpdate) {
                     varaxite: 0,
                     magic: 0,
                     umbral: 0,
-                    ancient: 0
+                    ancient: 0,
                     }
                 }
             let chat = global.db.data.chats[m.chat]
