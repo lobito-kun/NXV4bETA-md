@@ -139,6 +139,36 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.premium)) user.premium = false
                 if (!isNumber(user.premiumTime)) user.premiumTime = 0
                 if (!isNumber(user.limitjoin)) user.limitjoin = 0
+
+                // Tipos de minerales
+                if (!isNumber(user.mineral_tin)) user.mineral_tin = 0
+                if (!isNumber(user.mineral_copper)) user.mineral_copper = 0
+                if (!isNumber(user.mineral_iron)) user.mineral_iron = 0
+                if (!isNumber(user.mineral_salt)) user.mineral_salt = 0
+                if (!isNumber(user.mineral_coal)) user.mineral_coal = 0
+                if (!isNumber(user.mineral_silver)) user.mineral_silver = 0
+                if (!isNumber(user.mineral_crimsteel)) user.mineral_crimsteel = 0
+                if (!isNumber(user.mineral_gold)) user.mineral_gold = 0
+                if (!isNumber(user.mineral_pink_salt)) user.mineral_pink_salt = 0
+                if (!isNumber(user.mineral_mythan)) user.mineral_mythan = 0
+                if (!isNumber(user.mineral_sandstone)) user.mineral_sandstone = 0
+                if (!isNumber(user.mineral_cobalt)) user.mineral_cobalt = 0
+                if (!isNumber(user.mineral_varaxium)) user.mineral_varaxium = 0
+                if (!isNumber(user.mineral_black_salt)) user.mineral_black_salt = 0
+                if (!isNumber(user.mineral_magic)) user.mineral_magic = 0
+
+                // Tipos de picos
+                if (!isNumber(user.pickaxe_bronze)) user.pickaxe_bronze = 0
+                if (!isNumber(user.pickaxe_iron)) user.pickaxe_iron = 0
+                if (!isNumber(user.pickaxe_steel)) user.pickaxe_steel = 0
+                if (!isNumber(user.pickaxe_crimsteel)) user.pickaxe_crimsteel = 0
+                if (!isNumber(user.pickaxe_mythan)) user.pickaxe_mythan = 0
+                if (!isNumber(user.pickaxe_cobalt)) user.pickaxe_cobalt = 0
+                if (!isNumber(user.pickaxe_varaxite)) user.pickaxe_varaxite = 0
+                if (!isNumber(user.pickaxe_magic)) user.pickaxe_magic = 0
+                if (!isNumber(user.pickaxe_umbral)) user.pickaxe_umbral = 0
+                if (!isNumber(user.pickaxe_ancient)) user.pickaxe_ancient = 0
+
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
