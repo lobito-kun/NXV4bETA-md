@@ -38,7 +38,7 @@ export async function handler(chatUpdate) {
         try {
             // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
-            if (typeof user !== 'object') global.db.data.users[m.sender] = { minerals: {}, pickaxes: {} }
+            if (typeof user !== 'object') global.db.data.users[m.sender] = {}
             if (user) {
                 if (!isNumber(user.exp)) user.exp = 0
                 if (!isNumber(user.limit)) user.limit = 10
@@ -135,12 +135,10 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.lasthunt)) user.lasthunt = 0
                 if (!isNumber(user.lastweekly)) user.lastweekly = 0
                 if (!isNumber(user.lastmonthly)) user.lastmonthly = 0
-
-
+                    
                 if (!isNumber(user.premium)) user.premium = false
                 if (!isNumber(user.premiumTime)) user.premiumTime = 0
-
-                if (!isNumber(user.pickaxes.bronze)) user.pickaxes.bronze = 0
+                if (!isNumber(user.limitjoin)) user.limitjoin = 0
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
