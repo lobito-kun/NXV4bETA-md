@@ -1,11 +1,9 @@
 let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
   let user = global.db.data.users[m.sender]
-  //const min = user.pickaxe_bronze
-  //const minn = user.pickaxe_iron
-  //const _min = (min + minn)
-  //user.pickaxe_steel + user.pickaxe_crimsteel + user.pickaxe_mythan + user.pickaxe_cobalt + user.pickaxe_varaxite + user.pickaxe_magic + user.pickaxe_umbral + user.pickaxe_ancient
+  //const min = user.pickaxe_bronze + user.pickaxe_iron + user.pickaxe_steel + user.pickaxe_crimsteel + user.pickaxe_mythan + user.pickaxe_cobalt + user.pickaxe_varaxite + user.pickaxe_magic + user.pickaxe_umbral + user.pickaxe_ancient
   let pi = 'Necesitas un pico para extraer este mineral'
+  if (user.pickaxe_bronze == 0) throw 'Necesitas un pico para extraer minerales'
   let time = user.lastmiming + 37500 
   if (new Date - user.lastmiming < 37500) throw `Espera *${stime(time - new Date())}* para volver a minar` 
 
@@ -14,7 +12,6 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'estaño':
   case 'tin':
-    if (user.pickaxe_bronze == 0) throw 'Necesitas un pico para extraer este mineral'
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
     user.mineral_tin += tin * 1 
