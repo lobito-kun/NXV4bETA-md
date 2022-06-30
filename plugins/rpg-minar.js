@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'estaño':
   case 'tin':
-    if (min < 0) throw pi
+    if (`${min}` < 0) throw pi
     await m.reply(`${min}`)
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
