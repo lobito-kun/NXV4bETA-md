@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   //let tpick = (pick == 1 ? 'bronze' : '' || pick == 2 ? 'acero' : '' || pick == 3 ? 'acero carmesí' : '' || pick == 4 ? 'mythan' : '' || pick == 5 ? 'cobalto' : '' || pick == 6 ? 'varaxita' : '' || pick == 5 ? 'magica' : '' || pick == 5 ? 'umbral' : '' || pick == 5 ? 'ancient' : '')
 
   let type = (args[0] || ' ').toLowerCase()
-  let type2 = (args[1] || '').toLowerCase()
+  let type2 = (args[1] || args[2]).toLowerCase()
 
   switch (type) {
   case 'pico':
@@ -15,7 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
       case 'de bronce':
       case 'bronce':
         if (user.pickaxe_bronze == 0) throw 'Todavia tienes el pico de bronce para equiparte'
-        user.pickaxe_equipped = 1 * 1
+        user.pickaxe_equipped = 1 
         m.reply(`Te equipaste un pico de bronce`)
       break
       }
