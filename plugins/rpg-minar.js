@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 ◦ Estaño: ${tin}
 ◦ Exp: ${exp1}
 
-*⛏️ Pico:* ${tpick}
+*⛏️ Pico de:* ${tpick}
 `.trim()
     m.reply(m1)
     user.lastmiming = new Date * 1 
@@ -45,7 +45,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 ◦ Cobre: ${copper}
 ◦ Exp: ${exp2}
 
-*⛏️ Pico:* ${tpick}
+*⛏️ Pico de:* ${tpick}
 `.trim()
     m.reply(m2)
     user.lastmiming = new Date * 1 
@@ -64,7 +64,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 ◦ Hierro: ${iron}
 ◦ Exp: ${exp3}
 
-*⛏️ Pico:* ${tpick}
+*⛏️ Pico de:* ${tpick}
 `.trim()
     m.reply(m3)
     user.lastmiming = new Date * 1 
@@ -84,7 +84,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 ◦ Sal: ${salt}
 ◦ Exp: ${exp4}
 
-*⛏️ Pico:* ${tpick}
+*⛏️ Pico de:* ${tpick}
 `.trim()
     m.reply(m4)
     user.lastmiming = new Date * 1 
