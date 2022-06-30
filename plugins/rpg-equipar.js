@@ -13,9 +13,24 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     if (min == 0) throw 'No tienes ningun pico para equiparte'
     switch (type2) {
       case 'bronce':
-        if (user.pickaxe_bronze == 0) throw 'Todavia tienes el pico de bronce para equiparte'
+        if (user.pickaxe_bronze == 0) throw 'Todavia no tienes el pico de bronce para equiparte'
         user.pickaxe_equipped = 1 
-        m.reply(`Te equipaste un pico de bronce`)
+        m.reply('Te equipaste un pico de bronce')
+      break
+      case 'hierro':
+        if (user.pickaxe_iron == 0) throw 'Todavia no tienes el pico de hierro para equiparte'
+        user.pickaxe_equipped = 2 
+        m.reply('Te equipaste un pico de hierro')
+      break
+      case 'acero':
+        if (user.pickaxe_steel == 0) throw 'Todavia no tienes el pico de acero para equiparte'
+        user.pickaxe_equipped = 3 
+        m.reply('Te equipaste un pico de acero')
+      break
+      case 'carmesí':
+        if (user.pickaxe_crimsteel == 0) throw 'Todavia no tienes el pico de carmesí para equiparte'
+        user.pickaxe_equipped = 4 
+        m.reply('Te equipaste un pico de carmesí')
       break
       }
   break
