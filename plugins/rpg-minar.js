@@ -2,6 +2,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   let user = global.db.data.users[m.sender]
   let min = user.pickaxe_bronze + user.pickaxe_iron + user.pickaxe_steel + user.pickaxe_crimsteel + user.pickaxe_mythan + user.pickaxe_cobalt + user.pickaxe_varaxite + user.pickaxe_magic + user.pickaxe_umbral + user.pickaxe_ancient
+  let pick = user.pickaxe_equipped
+  let tpick = (pick == 0 ? 'no tiene' : '' || pick == 1 ? 'bronce' : '' || pick == 2 ? 'hierro' : ''  || pick == 3 ? 'acero' : '' || pick == 4 ? 'carmesí' : '' || pick == 5 ? 'mythan' : '' || pick == 6 ? 'cobalto' : '' || pick == 7 ? 'varaxita' : '' || pick == 8 ? 'magica' : '' || pick == 9 ? 'umbral' : '' || pick == 10 ? 'ancient' : '')
   let pmax = 'Necesitas un mejor pico para extraer este mineral'
   if (user.pickaxe_equipped == 0) throw 'Todavía no te has equipado ningún pico'
   if (min == 0) throw 'Necesitas un pico para extraer minerales'
