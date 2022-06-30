@@ -1,6 +1,8 @@
 let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
   let user = global.db.data.users[m.sender]
+  let min = (user.pickaxe_bronze + user.pickaxe_iron + user.pickaxe_steel + user.pickaxe_crimsteel + user.pickaxe_mythan + user.pickaxe_cobalt + user.pickaxe_varaxite + user.pickaxe_magic + user.pickaxe_umbral + user.pickaxe_ancient)
+  if (min < 0) throw 'Necesitas un pico para extraer este mineral'
   let time = user.lastmiming + 37500 
   if (new Date - user.lastmiming < 37500) throw `Espera *${stime(time - new Date())}* para volver a minar` 
 
@@ -9,7 +11,6 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'estaño':
   case 'tin':
-    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para poder minar'
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
     user.mineral_tin += tin * 1 
@@ -29,7 +30,6 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'cobre':
   case 'copper':
-    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para poder minar'
     let copper = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp2 = copper * 10
     user.mineral_copper += copper * 1 
@@ -49,7 +49,6 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'hierro':
   case 'iron':
-    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para poder minar'
     let iron = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp3 = iron * 50
     user.mineral_iron += iron * 1 
@@ -69,7 +68,6 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'sal':
   case 'salt':
-    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para extraer la sal'
     if (user.mining_level < 10) throw 'Necesitas un nivel de minería de 10 para extraer la sal'
     let salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp4 = salt * 80
