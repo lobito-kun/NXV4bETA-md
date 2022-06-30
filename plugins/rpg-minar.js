@@ -12,6 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'estaño':
   case 'tin':
     if (min < 0) throw pi
+    m.reply(min)
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
     user.mineral_tin += tin * 1 
