@@ -2,21 +2,23 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   let user = global.db.data.users[m.sender]
   let time = user.lastmiming + 600000 
-  if (new Date - user.lastmiming < 600000) throw `Espere *${stime(time - new Date())}* para volver a minar` 
+  if (new Date - user.lastmiming < 600000) throw `Espera *${stime(time - new Date())}* para volver a minar` 
 
   let type = (args[0] || ' ').toLowerCase()
 
   switch (type) {
   case 'estaño':
   case 'tin':
-    let tin = Math.floor(Math.random() * (35 - 40) + 40) + 1
+    let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
+    let exp = tin * 10
     user.mineral_tin += tin * 1 
+    user.mineral_tin += exp * 1 
     let m1 = `
 *Minaste 🏔️ mineral de estaño*
 
 *Obtienes:*
-◦ Estaño: 40
-◦ Exp: 396
+◦ Estaño: ${tin}
+◦ Exp: ${exp}
 
 *⛏️ Pico:* normal
 `.trim()
