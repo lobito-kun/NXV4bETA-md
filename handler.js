@@ -169,6 +169,8 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.pickaxe_umbral)) user.pickaxe_umbral = 0
                 if (!isNumber(user.pickaxe_ancient)) user.pickaxe_ancient = 0
 
+                if (!isNumber(user.pickaxe_equipped)) user.pickaxe_equipped = 0
+
                 if (!isNumber(user.mining_level)) user.mining_level = 0
                 if (!isNumber(user.mining_exp)) user.mining_exp = 0
                 
@@ -304,6 +306,8 @@ export async function handler(chatUpdate) {
                     pickaxe_magic: 0,
                     pickaxe_umbral: 0,
                     pickaxe_ancient: 0,
+
+                    pickaxe_equipped: 0,
 
                     mining_level: 0,
                     mining_exp: 0,
