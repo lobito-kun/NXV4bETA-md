@@ -2,7 +2,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   let user = global.db.data.users[m.sender]
   let min = user.pickaxe_bronze + user.pickaxe_iron + user.pickaxe_steel + user.pickaxe_crimsteel + user.pickaxe_mythan + user.pickaxe_cobalt + user.pickaxe_varaxite + user.pickaxe_magic + user.pickaxe_umbral + user.pickaxe_ancient
-  let pi = 'Necesitas un pico para extraer este mineral'
+  let pmax = 'Necesitas un mejor pico para extraer este mineral'
   if (min == 0) throw 'Necesitas un pico para extraer minerales'
   let time = user.lastmiming + 37500 
   if (new Date - user.lastmiming < 37500) throw `Espera *${stime(time - new Date())}* para volver a minar` 
@@ -69,7 +69,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'sal':
   case 'salt':
-    if (user.mining_level < 10) throw 'Necesitas un nivel de minería de 10 para extraer la sal'
+    if (user.mining_level < 10) throw 'Necesitas un nivel de minería de 10 para extraer este mineral'
     let salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp4 = salt * 80
     user.mineral_salt += salt * 1 
