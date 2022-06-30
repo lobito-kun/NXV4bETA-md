@@ -48,7 +48,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'hierro':
   case 'iron':
     let iron = Math.floor(Math.random() * (25 - 30) + 30) + 1
-    let exp3 = iron * 10
+    let exp3 = iron * 50
     user.mineral_iron += iron * 1 
     user.exp += exp3 * 1 
     let m3 = `
@@ -67,7 +67,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'sal':
   case 'salt':
     let salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
-    let exp4 = salt * 10
+    let exp4 = salt * 80
     user.mineral_salt += salt * 1 
     user.exp += exp4 * 1 
     let m4 = `
