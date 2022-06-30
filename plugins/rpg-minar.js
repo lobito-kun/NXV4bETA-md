@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'estaño':
   case 'tin':
-    if (user.pickaxe_bronze >= 1) throw 'Necesitas un pico'
+    if (user.pickaxe_bronze <= 1) throw 'Necesitas un pico'
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
     user.mineral_tin += tin * 1 
