@@ -1,8 +1,8 @@
 let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
   let user = global.db.data.users[m.sender]
-  let time = user.lastmiming + 600000 
-  if (new Date - user.lastmiming < 600000) throw `Espera *${stime(time - new Date())}* para volver a minar` 
+  let time = user.lastmiming + 37500 
+  if (new Date - user.lastmiming < 37500) throw `Espera *${stime(time - new Date())}* para volver a minar` 
 
   let type = (args[0] || ' ').toLowerCase()
 
