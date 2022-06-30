@@ -8,7 +8,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'pico':
     if (min == 0) throw 'No tienes ningun pico para equiparte'
-    m.reply(`Te equipaste un pico de ${pick}`)
+    user.pickaxe_equipped = pick * 1
+    m.reply(`Te equipaste un pico de ${tpick}`)
   break
   }
 }
