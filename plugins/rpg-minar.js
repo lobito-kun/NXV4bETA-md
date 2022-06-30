@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'estaño':
   case 'tin':
-    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico'
+    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para poder minar'
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
     user.mineral_tin += tin * 1 
@@ -29,6 +29,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'cobre':
   case 'copper':
+    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para poder minar'
     let copper = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp2 = copper * 10
     user.mineral_copper += copper * 1 
@@ -48,6 +49,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'hierro':
   case 'iron':
+    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para poder minar'
     let iron = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp3 = iron * 50
     user.mineral_iron += iron * 1 
@@ -67,6 +69,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
   case 'sal':
   case 'salt':
+    if (user.pickaxe_bronze < 1) throw 'Necesitas un pico para extraer la sal'
+    if (user.mining_level < 10) throw 'Necesitas un nivel de minería de 10 para extraer la sal'
     let salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp4 = salt * 80
     user.mineral_salt += salt * 1 
