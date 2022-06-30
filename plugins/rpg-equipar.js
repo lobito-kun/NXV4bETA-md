@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   //let tpick = (pick == 1 ? 'bronze' : '' || pick == 2 ? 'acero' : '' || pick == 3 ? 'acero carmesí' : '' || pick == 4 ? 'mythan' : '' || pick == 5 ? 'cobalto' : '' || pick == 6 ? 'varaxita' : '' || pick == 5 ? 'magica' : '' || pick == 5 ? 'umbral' : '' || pick == 5 ? 'ancient' : '')
 
   let type = (args[0] || ' ').toLowerCase()
-  let type2 = (args[1] || args[2]).toLowerCase()
+  let type2 = (args[2] || args[1]).toLowerCase()
 
   switch (type) {
   case 'pico':
