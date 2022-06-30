@@ -10,15 +10,15 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'estaño':
   case 'tin':
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
-    let exp = tin * 10
+    let exp1 = tin * 10
     user.mineral_tin += tin * 1 
-    user.exp += exp * 1 
+    user.exp += exp1 * 1 
     let m1 = `
 *Minaste 🏔️ mineral de estaño*
 
 *Obtienes:*
 ◦ Estaño: ${tin}
-◦ Exp: ${exp}
+◦ Exp: ${exp1}
 
 *⛏️ Pico:* normal
 `.trim()
@@ -29,15 +29,15 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'cobre':
   case 'copper':
     let copper = Math.floor(Math.random() * (25 - 30) + 30) + 1
-    let exp = copper * 10
+    let exp2 = copper * 10
     user.mineral_copper += copper * 1 
-    user.exp += exp * 1 
+    user.exp += exp2 * 1 
     let m2 = `
 *Minaste 🏔️ mineral de cobre*
 
 *Obtienes:*
 ◦ Cobre: ${copper}
-◦ Exp: ${exp}
+◦ Exp: ${exp2}
 
 *⛏️ Pico:* normal
 `.trim()
@@ -48,15 +48,15 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'hierro':
   case 'iron':
     let iron = Math.floor(Math.random() * (25 - 30) + 30) + 1
-    let exp = iron * 10
+    let exp3 = iron * 10
     user.mineral_iron += iron * 1 
-    user.exp += exp * 1 
+    user.exp += exp3 * 1 
     let m3 = `
 *Minaste 🏔️ mineral de hierro*
 
 *Obtienes:*
 ◦ Hierro: ${iron}
-◦ Exp: ${exp}
+◦ Exp: ${exp3}
 
 *⛏️ Pico:* normal
 `.trim()
@@ -67,15 +67,15 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'sal':
   case 'salt':
     let salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
-    let exp = salt * 10
+    let exp4 = salt * 10
     user.mineral_salt += salt * 1 
-    user.exp += exp * 1 
+    user.exp += exp4 * 1 
     let m4 = `
 *Minaste 🏔️ mineral de sal*
 
 *Obtienes:*
 ◦ Sal: ${salt}
-◦ Exp: ${exp}
+◦ Exp: ${exp4}
 
 *⛏️ Pico:* normal
 `.trim()
