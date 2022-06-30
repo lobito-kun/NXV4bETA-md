@@ -12,7 +12,6 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   case 'pico':
     if (min == 0) throw 'No tienes ningun pico para equiparte'
     switch (type2) {
-      case 'de bronce':
       case 'bronce':
         if (user.pickaxe_bronze == 0) throw 'Todavia tienes el pico de bronce para equiparte'
         user.pickaxe_equipped = 1 
