@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   switch (type) {
   case 'estaño':
   case 'tin':
-    if (global.db.data.users[m.sender] < 0) throw pi
+    if (user.pickaxe_bronze < 0) throw pi
     //await m.reply(_min)
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
