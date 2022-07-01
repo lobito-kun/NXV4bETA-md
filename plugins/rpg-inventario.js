@@ -108,7 +108,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let { name, exp, limit, lastclaim, registered, regTime, age, level, role } = global.db.data.users[who]
     let { min, xp, max } = xpRange(user.level, global.multiplier)
   
-    let { pmin: min, pxp: xp, pmax: max } = xpRange(user.mining_level, global.multiplier)
+    let pick = xpRange(user.mining_level, global.multiplier)
 
     //let invt = fs.readFileSync('./storage/image/inv.png')
     if (global.db.data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
@@ -135,7 +135,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *✨ Exp:* ${exp}
 *🆙️ Exp nivel:* ${user.exp - min}/${xp}
 
-${pickaxes ? `*⛏️ Picos*\n${pickaxes}\n\n*Nivel de minería:* ${user.mining_level}\n*Exp:* ${user.mining_exp - pmin}/${pxp}` : ''}
+${pickaxes ? `*⛏️ Picos*\n${pickaxes}\n\n*Nivel de minería:* ${user.mining_level}\n*Exp:* ${user.mining_exp - pick.min}/${pick.xp}` : ''}
 
 
 \t\t\t\t*乂 I T E M S*
