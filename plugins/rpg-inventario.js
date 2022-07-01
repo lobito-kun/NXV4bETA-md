@@ -31,6 +31,18 @@ import fs from 'fs'
     rare: true,
     mythic: true,
     legendary: true
+  },
+  pickaxes: {
+    pickaxe_bronze: true,
+    pickaxe_iron: true,
+    pickaxe_steel: true,
+    pickaxe_crimsteel: true,
+    pickaxe_mythan: true,
+    pickaxe_cobalt: true,
+    pickaxe_varaxite: true,
+    pickaxe_magic: true,
+    pickaxe_umbral: true,
+    pickaxe_ancient: true
   }
   }
 
@@ -101,7 +113,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     const fishes = Object.keys(inventory.fishes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fruits = Object.keys(inventory.fruits).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const crates = Object.keys(inventory.crates).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
-
+    const pickaxes = Object.keys(inventory.pickaxes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -119,8 +131,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
 *🎗 Durabilidad:* ${_sdurability}%
 
-*⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
-*🎗 Durabilidad:* ${_pdurability}%
+${minerals ? `*⛏️ Picos*\n${pickaxes}` : ''}
 
 *🎣 Caña de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}
 *🎗 Durabilidad:* ${_rdurability}%
@@ -191,7 +202,18 @@ const rpg = {
       common: '📦 Comun',
       rare: '🥡 Rara',
       mythic: '🎁 Epica',
-      legendary: '🧰 Legendaria'
+      legendary: '🧰 Legendaria',
+
+      pickaxe_bronze: 'Bronce',
+      pickaxe_iron: 'Hierro',
+      pickaxe_steel: 'Acero',
+      pickaxe_crimsteel: 'Carmesí',
+      pickaxe_mythan: 'Mythan',
+      pickaxe_cobalt: 'Cobalto',
+      pickaxe_varaxite: 'Varaxita',
+      pickaxe_magic: 'Magica',
+      pickaxe_umbral: 'Umbral',
+      pickaxe_ancient: 'Ancient'
     }
     let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
     if (!results.length) return ''
