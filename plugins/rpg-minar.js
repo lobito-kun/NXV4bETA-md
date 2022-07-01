@@ -86,7 +86,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m3)
+    await m.reply(m3)
     user.lastmiming = new Date * 1 
   break
 
@@ -106,7 +106,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m4)
+    await m.reply(m4)
     user.lastmiming = new Date * 1 
   break
 
@@ -146,7 +146,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m6)
+    await m.reply(m6)
     user.lastmiming = new Date * 1 
   break
 
@@ -166,7 +166,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m7)
+    await m.reply(m7)
     user.lastmiming = new Date * 1 
   break
 
@@ -186,7 +186,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m8)
+    await m.reply(m8)
     user.lastmiming = new Date * 1 
   break
 
@@ -206,7 +206,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m9)
+    await m.reply(m9)
     user.lastmiming = new Date * 1 
   break
   }
