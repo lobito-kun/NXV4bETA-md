@@ -1,3 +1,5 @@
+import { canLevelUp, xpRange } from '../lib/levelling.js'
+
 let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
   let xtext = `*⛌ Ingrese un mineral de la lista que desea minar*
@@ -208,6 +210,14 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     user.lastmiming = new Date * 1 
   break
   }
+
+
+  let before = user.level * 1
+  while (canLevelUp(user.mining_level, user.mining_exp, global.multiplier)) user.mining_level++
+  if (before !== user.level) {
+  m.reply(`*⛏️ Subiste el nivel ${before} -> ${user.level} de minería 🎊*`}
+  }
+
 }
 
 handler.help = ['minar']
