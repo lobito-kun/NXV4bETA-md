@@ -133,7 +133,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *✨ Exp:* ${exp}
 *🆙️ Exp nivel:* ${user.exp - min}/${xp}
 
-${pickaxes ? `*⛏️ Picos*\n${pickaxes}` : ''}
+${pickaxes ? `*⛏️ Picos*\n${pickaxes}\n\n*Nivel de minería:* ${user.mining_level}\n*Exp:* ${user.mining_exp}` : ''}
 
 
 \t\t\t\t*乂 I T E M S*
