@@ -3,12 +3,21 @@ import fs from 'fs'
 
   const inventory = {
   minerals: {
-    emerald: true,
-    reddiamond: true,
-    diamond: true,
-    gold: true,
-    iron: true,
-    stone: true
+    mineral_tin: true,
+    mineral_copper: true,
+    mineral_iron: true,
+    mineral_salt: true,
+    mineral_coal: true,
+    mineral_silver: true,
+    mineral_crimsteel: true,
+    mineral_gold: true,
+    mineral_pink_salt: true,
+    mineral_mythan: true,
+    mineral_sandstone: true,
+    mineral_cobalt: true,
+    mineral_varaxium: true,
+    mineral_black_salt: true,
+    mineral_magic: true
   },
   fruits: {
     strawberry: true,
@@ -109,7 +118,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let _adurability = Math.floor((adurability * 100) / 5000)
     let _rdurability = Math.floor((rdurability * 100) / 5000)
 
-    const minerals = Object.keys(inventory.minerals).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const minerals = Object.keys(inventory.minerals).map(v => user[v] && `*◦ ${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fishes = Object.keys(inventory.fishes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fruits = Object.keys(inventory.fruits).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const crates = Object.keys(inventory.crates).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
@@ -128,7 +137,7 @@ ${pickaxes ? `*⛏️ Picos*\n${pickaxes}` : ''}
 
 
 \t\t\t\t*乂 I T E M S*
-${minerals ? `\n*Minerales*\n${minerals}` : ''}${fruits ? `\n\n*Frutas*\n${fruits}` : ''}${fishes ? `\n\n*Peces*\n${fishes}` : ''}${crates ? `\n\n*Cajas*\n${crates}` : ''}
+${minerals ? `\n*💎 Minerales*\n${minerals}` : ''}
 
 *Otros items*
 *🪵 Madera:* ${wood}
@@ -168,12 +177,21 @@ const rpg = {
   emoticon(string) {
     string = string.toLowerCase()
     let emot = {
-      emerald: '🍀 Esmeralda',
-      reddiamond: '♦️ Diamante rojo',
-      diamond: '💎 Diamante',
-      gold: '🪙 Oro',
-      iron: '🔩 Hierro',
-      stone: '🪨 Piedra',
+      mineral_tin: 'Estaño',
+      mineral_copper: 'Cobre',
+      mineral_iron: 'Hierro',
+      mineral_salt: 'Sal',
+      mineral_coal: 'Carbón',
+      mineral_silver: 'Plata',
+      mineral_crimsteel: 'Carmesí',
+      mineral_gold: 'Oro',
+      mineral_pink_salt: 'Sal rosa',
+      mineral_mythan: 'Mythan',
+      mineral_sandstone: 'Arenisca',
+      mineral_cobalt: 'Cobalto',
+      mineral_varaxium: 'Varaxio',
+      mineral_black_salt: 'Sal negro',
+      mineral_magic: 'Mágico',
 
       strawberry: '🍓 Fresa',
       watermelon: '🍉 Sandía',
@@ -201,7 +219,7 @@ const rpg = {
       pickaxe_mythan: 'Mythan',
       pickaxe_cobalt: 'Cobalto',
       pickaxe_varaxite: 'Varaxita',
-      pickaxe_magic: 'Magica',
+      pickaxe_magic: 'Mágico',
       pickaxe_umbral: 'Umbral',
       pickaxe_ancient: 'Ancient'
     }
