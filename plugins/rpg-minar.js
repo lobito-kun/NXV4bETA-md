@@ -48,7 +48,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
 
 *⛏️ Pico de:* ${tpick}
 `.trim()
-    m.reply(m1)
+    await m.reply(m1)
     user.lastmiming = new Date * 1 
   break
 
