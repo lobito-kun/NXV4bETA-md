@@ -18,7 +18,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     let tin = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp1 = tin * 10
     user.mineral_tin += tin * 1 
-    user.exp += exp1 * 1 
+    user.mining_exp += exp1 * 1 
     let m1 = `
 *Minaste 🏔️ mineral de estaño*
 
@@ -37,7 +37,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     let copper = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp2 = copper * 10
     user.mineral_copper += copper * 1 
-    user.exp += exp2 * 1 
+    user.mining_exp += exp2 * 1 
     let m2 = `
 *Minaste 🏔️ mineral de cobre*
 
@@ -56,7 +56,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     let iron = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp3 = iron * 50
     user.mineral_iron += iron * 1 
-    user.exp += exp3 * 1 
+    user.mining_exp += exp3 * 1 
     let m3 = `
 *Minaste 🏔️ mineral de hierro*
 
@@ -76,7 +76,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     let salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
     let exp4 = salt * 80
     user.mineral_salt += salt * 1 
-    user.exp += exp4 * 1 
+    user.mining_exp += exp4 * 1 
     let m4 = `
 *Minaste 🏔️ mineral de sal*
 
