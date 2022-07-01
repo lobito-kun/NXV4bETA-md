@@ -89,6 +89,106 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
     m.reply(m4)
     user.lastmiming = new Date * 1 
   break
+
+  case 'carbón':
+  case 'coal':
+    if (user.mining_level < 20) throw 'Necesitas un nivel de minería de 20 para extraer este mineral'
+    let coal = Math.floor(Math.random() * (25 - 30) + 30) + 1
+    let exp5 = coal * 115
+    user.mineral_coal += coal * 1 
+    user.mining_exp += exp5 * 1 
+    let m5 = `
+*Minaste 🏔️ mineral de carbón*
+
+*Obtienes:*
+◦ Carbón: ${coal}
+◦ Exp: ${exp5}
+
+*⛏️ Pico de:* ${tpick}
+`.trim()
+    m.reply(m5)
+    user.lastmiming = new Date * 1 
+  break
+
+  case 'plata':
+  case 'silver':
+    if (user.mining_level < 25) throw 'Necesitas un nivel de minería de 25 para extraer este mineral'
+    let silver = Math.floor(Math.random() * (25 - 30) + 30) + 1
+    let exp6 = silver * 135
+    user.mineral_silver += silver * 1 
+    user.mining_exp += exp6 * 1 
+    let m6 = `
+*Minaste 🏔️ mineral de plata*
+
+*Obtienes:*
+◦ plata: ${silver}
+◦ Exp: ${exp6}
+
+*⛏️ Pico de:* ${tpick}
+`.trim()
+    m.reply(m6)
+    user.lastmiming = new Date * 1 
+  break
+
+  case 'carmesí':
+  case 'crimsteel':
+    if (user.mining_level < 30) throw 'Necesitas un nivel de minería de 30 para extraer este mineral'
+    let crimsteel = Math.floor(Math.random() * (25 - 30) + 30) + 1
+    let exp7 = crimsteel * 350
+    user.mineral_crimsteel += crimsteel * 1 
+    user.mining_exp += exp7 * 1 
+    let m7 = `
+*Minaste 🏔️ mineral de carmesí*
+
+*Obtienes:*
+◦ Carmesí: ${crimsteel}
+◦ Exp: ${exp7}
+
+*⛏️ Pico de:* ${tpick}
+`.trim()
+    m.reply(m7)
+    user.lastmiming = new Date * 1 
+  break
+
+  case 'oro':
+  case 'gold':
+    if (user.mining_level < 40) throw 'Necesitas un nivel de minería de 40 para extraer este mineral'
+    let gold = Math.floor(Math.random() * (25 - 30) + 30) + 1
+    let exp8 = gold * 400
+    user.mineral_gold += gold * 1 
+    user.mining_exp += exp8 * 1 
+    let m8 = `
+*Minaste 🏔️ mineral de oro*
+
+*Obtienes:*
+◦ Oro: ${gold}
+◦ Exp: ${exp8}
+
+*⛏️ Pico de:* ${tpick}
+`.trim()
+    m.reply(m8)
+    user.lastmiming = new Date * 1 
+  break
+
+  case 'sal rosa':
+  case 'pink salt':
+    if (user.mining_level < 45) throw 'Necesitas un nivel de minería de 45 para extraer este mineral'
+    let pink_salt = Math.floor(Math.random() * (25 - 30) + 30) + 1
+    let exp9 = pink_salt * 500
+    user.mineral_pink_salt += pink_salt * 1 
+    user.mining_exp += exp9 * 1 
+    let m9 = `
+*Minaste 🏔️ mineral de sal rosa*
+
+*Obtienes:*
+◦ Sal rosa: ${pink_salt}
+◦ Exp: ${exp9}
+
+*⛏️ Pico de:* ${tpick}
+`.trim()
+    m.reply(m9)
+    user.lastmiming = new Date * 1 
+  break
   }
 }
 
