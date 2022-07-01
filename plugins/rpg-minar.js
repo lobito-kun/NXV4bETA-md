@@ -215,7 +215,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmi
   let before = user.mining_level * 1
   while (canLevelUp(user.mining_level, user.mining_exp, global.multiplier)) user.mining_level++
   if (before !== user.level) {
-  m.reply(`*⛏️ Subiste el nivel ${before} -> ${user.level} de minería 🎊*`)
+  await m.reply(`*⛏️ Subiste el nivel ${before} -> ${user.level} de minería 🎊*`)
   }
 
 }
