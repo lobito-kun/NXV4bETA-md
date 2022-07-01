@@ -113,7 +113,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     const fishes = Object.keys(inventory.fishes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const fruits = Object.keys(inventory.fruits).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
     const crates = Object.keys(inventory.crates).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
-    const pickaxes = Object.keys(inventory.pickaxes).map(v => user[v] && `*${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
+    const pickaxes = Object.keys(inventory.pickaxes).map(v => user[v] && `*◦ ${rpg.emoticon(v)}:* ${user[v]}`).filter(v => v).join('\n').trim()
 
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
@@ -124,17 +124,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *✨ Exp:* ${exp}
 *🆙️ Exp nivel:* ${user.exp - min}/${xp}
 
-
-*👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
-*🎗 Durabilidad:* ${_ardurability}%
-
-*🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
-*🎗 Durabilidad:* ${_sdurability}%
-
-${minerals ? `*⛏️ Picos*\n${pickaxes}` : ''}
-
-*🎣 Caña de:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : ''}
-*🎗 Durabilidad:* ${_rdurability}%
+${pickaxes ? `*⛏️ Picos*\n${pickaxes}` : ''}
 
 
 \t\t\t\t*乂 I T E M S*
