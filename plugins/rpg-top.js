@@ -18,13 +18,13 @@ let handler = async (m, { conn, args, participants }) => {
 case 'exp':
 case 'xp':
 case 'experiencia':
-  exp = `\t\t\t\t*乂 T O P  -  E X P*
+  let topexp = `\t\t\t\t*乂 T O P  -  E X P*
 
 *• Posicion:* *${usersExp.indexOf(m.sender) + 1}* de *${usersExp.length}*
 
-${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*✨ Exp:* ${shortNum(exp)}`).join'\n╶\n'}
+${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*✨ Exp:* ${shortNum(exp)}`).join`\n╶\n`}
 `
-  m.reply(exp)
+  m.reply(topexp)
 break
 
 }
