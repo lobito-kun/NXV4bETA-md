@@ -71,6 +71,6 @@ async function genProfile(conn, m) {
     await welcome.print(font, 550, 340, 'About:')
     await welcome.print(font, 650, 415, status)
     await welcome.print(font, 550, 500, 'Number:')
-    await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+    await welcome.print(font, 650, 575, '+51 940 617 554')
     return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png')
 }
