@@ -26,7 +26,7 @@ ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}. @${jid.split`@`[0
 `
   m.reply(topexp)
 break
-
+  }
 }
 
 handler.help = ['top']
