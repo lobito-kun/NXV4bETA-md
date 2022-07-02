@@ -16,16 +16,16 @@ import fs from 'fs'
 
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-let tumb = fs.readFileSync('./storage/image/tienda.jpg')
-let tt = "```"
-let shop = `*Picos para comprar:*
+  let tumb = fs.readFileSync('./storage/image/tienda.jpg')
+  let tt = "```"
+  let shop = `*Picos para comprar:*
 >  Bronce:  $${p_bronze}
 >  Hierro:  $${p_iron}
 >  Acero:  $${p_steel}
 >  Carmesí:  $${p_crimsteel}`
-let note = `-`
+  let note = `-`
 
-conn.sendButton(m.chat, shop, note, tumb, [['Energía ⚡', '.energia'], ['Inventario 🎒', '.inv']], m)
+  conn.sendButton(m.chat, shop, note, tumb, [['Energía ⚡', '.energia'], ['Inventario 🎒', '.inv']], m)
 }
 
 handler.help = ['tienda']
