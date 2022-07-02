@@ -7,13 +7,10 @@ import jimp from 'jimp'
 let handler = async (m, { conn, text } ) => {
 
   let ppimg = miniurl
-  exec(`magick './src/lev.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 70 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jamny} ${calender}' -pointsize 50 -annotate +460+200 'Leaving from ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
+  exec(`magick './src/lev.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 70 -interline-spacing 7.5 -annotate +460-45 'gatito' -pointsize 35 -annotate +460+83 'Undefined' -pointsize 50 -annotate +460+200 'Leaving from Loli - Test' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
   .on('error', () => reply('error'))
   .on('exit', () => {
-  try {
-    alpha.sendMessage(mdata.id, fs.readFileSync('hamsil.jpg'), MessageType.image, {quoted : falfa, caption: out, contextInfo: { "mentionedJid" : [num], "forwardingScore":999,"isForwarded":true},sendEphemeral: true })
-  } catch {
-    alpha.sendMessage(mdata.id, buff, MessageType.image, {quoted : falfa, caption: out, contextInfo: { "mentionedJid" : [num], "forwardingScore":999,"isForwarded":true},sendEphemeral: true })
+  conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'Error.jpg', '*Test imagemagick*', m)
   }
 
 
