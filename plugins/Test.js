@@ -11,7 +11,7 @@ let handler = async (m, { conn, text } ) => {
   .on('error', () => reply('error'))
   .on('exit', () => {
   conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'Error.jpg', '*Test imagemagick*', m)
-  }
+  })
 
 
   /*conn.sendButton(m.chat, `*Test button*`, '-', await genProfile(conn, m), [['Speedtest', 'ping'], ['Owner', 'owner']], false, { quoted: m, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: imgmenu, title: 'Simple Bot Esm', body: 'By Papah-Chan',thumbnail: imgmenu, sourceUrl: 'https://youtu.be/poD-7_U3jXk' } } })
