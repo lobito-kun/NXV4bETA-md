@@ -9,8 +9,8 @@ let handler = async (m, { conn, args, participants }) => {
   let usersExp = sortedExp.map(enumGetKey)
   let usersLim = sortedLim.map(enumGetKey)
   let usersLevel = sortedLevel.map(enumGetKey)
-  let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(5, sortedExp.length)
-  
+  let len = args[1] && args[1].length > 1 ? Math.min(100, Math.max(parseInt(args[1]), 5)) : Math.min(10, sortedExp.length)
+
   let type = (args[0] || ' ').toLowerCase()
   
   switch (type) {
