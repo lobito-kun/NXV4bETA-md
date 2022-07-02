@@ -21,7 +21,7 @@ let handler = async (m, { conn, args, participants }) => {
 
 *• Posicion:* *${usersLevel.indexOf(m.sender) + 1}* de *${usersLevel.length}*
 
-${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*⭐ Nivel:* ${level}`).join`\n`}
+${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*⭐ Nivel:* ${level}`).join`\n╶\n`}
 `
     m.reply(toplevel, null, { mentions: conn.parseMention(toplevel) })
   break
