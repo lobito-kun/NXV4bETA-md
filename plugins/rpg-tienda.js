@@ -18,7 +18,7 @@ import fs from 'fs'
 let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
 let tt = "```"
-let shop = `*Picos en venta:*
+let shop = `*Picos para comprar:*
 >  Bronce:  $${p_bronze}
 >  Hierro:  $${p_iron}
 >  Acero:  $${p_steel}
