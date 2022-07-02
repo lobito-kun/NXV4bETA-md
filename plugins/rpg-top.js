@@ -23,7 +23,7 @@ let handler = async (m, { conn, args, participants }) => {
 
 ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*⭐ Nivel:* ${level}`).join`\n`}
 `
-    m.reply(toplevel)
+    m.reply(toplevel, null, { mentions: conn.parseMention(toplevel) })
   break
 
   case 'exp':
