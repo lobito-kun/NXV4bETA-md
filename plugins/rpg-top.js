@@ -15,6 +15,17 @@ let handler = async (m, { conn, args, participants }) => {
   
   switch (type) {
 
+  case 'nivel':
+  case 'level':
+    let toplevel = `\t\t\t\t*乂 T O P  -  N I V E L*
+
+*• Posicion:* *${usersLevel.indexOf(m.sender) + 1}* de *${usersLevel.length}*
+
+${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*⭐ Nivel:* ${level}`).join`\n`}
+`
+    m.reply(toplevel)
+  break
+
   case 'exp':
   case 'xp':
   case 'experiencia':
