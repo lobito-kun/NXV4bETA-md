@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, participants }) => {
 
 *• Posicion:* *${usersExp.indexOf(m.sender) + 1}* de *${usersExp.length}*
 
-${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}. @${jid.split'@'[0]}*\n*✨ Exp:* ${shortNum(exp)}`).join'\n╶\n'}
+${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*✨ Exp:* ${shortNum(exp)}`).join`\n╶\n`}
 `
     m.reply(topexp)
   break
