@@ -17,14 +17,14 @@ let handler = async (m, { conn, args, participants }) => {
 
   case 'exp':
   case 'xp':
-    case 'experiencia':
+  case 'experiencia':
     let topexp = `\t\t\t\t*乂 T O P  -  E X P*
 
 *• Posicion:* *${usersExp.indexOf(m.sender) + 1}* de *${usersExp.length}*
 
 ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}. @${jid.split`@`[0]}*\n*✨ Exp:* ${shortNum(exp)}`).join`\n╶\n`}
 `
-    m.reply(topexp)
+    m.reply(topexp, null, { mentions: conn.parseMention(topexp) })
   break
   }
 }
