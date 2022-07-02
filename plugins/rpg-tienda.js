@@ -18,7 +18,11 @@ import fs from 'fs'
 let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
 let tt = "```"
-let shop = `*Test*`
+let shop = `*Picos en venta:*
+>  Bronce: ${p_bronze}
+>  Hierro: ${p_iron}
+>  Acero: ${p_steel}
+>  Carmesí: ${p_crimsteel}`
 let note = `-`
 
 conn.sendButton(m.chat, shop, note, tumb, [['Energía ⚡', '.energia'], ['Inventario 🎒', '.inv']], m)
