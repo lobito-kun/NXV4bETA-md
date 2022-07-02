@@ -55,7 +55,7 @@ export default handler
 
 
 async function genProfile(conn, m) {
-  let font = await jimp.loadFont('./names.fnt'),
+  let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK),
     mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
     welcome = await jimp.read(thumbnailUrl.getRandom()),
     avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
