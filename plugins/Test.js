@@ -7,14 +7,21 @@ import jimp from 'jimp'
 
 let handler = async (m, { conn, text } ) => {
 
-  /*let ppimg = miniurl
-  exec(`magick './src/lev.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 70 -interline-spacing 7.5 -annotate +460-45 'gatito' -pointsize 35 -annotate +460+83 'Undefined' -pointsize 50 -annotate +460+200 'Leaving from Loli - Test' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
+  exec(`magick './src/wel.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 'gatito' -pointsize 35 -annotate +460+83 'Test' -pointsize 50 -annotate +460+200 'Welcome To Test' './storage/image/miniurl.jpg' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
   .on('error', () => reply('error'))
   .on('exit', () => {
-  conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'Error.jpg', '*Test imagemagick*', m)
-  })*/
+  try {
 
-      let str = '*Test imagemagick*'
+    conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
+  } catch {
+    conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
+
+  }
+  })
+
+
+
+     /*let str = '*Test imagemagick*'
       if (global.support.convert || global.support.magick || global.support.gm) {
         let fontLevel = 'storage/font/level_c.otf'
         let fontTexts = 'storage/font/texts.otf'
@@ -75,7 +82,7 @@ let handler = async (m, { conn, text } ) => {
 
 
 
-  /*conn.sendButton(m.chat, `*Test button*`, '-', await genProfile(conn, m), [['Speedtest', 'ping'], ['Owner', 'owner']], false, { quoted: m, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: imgmenu, title: 'Simple Bot Esm', body: 'By Papah-Chan',thumbnail: imgmenu, sourceUrl: 'https://youtu.be/poD-7_U3jXk' } } })
+  conn.sendButton(m.chat, `*Test button*`, '-', await genProfile(conn, m), [['Speedtest', 'ping'], ['Owner', 'owner']], false, { quoted: m, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: imgmenu, title: 'Simple Bot Esm', body: 'By Papah-Chan',thumbnail: imgmenu, sourceUrl: 'https://youtu.be/poD-7_U3jXk' } } })
 
   conn.sendButton(m.chat, `*Test button*`, 'Creɑted by gɑtito ⾕', imgmenu, [['Info 🧃', '.ping'], ['Creador 🍭', '.owner']], false, { quoted: m, contextInfo: { externalAdReply: {
   showAdAttribution: true,
