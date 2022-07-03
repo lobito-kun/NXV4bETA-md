@@ -1,5 +1,5 @@
 import MessageType from '@adiwajshing/baileys'
-import { exec } from 'child_process'
+import { spawn, exec } from 'child_process'
 import axios from 'axios'
 import fetch from 'node-fetch'
 import fs from 'fs'
