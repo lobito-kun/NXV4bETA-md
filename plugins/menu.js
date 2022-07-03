@@ -40,12 +40,12 @@ const defaultMenu = {
 🍬 *Rango* : %role
 🍬 *Nivel* : %level
 
-⠀⠀⠀\t\t\t*I N F O  -  B O T*
+⠀⠀\t\t\t*I N F O  -  B O T*
 🍬 *Usuarios* : %totalreg
 🍬 *Regs* : %rtotalreg
 🍬 *Hora* : %time
 
-⠀⠀⠀\t\t\t*I N F O  -  N P M*
+⠀⠀\t\t\t*I N F O  -  N P M*
 🍬 *Nombre* : %npmname
 🍬 *Descrip* : %npmdesc
 🍬 *Versión* : %version
@@ -58,7 +58,7 @@ const defaultMenu = {
 
 *Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴*
 
-\t\t*L I S T A  -  M E N U S*
+\t\t\t\t*L I S T A  -  M E N U S*
 `.trimStart(),
   header: '⠀❒ *%category*',
   body: '⠀│∙ *%cmd*\n',
