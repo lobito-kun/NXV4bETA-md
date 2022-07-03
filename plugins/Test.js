@@ -12,7 +12,7 @@ let handler = async (m, { conn, text } ) => {
   .on('exit', () => {
   try {
 
-    conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
+    conn.sendFile(m.chat, fs.readFileSync('./hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
   } catch {
     conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
 
