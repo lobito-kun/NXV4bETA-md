@@ -58,7 +58,7 @@ let handler = async (m, { conn, text } ) => {
           'Leaving from Loli - Test',
           './storage/image/miniurl.jpg',
           '-resize',
-          '%[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h]',
+          '%[fx:t?u.w*0.2:u.w]',
           '-gravity',
           'center',
           '-geometry',
