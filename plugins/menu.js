@@ -54,9 +54,9 @@ const defaultMenu = {
 ₊˚⌗ > *Licencia* : %license
 
 
-Lolita bot remastered by *%wasp*
+- lolibot remastered by *%wasp* -
 
-Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+*Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴*
 
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
 `.trimStart(),
