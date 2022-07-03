@@ -57,7 +57,7 @@ let handler = async (m, { conn, text } ) => {
           '-geometry',
           '-430+70',
           '-composite',
-          'hamsil.jpg'
+          'jpg:-'
         ]
         spawn(_spawnprocess, _spawnargs)
           .on('error', e => {
