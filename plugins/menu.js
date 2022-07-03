@@ -60,9 +60,9 @@ const defaultMenu = {
 
 \t\t*L I S T A  -  M E N U S*
 `.trimStart(),
-  header: '❒ *%category*',
-  body: '│∙ *%cmd*\n',
-  footer: '╰•',
+  header: '⠀❒ *%category*',
+  body: '⠀│∙ *%cmd*\n',
+  footer: '⠀╰•',
   after: '',
 }
 
