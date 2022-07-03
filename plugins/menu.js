@@ -54,8 +54,6 @@ const defaultMenu = {
 ₊˚⌗ > *Licencia* : %license
 
 
-- lolibot remastered by *%wasp* -
-
 *Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴*
 
 \t\t\`\`\`L I S T A  -  M E N U S\`\`\`
