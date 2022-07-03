@@ -2,6 +2,7 @@ import { canLevelUp, xpRange } from '../lib/levelling.js'
 import { createHash } from 'crypto'
 import PhoneNumber from 'awesome-phonenumber'
 import fetch from 'node-fetch'
+import { spawn, exec } from 'child_process'
 
 let handler = async (m, { conn, usedPrefix, command}) => {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
