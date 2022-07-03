@@ -62,7 +62,7 @@ const defaultMenu = {
 `.trimStart(),
   header: '⠀❒ *%category*',
   body: '⠀│∙ *%cmd*\n',
-  footer: '⠀╰•',
+  footer: '⠀╰•\n',
   after: '',
 }
 
