@@ -54,7 +54,7 @@ const defaultMenu = {
 🍬 *Licencia* : %license
 
 
-“ Si encuentra un error en la bot reportar con el comando *%preport* ”
+“ Si encuentrɑ un error en lɑ bot reportɑr con el comɑndo *%preport* ”
 
 *Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴*
 
