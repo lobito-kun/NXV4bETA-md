@@ -7,14 +7,13 @@ import jimp from 'jimp'
 
 let handler = async (m, { conn, text } ) => {
 
-  exec(`magick './src/wel.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 'gatito' -pointsize 35 -annotate +460+83 'Test' -pointsize 50 -annotate +460+200 'Welcome To Test' './storage/image/miniurl.jpg' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
+  exec(`magick './image/perfilx.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 'gatito' -pointsize 35 -annotate +460+83 'Test' -pointsize 50 -annotate +460+200 'Welcome To Test' './storage/image/miniurl.jpg' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'perfil.jpg'`)
   .on('error', () => reply('error'))
   .on('exit', () => {
   try {
-    conn.sendFile(m.chat, fs.readFileSync('./hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
+    conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'result.jpg', '*Test imagemagick*', m)
   } catch {
-    conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'result.jpg', '*Test imagemagick*', m)
-
+    conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'result.jpg', '*Test imagemagick*', m)
   }
   })
 
