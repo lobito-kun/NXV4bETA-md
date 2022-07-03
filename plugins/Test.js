@@ -7,12 +7,67 @@ import jimp from 'jimp'
 
 let handler = async (m, { conn, text } ) => {
 
-  let ppimg = miniurl
+  /*let ppimg = miniurl
   exec(`magick './src/lev.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 70 -interline-spacing 7.5 -annotate +460-45 'gatito' -pointsize 35 -annotate +460+83 'Undefined' -pointsize 50 -annotate +460+200 'Leaving from Loli - Test' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
   .on('error', () => reply('error'))
   .on('exit', () => {
   conn.sendFile(m.chat, fs.readFileSync('hamsil.jpg'), 'Error.jpg', '*Test imagemagick*', m)
-  })
+  })*/
+
+      let str = '*Test imagemagick*'
+      if (global.support.convert || global.support.magick || global.support.gm) {
+        let fontLevel = 'storage/font/level_c.otf'
+        let fontTexts = 'storage/font/texts.otf'
+
+        let bufs = []
+        
+        const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []),
+          'convert',
+          './src/lev.jpg',
+          '-gravity',
+          'west',
+          '-fill',
+          '#000000',
+          '-font',
+          './src/font-gue.ttf',
+          '-size', 1280x710',
+          '-pointsize', 70',
+          '-interline-spacing',
+          '7.5', -annotate',
+          '+460-45', 'gatito'
+          '-pointsize', 35',
+          '-annotate',
+          '+460+83',
+          'Undefined',
+          '-pointsize',
+          '50',
+          '-annotate',
+          '+460+200',
+          'Leaving from Loli - Test',
+          './storage/image/miniurl.jpg',
+          '-resize',
+          '%[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h]',
+          '-gravity',
+          'center',
+          '-geometry',
+          '-430+70',
+          '-composite',
+          'hamsil.jpg'
+        ]
+        spawn(_spawnprocess, _spawnargs)
+          .on('error', e => {
+            throw e
+          })
+          .on('close', () => {
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'result.jpg', str, m)
+          })
+          .stdout.on('data', chunk => bufs.push(chunk))
+
+      } else {
+        m.reply(str)
+      }
+
+
 
 
   /*conn.sendButton(m.chat, `*Test button*`, '-', await genProfile(conn, m), [['Speedtest', 'ping'], ['Owner', 'owner']], false, { quoted: m, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType: 'VIDEO', mediaUrl: imgmenu, title: 'Simple Bot Esm', body: 'By Papah-Chan',thumbnail: imgmenu, sourceUrl: 'https://youtu.be/poD-7_U3jXk' } } })
