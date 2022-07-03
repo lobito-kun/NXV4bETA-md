@@ -43,7 +43,8 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   try {
     conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'Error.jpg', str, m)
   } catch (e) {
-    conn.sendFile(m.chat, pp, 'Error.jpg', str, m, false, { contextInfo: { mentionedJid }})
+    conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'Error.jpg', str, m)
+    //conn.sendFile(m.chat, pp, 'Error.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
   })
   //conn.sendFile(m.chat, pp, 'Error.jpg', str, m, false, { contextInfo: { mentionedJid }})
