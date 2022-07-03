@@ -33,34 +33,36 @@ const defaultMenu = {
 “ Holɑ *%taguser 👋🏻*, %greeting ”
 
 
-\t\t\t\`\`\`I N F O  -  U S E R\`\`\`
-₊˚⌗ > *Nombre* : %name
-₊˚⌗ > *Exp* : %totalexp
-₊˚⌗ > *Limite* : %limit
-₊˚⌗ > *Rango* : %role
-₊˚⌗ > *Nivel* : %level
+\t\t\t*I N F O  -  U S E R*
+🍬 *Nombre* : %name
+🍬 *Exp* : %totalexp
+🍬 *Limite* : %limit
+🍬 *Rango* : %role
+🍬 *Nivel* : %level
 
-⠀\t\t\t\`\`\`I N F O  -  B O T\`\`\`
-₊˚⌗ > *Usuarios* : %totalreg
-₊˚⌗ > *Regs* : %rtotalreg
-₊˚⌗ > *Hora* : %time
+⠀⠀⠀\t\t\t*I N F O  -  B O T*
+🍬 *Usuarios* : %totalreg
+🍬 *Regs* : %rtotalreg
+🍬 *Hora* : %time
 
-⠀\t\t\t\`\`\`I N F O  -  N P M\`\`\`
-₊˚⌗ > *Nombre* : %npmname
-₊˚⌗ > *Descrip* : %npmdesc
-₊˚⌗ > *Versión* : %version
-₊˚⌗ > *Main* : %npmmain
-₊˚⌗ > *Autor* : %author
-₊˚⌗ > *Licencia* : %license
+⠀⠀⠀\t\t\t*I N F O  -  N P M*
+🍬 *Nombre* : %npmname
+🍬 *Descrip* : %npmdesc
+🍬 *Versión* : %version
+🍬 *Main* : %npmmain
+🍬 *Autor* : %author
+🍬 *Licencia* : %license
 
+
+“ Si encuentra un error en la bot reportar con el comando *%preport* ”
 
 *Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴*
 
-\t\t\`\`\`L I S T A  -  M E N U S\`\`\`
+\t\t*L I S T A  -  M E N U S*
 `.trimStart(),
-  header: '⠀⠀⠀⠀ *%category*',
-  body: '₊˚⌗ > %cmd\n',
-  footer: '╶',
+  header: '❒ *%category*',
+  body: '│∙ *%cmd*\n',
+  footer: '╰•',
   after: '',
 }
 
