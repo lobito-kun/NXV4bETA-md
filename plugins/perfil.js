@@ -38,17 +38,19 @@ let handler = async (m, { conn, usedPrefix, command}) => {
 `
   let mentionedJid = [who]
 
-  exec(`magick './storage/image/perfilx.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${name}' -pointsize 35 -annotate +460+83 '${age} años' -pointsize 50 -annotate +460+200 '${about}' '${pp}' -resize %[fx:t?u.w*0.2:u.w] -gravity center -geometry -430+70 -composite 'perfil.jpg'`)
+  //Test
+  /*exec(`magick './storage/image/perfilx.jpg' -gravity west -fill '#000000' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${name}' -pointsize 35 -annotate +460+83 '${age} años' -pointsize 50 -annotate +460+200 '${about}' '${pp}' -resize %[fx:t?u.w*0.2:u.w] -gravity center -geometry -430+70 -composite 'perfil.jpg'`)
   .on('error', () => reply('error'))
   .on('exit', () => {
   try {
     conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'Error.jpg', str, m)
   } catch (e) {
-    //conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'Error.jpg', str, m)
+    conn.sendFile(m.chat, fs.readFileSync('./perfil.jpg'), 'Error.jpg', str, m)
     conn.sendFile(m.chat, pp, 'Error.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
-  })
-  //conn.sendFile(m.chat, pp, 'Error.jpg', str, m, false, { contextInfo: { mentionedJid }})
+  })*/
+
+  conn.sendFile(m.chat, pp, 'Error.jpg', str, m, false, { contextInfo: { mentionedJid }})
 }
 
 handler.help = ['perfil']
