@@ -24,6 +24,30 @@ let handler = async (m, { conn, usedPrefix, command, text, args, isOwner, isAdmi
         await m.reply(`Compraste un pico de *bronce* por *$${p_bronze}*`)
         } else m.reply(`Necesitas *$${p_bronze}* para comprar el pico`)
       break
+
+      case 'hierro':
+        if (user.money > p_iron * 1) {
+        user.pickaxe_iron += 1
+        user.money -= p_iron * 1
+        await m.reply(`Compraste un pico de *hierro* por *$${p_iron}*`)
+        } else m.reply(`Necesitas *$${p_iron}* para comprar el pico`)
+      break
+
+      case 'acero':
+        if (user.money > p_steel * 1) {
+        user.pickaxe_steel += 1
+        user.money -= p_steel * 1
+        await m.reply(`Compraste un pico de *acero* por *$${p_steel}*`)
+        } else m.reply(`Necesitas *$${p_steel}* para comprar el pico`)
+      break
+
+      case 'carmesí':
+        if (user.money > p_crimsteel * 1) {
+        user.pickaxe_crimsteel += 1
+        user.money -= p_crimsteel * 1
+        await m.reply(`Compraste un pico de *carmesí* por *$${p_crimsteel}*`)
+        } else m.reply(`Necesitas *$${p_crimsteel}* para comprar el pico`)
+      break
     }
   break
 
