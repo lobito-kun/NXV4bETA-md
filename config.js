@@ -1,3 +1,4 @@
+let { proto } = (await import('@adiwajshing/baileys')).default
 import { watchFile, unwatchFile } from 'fs'
 import fs from 'fs'
 import chalk from 'chalk'
@@ -39,7 +40,8 @@ global.packname = 'Lolibot - OFC'
 global.author = '💌 Lobita & Gatito 💫'
 
 global.wait = '*↻ Esperɑ soy lentɑ. . .*'
-global.error = '*☓ Ocurrió un error inesperado*'
+global.error = conn.relayMessage(m.chat, { reactionMessage: proto.ReactionMessage.create({ key: m.quoted.key, text: '❌' }) }, { messageId: m.quoted.key.id })
+//'*☓ Ocurrió un error inesperado*'
 
 global.igfg = '\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n' 
 global.fgsc = 'https://github.com/FG98F/dylux-fg' 
