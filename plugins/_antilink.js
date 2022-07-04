@@ -20,7 +20,7 @@ export async function before(m, {conn, isAdmin, isBotAdmin }) {
 En este grupo no esta permitido enviar enlaces de otros grupos por lo tanto serás baneado`)
         if (isBotAdmin && chat.antiLink) {
             conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-        } else if (!chat.antiLink) return //m.reply('')
+        } else if (!chat.antiLink) return false //m.reply('')
     }
     return !0
 }
