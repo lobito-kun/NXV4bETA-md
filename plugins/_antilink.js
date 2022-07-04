@@ -7,19 +7,19 @@ export async function before(m, {conn, isAdmin, isBotAdmin }) {
         return !0
     if (!m.isGroup) return !1
     let chat = global.db.data.chats[m.chat]
-    let bot = global.db.data.settings[this.user.jid] || {}
+    //let bot = global.db.data.settings[this.user.jid] || {}
     const isGroupLink = linkRegex.exec(m.text)
 
     if (chat.antiLink && isGroupLink && !isAdmin) {
         if (isBotAdmin) {
-            const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
+            const linkThisGroup = `https://chat.whatsapp.com/${await conn.groupInviteCode(m.chat)}`
             if (m.text.includes(linkThisGroup)) return !0
         }
         await conn.reply(`\t\t\`\`\`「 Enlace Detectado 」\`\`\`
 
 En este grupo no esta permitido enviar enlaces de otros grupos por lo tanto serás baneado`)
         if (isBotAdmin && chat.antiLink) {
-            await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+            conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         } else if (!chat.antiLink) return //m.reply('')
     }
     return !0
