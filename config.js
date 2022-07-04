@@ -1,4 +1,3 @@
-let { proto } = (await import('@adiwajshing/baileys')).default
 import { watchFile, unwatchFile } from 'fs'
 import fs from 'fs'
 import chalk from 'chalk'
