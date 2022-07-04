@@ -5,7 +5,9 @@ import fetch from 'node-fetch'
 
 let handler = m => m
 
-handler.before = async function(m, { conn, command }) {
+handler.before = async function(m, { conn, command, isOwner }) {
+let chat = global.db.data.chats[m.chat]
+if (chat.isBanned && !isOwner) return true
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
 
 let audio1A = /onichan|senpai|sempai|yamete|onii-chan|oni-chan/i
