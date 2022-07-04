@@ -8,12 +8,12 @@ handler.all = async function (m, { isBotAdmin }) {
             content: m.msg,
             sender: m.sender
         }
-        await this.groupRemove(m.chat, [m.sender])
-        await this.modifyChat(m.chat, 'clear', {
-            includeStarred: false
-        }).catch(console.log)
-        //this.reply('')
-        //this.reply("El mensaje supera los 68 caracteres se elimino el chat por prevención a traba/lag")
+        await this.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+       //await this.modifyChat(m.chat, 'clear', {
+       //    includeStarred: false
+       //}).catch(console.log)
+       await this.reply(m.chat, '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+       //this.reply("El mensaje supera los 68 caracteres se elimino el chat por prevención a traba/lag")
     }
 }
 
