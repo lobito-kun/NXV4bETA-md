@@ -124,6 +124,7 @@ conn.sendMessage(m.chat, buttonMessage, { quoted: m })*/
 }
 
 handler.command = ['test']
+handler.owner = true
 
 export default handler
 
