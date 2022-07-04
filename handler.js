@@ -687,8 +687,9 @@ export async function participantsUpdate({ id, participants, action }) {
     let text = ''
     switch (action) {
         case 'add':
-          let puserd = `${participants.split('@')[0]}`
-          if (puserd.startsWith('51')) return this.groupParticipantsUpdate(id, [puserd], 'remove')
+          let puserd = participants.split('@')[0]
+          await m.reply(`${puserd}`)
+          if (`${puserd}`.startsWith('51')) return this.groupParticipantsUpdate(id, [puserd], 'remove')
           
         break
 
