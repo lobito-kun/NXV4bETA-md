@@ -6,16 +6,16 @@ let handler = async (m, { conn, text, isOwner, usedPrefix, command }) => {
   if (!code) throw 'El link es invalido'
   let res = await conn.groupAcceptInvite(code)
   await m.reply(`${JSON.stringify(res, null, 1)}`)
-  await m.reply(`*Enviando spam . . .*`)
+  //await m.reply(`*Enviando spam . . .*`)
 }
 
 handler.help = ['spamjp']
 handler.tags = ['premium']
-
 handler.command = ['spamgp'] 
 
 handler.owner = true
 
 export default handler
+
 
 const isNumber = (x) => (x = parseInt(x), typeof x === 'number' && !isNaN(x))*/
