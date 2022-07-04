@@ -55,8 +55,8 @@ let audio14B = audio14A.exec(m.text)
 let audio15A = /^(A|ª|ᵃ|a)$/i
 let audio15B = audio15A.exec(m.text)
 
-let audio16A = /Bot |bot /i
-let audio16B = audio16A.exec(m.text)
+//let audio16A = /Bot |bot /i
+//let audio16B = audio16A.exec(m.text)
 
 let audio17A = /Aver el poto|el poto|tu poto/i
 let audio17B = audio17A.exec(m.text)
@@ -174,13 +174,13 @@ if (audio15B) {
 	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
-if (audio16B) {
+/*if (audio16B) {
         let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp", "./storage/sticker/Bot3.webp", "./storage/sticker/Bot4.webp"]
 	let vn = ss[Math.floor(Math.random() * ss.length)]
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
         await conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", mediaType:"2", previewType: "VIDEO", thumbnail: ppp, mediaUrl: ""}}})
-        } else
+        } else*/
 
 if (audio17B) {
 	let vn = './storage/audio/No_te_dare_mi_poto.mp3'
