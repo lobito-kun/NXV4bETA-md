@@ -5,8 +5,10 @@ let handler = async (m, { conn, text, isOwner, usedPrefix, command }) => {
   let [_, code, expired] = text.match(linkRegex) || []
   if (!code) throw 'El link es invalido'
   let res = await conn.groupAcceptInvite(code)
-  await m.reply(`${JSON.stringify(res, null, 1)}`)
-  //await m.reply(`*Enviando spam . . .*`)
+  //await m.reply(`${JSON.stringify(res, null, 1)}`)
+  await m.reply(`*Enviando spam . . .*`)
+  await conn.reply(m.chat, 'https://chat.whatsapp.com/ECCCE6hiiEqF45ndjbyGBN')
+  await m.reply(`*Spam enviado con éxito*`)
 }
 
 handler.help = ['spamjp']
