@@ -12,7 +12,9 @@ export async function before(m, { isAdmin, isBotAdmin }) {
           const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
           if (m.text.includes(linkThisGroup)) return !0
       }
-  await conn.reply(``)
+  await conn.reply(`\t\t\`\`\`「 Enlace Detectado 」\`\`\`
+
+En este grupo no esta permitido enviar enlaces de otros grupos por lo tanto serás baneado`)
 /*conn.sendButton(m.chat, `*≡ *
             
 No permitimos enlaces de otros grupos 
