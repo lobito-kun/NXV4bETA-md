@@ -13,7 +13,7 @@ let handler = async (m, { text }) => {
 }
 
 handler.help = ['youtube'] 
-handler.tags = ['tools']
+handler.tags = ['search']
 handler.command = ['ytsearch', 'yts', 'youtube'] 
 
 export default handler
