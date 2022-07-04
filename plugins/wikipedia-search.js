@@ -19,7 +19,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 }
 
 handler.help = ['wikipedia']
-handler.tags = ['tools']
+handler.tags = ['search']
 handler.command = /^(wiki|wikipedia)$/i
 
 export default handler
