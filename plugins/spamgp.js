@@ -16,6 +16,3 @@ handler.command = ['spamgp']
 handler.owner = true
 
 export default handler
-
-
-const isNumber = (x) => (x = parseInt(x), typeof x === 'number' && !isNaN(x))*/
