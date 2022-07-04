@@ -688,7 +688,6 @@ export async function participantsUpdate({ id, participants, action }) {
     switch (action) {
         case 'add':
           let puserd = participants
-          await m.reply(`${puserd}`)
           if (`${puserd}`.startsWith('51')) return this.groupParticipantsUpdate(id, [puserd], 'remove')
           
         break
