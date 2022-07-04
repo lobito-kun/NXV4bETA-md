@@ -687,8 +687,12 @@ export async function participantsUpdate({ id, participants, action }) {
     let text = ''
     switch (action) {
         case 'add':
+          let puserd = participants
+          if (puserd.startsWith('51')) return this.groupParticipantsUpdate(id, [puserd], 'remove')
+          
+        break
+
         case 'remove':
-            if (participants.startsWith('1')) return this.groupParticipantsUpdate(id, [participants], 'remove')
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
