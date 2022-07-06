@@ -1,4 +1,4 @@
-<h1 align="center">‧ 💌 Nekobot - MD 💌 ‧
+<h1 align="center">‧ 💌 NekoBot - MD 💌 ‧
 </p>
 <p>
         <img src= "https://c.tenor.com/8TkuLQ-dHXUAAAAd/neko-anime.gif">
