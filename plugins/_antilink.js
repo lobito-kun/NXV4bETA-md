@@ -1,4 +1,4 @@
-/*import db from '../lib/database.js'
+import db from '../lib/database.js'
 
 const linkRegex = /chat.whatsapp.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i
 
@@ -21,4 +21,4 @@ export async function before(m, {conn, isAdmin, isBotAdmin }) {
         } else if (!chat.antiLink) return //m.reply('')
     }
     return !0
-}*/
+}
