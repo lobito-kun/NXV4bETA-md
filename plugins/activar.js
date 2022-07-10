@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
   switch (type) {
   case 'autosticker':
-    conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
+    await conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
     switch (type2) {
     case 'off':
       if (chat.autosticker) throw m.reply('La función autosticker ya ha sido desactivado')
