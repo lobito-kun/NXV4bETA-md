@@ -149,7 +149,7 @@
 
 ## Repo Stɑts 🔭
 
-![github card](https://github-readme-stats.vercel.app/api/pin/?username=g4tito&repo=nekobot-md&theme=dark)
+![github card](https://github-readme-stats.vercel.app/api/pin/?username=g4tito&repo=nekobot-md&theme=chartreuse-dark)
 
 ---------
 
