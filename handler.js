@@ -328,6 +328,7 @@ export async function handler(chatUpdate) {
                 if (!('viewonce' in chat)) chat.viewonce = false
                 if (!('antiToxic' in chat)) chat.antiToxic = false
                 if (!('nsfw' in chat)) chat.nsfw = false
+                if (!('autosticker' in chat)) chat.autosticker = false
                 if (!isNumber(chat.expired)) chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
@@ -343,7 +344,8 @@ export async function handler(chatUpdate) {
                     viewonce: false,
                     useDocument: true,
                     antiToxic: false,
-                    nsfw: false, 
+                    nsfw: false,
+                    autosticker: false,
                     expired: 0,
                 }
             let settings = global.db.data.settings[this.user.jid]
