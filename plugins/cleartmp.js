@@ -17,7 +17,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
       if (stdout.trim()) m.reply(`Se eliminó *${stdout. replace('M	tmp', ' MB').trim()}* de archivos de la carpeta tmp`)
       if (stderr.trim()) m.reply(`Se eliminó *${stderr. replace('M	tmp', ' MB').trim()}* de archivos de la carpeta tmp`)
   }
-  exec('cd tmp && rm *1')
+  exec('cd tmp && rm -rf *')
 }
 
 handler.help = ['cleartmp']
