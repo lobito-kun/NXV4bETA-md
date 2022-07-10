@@ -1,3 +1,4 @@
+import { sticker } from '../lib/sticker.js'
 import fetch from 'node-fetch'
 import cheerio from 'cheerio'
 import RA from 'ra-api'
