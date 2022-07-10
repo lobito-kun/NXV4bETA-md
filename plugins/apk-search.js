@@ -11,12 +11,13 @@ let link = image
 if (command == 'apkdone') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/apkdone?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda ApkDone 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
-*:* ${x.apps_version}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+*• Versión:* ${x.apps_version}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -24,11 +25,12 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'apkgoogle') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/apkgoogle?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda ApkGoogle 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -36,12 +38,13 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'apkmody') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/apkmody?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda ApkMody 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
-*:* ${x.desc}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+*• Descripción:* ${x.desc}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -49,11 +52,12 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'apkshub') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/apkshub?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda ApkShub 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -61,11 +65,12 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'happymod') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/happymod?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda HappyMod 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -73,12 +78,13 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'hostapk') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/hostapk?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda HostApk 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
-*:* ${x.apps_desc}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+*• Descripción:* ${x.apps_desc}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -86,11 +92,12 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'revdl') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/revdl?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda Revld 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -98,12 +105,13 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'toraccino') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/toraccino?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda Toraccino 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
-*:* ${x.apps_desc}
+*• Nombre:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+*• Descripción:* ${x.apps_desc}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
@@ -111,11 +119,12 @@ await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 if (command == 'uapkpro') {
 let json = await fetch(`https://dhn-api.herokuapp.com/api/apk/uapkpro?apps=${text}&apikey=4ca83deeb14d61d16cf0`)
 let jsons = await json.json()
-let caption = `* ${command} *\n`
+let caption = `\t\t\t*∙ 🔎 Búsqueda Uapkpro 🔍 ∙*\n\n`
 for (let x of jsons.result) {
 caption += `
-*:* *${x.apps_name}*
-*:* ${x.apps_linkdl}
+*• Titulo:* ${x.apps_name}
+*• Link:* ${x.apps_linkdl}
+
 `}
 await conn.sendFile(m.chat, link, 'error.mp3', caption, m)}
 //await conn.reply(m.chat, caption, m)}
