@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   );
   if (!res.ok) throw `${res.status} ${res.statusText}`
   let json = await res.json()
-  let pokedex = `\t\t\t\t*‧ 📟 Pokedex 📟 ‧*
+  let caption = `\t\t\t\t*‧ 📟 Pokedex 📟 ‧*
 
 *• Nombre:* ${json.name}
 *• Id:* ${json.id}
