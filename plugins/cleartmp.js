@@ -22,10 +22,9 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
       o = e
   } finally {
       let { stdout, stderr } = o
-      if (stdout.trim()) m.reply(stdout)
-      if (stderr.trim()) m.reply(stderr)
+      if (stdout.trim()) m.reply(`Se eliminó *${stdout. replace('M	tmp', ' MB')}* de archivos de la carpeta tmp`)
+      if (stderr.trim()) m.reply(`Se eliminó *${stderr. replace('M	tmp', ' MB')}* de archivos de la carpeta tmp`)
   }
-  //await conn.reply(m.chat, 'Se eliminó *${tmm}* de archivos de la carpeta tmp', m)
 }
 
 handler.help = ['cleartmp']
