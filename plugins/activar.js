@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
       m.reply('Se desactivó la función de autosticker en este grupo')
     break
     case 'on':
-      if (chat.autosticker = true) throw m.reply('La función autosticker ya ha sido activado'')
+      if (chat.autosticker = true) throw m.reply('La función autosticker ya ha sido activado')
       chat[m.chat].autosticker = true 
       m.reply('Se activó la función de autosticker en este grupo')
     break
