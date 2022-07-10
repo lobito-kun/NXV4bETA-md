@@ -5,8 +5,8 @@ import RA from 'ra-api'
 let handler = async (m, { conn, text }) => {
   if (!text) throw `Example : ${prefix + command} loli`
   let anu = await RA.StickerSearch(text)
-  for (let i = 0; i < (anu.sticker_url.length < 5 ? anu.sticker_url.length : 5); i++) {
-  await conn.sendFile(m.chat, anu.sticker_url[i], null, { asSticker: true }, m)
+  for (let i = 0; i < (anu.data.sticker.length < 5 ? anu.data.sticker.length : 5); i++) {
+  await conn.sendFile(m.chat, anu.data.sticker.length[i], null, { asSticker: true }, m)
   }
 }
 
