@@ -10,12 +10,12 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
     switch (type2) {
     case 'off':
-      if (chat.autosticker = false) throw m.reply('La función autosticker ya ha sido desactivado')
+      if (chat.autosticker) throw m.reply('La función autosticker ya ha sido desactivado')
       chat.autosticker = false 
       await m.reply('Se desactivó la función de autosticker en este grupo')
     break
     case 'on':
-      if (chat.autosticker = true) throw m.reply('La función autosticker ya ha sido activado')
+      if (chat.autosticker) throw m.reply('La función autosticker ya ha sido activado')
       chat[m.chat].autosticker = true 
       await m.reply('Se activó la función de autosticker en este grupo')
     break
