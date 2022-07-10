@@ -1,14 +1,14 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   let enn = `-`
-  await conn.reply(m.chat, enn, m)
+  if (!text) throw conn.reply(m.chat, enn, m)
 
   let type = (command).toLowerCase()
   let type2 = (args[0] || ' ').toLowerCase()
 
   switch (type) {
   case 'autosticker':
-    await conn.sendButton(m.chat, '', wm, [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
+    await conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
     switch (type2) {
     case 'off':
       global.db.data.chats[m.chat].autosticker = false 
