@@ -147,6 +147,12 @@
 
 ---------
 
+## Repo Stɑts 🔭
+
+![github card](https://github-readme-stats.vercel.app/api/pin/?username=g4tito&repo=nekobot-md&theme=dark)
+
+---------
+
 ## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" alt="Github" width="44" height="44"> Github Stɑts
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=g4tito&show_icons=true&theme=chartreuse-dark)
