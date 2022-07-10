@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
   let anu = await RA.StickerSearch(text)
   for (let i = 0; i < (anu.data.sticker.length < 5 ? anu.data.sticker.length : 5); i++) {
   let stiker = await sticker(null, anu.data.sticker[i], global.packname, global.author)
-  conn.sendFile(m.chat, stiker, null, { asSticker: true })
+  conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
   }
 }
 
