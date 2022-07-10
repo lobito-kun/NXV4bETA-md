@@ -1,4 +1,4 @@
-/*export async function all(m) {
+export async function all(m) {
     if (!m.message)
         return
     this.spam = this.spam ? this.spam : {}
@@ -18,4 +18,4 @@
             count: 0,
             lastspam: 0
         }
-}*/
+}
