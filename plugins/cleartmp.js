@@ -7,14 +7,6 @@ import { promisify } from 'util'
 let exec = promisify(cp.exec).bind(cp)
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
-  //const tmp = [tmpdir(), join(__dirname, '../tmp')]
-  //const filename = []
-  //tmp.forEach(dirname => readdirSync(dirname).forEach(file => filename.push(join(dirname, file))))
-  //return filename.map(file => {
-  //const stats = statSync(file)
-  //unlinkSync(file)
-  //})
-
   let o
   try {
       o = await exec('du -sh tmp')
@@ -25,6 +17,13 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
       if (stdout.trim()) m.reply(`Se eliminó *${stdout. replace('M	tmp', ' MB').trim()}* de archivos de la carpeta tmp`)
       if (stderr.trim()) m.reply(`Se eliminó *${stderr. replace('M	tmp', ' MB').trim()}* de archivos de la carpeta tmp`)
   }
+  const tmp = [tmpdir(), join(__dirname, '../tmp')]
+  const filename = []
+  tmp.forEach(dirname => readdirSync(dirname).forEach(file => filename.push(join(dirname, file))))
+  return filename.map(file => {
+  const stats = statSync(file)
+  unlinkSync(file)
+  })
 }
 
 handler.help = ['cleartmp']
