@@ -37,7 +37,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   break
 
   case 'nsfw':
-    if (!text) return conn.sendButton(m.chat, '\t\t\t\t*∙ 📵 Modo +18 📵 ∙*\n\nPermite el acceso al comandos +18 (hentai, porno, rule34, etc)', fr, [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
+    if (!text) return conn.sendButton(m.chat, '\t\t\t\t*∙ 📵 Contenido +18 📵 ∙*\n\nPermite el acceso al comandos +18 (hentai, porno, rule34, etc)', fr, [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
     chat.nsfw = isOption
     await m.reply(`La función +18 se ${isOption ? 'activó' : 'desactivó'} en este Grupo`)
   break
