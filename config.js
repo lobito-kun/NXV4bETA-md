@@ -3,6 +3,10 @@ import fs from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
+const dnw = Date.now();
+const hoy = new Date(dnw);
+let dtw = hoy.toLocaleDateString()
+
 global.owner = [
   ['51940617554', '「gatitoツ」', true], 
   ['5356588048'], 
@@ -35,8 +39,15 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'Lolibot - OFC'
-global.author = '💌 Lobita & Gatito 💫'
+global.packname = ''
+global.author = `• 💌 Sticker-pack:
+- Random Stickers
+
+• 🐈 Created-by:
+- Neko-bot MD
+
+• 🧃 Creation-date:
+- ${(dtw).replace(/\//g, ' / ')}`
 
 global.wait = '*↻ Esperɑ soy lentɑ. . .*'
 global.error = '*☓ Ocurrió un error inesperado*'
