@@ -5,6 +5,7 @@ import RA from 'ra-api'
 
 let handler = async (m, { conn, text }) => {
   if (!text) throw `Example : ${prefix + command} loli`
+  await conn.reply(m.chat, '*Enviando los stickers . . .*', m)
   let anu = await RA.StickerSearch(text)
   for (let i = 0; i < (anu.data.sticker.length < 5 ? anu.data.sticker.length : 5); i++) {
   let stiker = await sticker(null, anu.data.sticker[i], global.packname, global.author)
