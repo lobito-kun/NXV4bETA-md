@@ -22,10 +22,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
       o = e
   } finally {
       let { stdout, stderr } = o
-      if (stdout.trim()) m.reply(`Se eliminó *${stdout. replace('M	tmp
-', ' MB')}* de archivos de la carpeta tmp`)
-      if (stderr.trim()) m.reply(`Se eliminó *${stderr. replace('M	tmp
-', ' MB')}* de archivos de la carpeta tmp`)
+      if (stdout.trim()) m.reply(`Se eliminó *${stdout. replace('M	tmp', ' MB').trim()}* de archivos de la carpeta tmp`)
+      if (stderr.trim()) m.reply(`Se eliminó *${stderr. replace('M	tmp', ' MB').trim()}* de archivos de la carpeta tmp`)
   }
 }
 
