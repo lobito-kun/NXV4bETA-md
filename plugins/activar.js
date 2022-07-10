@@ -1,7 +1,6 @@
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
-  //let enn = `-`
-  //if (!text) throw conn.reply(m.chat, enn, m)
+  let chat = global.db.data.chats[m.chat]
 
   let type = (command).toLowerCase()
   let type2 = (args[0] || ' ').toLowerCase()
@@ -11,12 +10,14 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
     switch (type2) {
     case 'off':
-      global.db.data.chats[m.chat].autosticker = false 
-      await m.reply('Se desactivó la función de autosticker en este grupo')
+      if (chat.autosticker = false) throw m.reply('La función autosticker ya ha sido desactivado')
+      chat.autosticker = false 
+      m.reply('Se desactivó la función de autosticker en este grupo')
     break
     case 'on':
-      global.db.data.chats[m.chat].autosticker = true 
-      await m.reply('Se activó la función de autosticker en este grupo')
+      if (chat.autosticker = true) throw m.reply('La función autosticker ya ha sido activado'')
+      chat[m.chat].autosticker = true 
+      m.reply('Se activó la función de autosticker en este grupo')
     break
     }
   break
