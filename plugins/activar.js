@@ -24,7 +24,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 }
 
 handler.help = ['autosticker']
-handler.tags = ['random']
+handler.tags = ['group']
 handler.command = /^(autosticker)$/i
 
 export default handler
