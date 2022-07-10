@@ -1,12 +1,12 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `*Ingrese el nombre de un pokemon*\n\n- Ejemplo: ${usedPrefix + command} pikachu`;
+  if (!text) throw `*Ingrese el nombre de un pokemon*\n\n- Ejemplo: ${usedPrefix + command} pikachu`
   let res = await fetch(
     API("https://some-random-api.ml", "/pokedex", { pokemon: text })
   );
-  if (!res.ok) throw `${res.status} ${res.statusText}`;
-  let json = await res.json();
+  if (!res.ok) throw `${res.status} ${res.statusText}`
+  let json = await res.json()
   let pokedex = `\t\t\t\t*‧ 📟 Pokedex 📟 ‧*
 
 *• Nombre:* ${json.name}
@@ -39,12 +39,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 ${json.description}
 *• Generación:* ${json.generation}`
   if (!json.error)
-    conn.sendFile(m.chat, json.sprites.animated, 'pokedex.gif', pokedex, m)
+    await conn.sendFile(m.chat, json.sprites.animated, 'pokedex.gif', pokedex, m)
     //await conn.sendFile(m.chat, json.sprites.animated, "pokemon.gif", pokedex, m);
     //await conn.sendFile(m.chat, `${json.sprites.animated}`, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif' })
     //await conn.sendFile(m.chat, `${json.sprites.animated}`, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif' })
-  else throw json.error;
-};
+  else throw json.error
+}
 
 handler.help = ['pokedex']
 handler.tags = ['internet']
