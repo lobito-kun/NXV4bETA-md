@@ -47,7 +47,7 @@ global.author = `• 💌 Sticker-pack:
 - Neko-bot MD
 
 • 🧃 Creation-date:
-- ${(dtw).replace(/\//g, ' / ')}`
+- 0${(dtw).replace(/\//g, ' / ')}`
 
 global.wait = '*↻ Esperɑ soy lentɑ. . .*'
 global.error = '*☓ Ocurrió un error inesperado*'
