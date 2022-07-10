@@ -1,7 +1,7 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
-  let enn = `-`
-  if (!text) throw conn.reply(m.chat, enn, m)
+  //let enn = `-`
+  //if (!text) throw conn.reply(m.chat, enn, m)
 
   let type = (command).toLowerCase()
   let type2 = (args[0] || ' ').toLowerCase()
