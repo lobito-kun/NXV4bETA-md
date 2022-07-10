@@ -27,7 +27,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 }
 
 handler.help = ['autosticker', 'antispam']
-handler.tags = ['group']
+handler.tags = ['nable']
 handler.command = /^(autosticker|antispam)$/i
 handler.group = true
 handler.admin = true
