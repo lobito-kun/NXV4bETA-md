@@ -8,7 +8,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
   switch (type) {
   case 'autosticker':
-    await conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
+    conn.sendButton(m.chat, '\t\t\t- *Autosticker* - ', '-', [['Desactivar', `${usedPrefix + command} off`], ['Activar', `${usedPrefix + command} on`]], m)
     switch (type2) {
     case 'off':
       global.db.data.chats[m.chat].autosticker = false 
