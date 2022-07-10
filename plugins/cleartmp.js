@@ -2,8 +2,6 @@ import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch } fr
 import { tmpdir } from 'os'
 import path, { join } from 'path'
 
-import { spawn, exec } from 'child_process'
-
 import cp from 'child_process'
 import { promisify } from 'util'
 let exec = promisify(cp.exec).bind(cp)
