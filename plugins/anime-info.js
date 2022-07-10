@@ -10,7 +10,7 @@ let handler = async (m, { conn, text }) => {
   let res2 = await fetch(`https://myanimelist.net/anime/${mal_id}`)
   if (!res2.ok) throw await res2.text()
   let html = await res2.text()
-  let animeingfo = `${image_url}
+  let animeingfo = `
 *✨ Titulo:* ${title}
 *🎆 Episodios:* ${episodes}
 *💬 Transmitido en:* ${type}
