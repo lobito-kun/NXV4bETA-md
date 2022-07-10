@@ -4,6 +4,7 @@ import fs from 'fs'
 
 let handler = async (m, {text, usedPrefix, command, conn}) => {
 if (!text) throw `*[]         *`
+await conn.reply(m.chat, global.wait, m)
 const res = await googleImage(text)
 let image = res.getRandom()
 let link = image
