@@ -6,8 +6,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   await conn.reply(m.chat, '*Enviando los stickers . . .*', m)
   let res = await fetch(`https://api.zacros.my.id/downloader/stickerpack?link=${text}`)
   let json = await res.json()
-  for (let data of (json.result || json)) {
-  let stiker = await sticker(null, data, global.packname, global.author)
+  for (let i = 0; i < ((json.result || json).length < 10 ? (json.result || json).length : 10); i++) {
+  let stiker = await sticker(null, (json.result || json), global.packname, global.author)
   conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
   }
 }
