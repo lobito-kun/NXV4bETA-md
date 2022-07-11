@@ -2,6 +2,7 @@ import gplay from 'google-play-scraper'
 
 let handler = async (m, { conn, text }) => {
   if (!text) throw 'Input Query'
+  await conn.reply(m.chat, global.wait, m)
   let res = await gplay.search({ term: text })
   if (!res.length) throw `Query "${text}" not found :/`
   let opt = { contextInfo: { externalAdReply: { title: res[0].title, body: res[0].summary, thumbnail: (await conn.getFile(res[0].icon)).data, sourceUrl: res[0].url }}}
