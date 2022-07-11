@@ -6,7 +6,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   let json = await fetch(`https://api.zacros.my.id/search/sticker?query=${text}`)
   let jsons = await json.json()
   let res = jsons.result.map((v) => `*• 🏷 Nombre:* ${v.title}\n*• 🔗 Url:* ${v.url}`).join`\n\n╶\n\n`
-  await conn.reply(m.chat, res, m)
+  let imgstick = fs.readFileSync('./storage/image/sticker-maker.jpg')
+  await conn.sendFile(m.chat, imgstick, 'Error.jpg', res, m)
 }
 
 handler.help = ['stickers2']
