@@ -5,7 +5,7 @@ handler.before = async function (m) {
   if (m.sender.startsWith(vnro)) {
   global.db.data.users[m.sender].banned = false 
   m.reply('AntiMoros Activado lo siento mirey seras expulsado del grupo.')
-  conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+  await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
 }
 
