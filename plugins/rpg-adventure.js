@@ -30,12 +30,8 @@ let handler = async (m, { usedPrefix }) => {
         user[rewardItem] += total * 1
         if (total) text += `\n◦ ${global.rpg.emoticon(rewardItem)}${rewardItem}: ${total}`
     }
-    conn.sendButton(m.chat, 
-    '*–––––『 ADVENTURE 』–––––*', 
-    text.trim(), './media/adventure.jpg', [
-[`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`],
-[`ᴅᴀɪʟʏ`, `${usedPrefix}daily`]
-], m, {asLocation: true})
+    let teks = `\t\t\t*× 🎑 Aventura RPG 🎑 ×*\n\n${text}`
+    conn.reply(m.chat, teks, m)
     user.lastadventure = new Date * 1
 }
 
