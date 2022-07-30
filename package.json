@@ -1,7 +1,7 @@
 {
     "name": "lolibot-md",
     "version": "1.2.5",
-    "description": "WhatsApp Bot",
+    "description": "WhatsApp Bot Multi Device",
     "main": "index.js",
     "type": "module",
     "directories": {
