@@ -1,13 +1,13 @@
 console.log('✅ Iniciando...')
 
-import { join, dirname } from 'path'
-import { createRequire } from "module";
-import { fileURLToPath } from 'url'
-import { setupMaster, fork } from 'cluster'
-import { watchFile, unwatchFile } from 'fs'
-import cfonts from 'cfonts';
-import { createInterface } from 'readline'
-import yargs from 'yargs'
+let { join, dirname } = require('path')
+let { createRequire } = require('module')
+let { fileURLToPath } = require('url')
+let { setupMaster, fork } = require('cluster')
+let { watchFile, unwatchFile } = require('fs')
+let cfonts = require('cfonts')
+let { createInterface } = require('readline')
+let yargs = require('yargs')
 
 // https://stackoverflow.com/a/50052194
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -16,22 +16,24 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('WhatsApp Bot', {
+say('NekoBot - MD', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-say(`'${name}' By gatito`, {
+say('Created By Gatito', {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
 })
 
 var isRunning = false
+
 /**
  * Start a js file
  * @param {String} file `path/to/file`
  */
+
 function start(file) {
   if (isRunning) return
   isRunning = true
