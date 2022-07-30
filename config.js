@@ -40,14 +40,7 @@ global.APIKeys = { // APIKey Here
 
 // Sticker WM
 global.packname = ''
-global.author = `• 💌 Sticker-pack:
-- Random Stickers
-
-• 🐈 Created-by:
-- Neko-bot MD
-
-• 🧃 Creation-date:
-- 0${(dtw).replace(/\//g, ' / ')}`
+global.author = '[ NekoBot - MD ]'
 
 global.wait = '*↻ Esperɑ soy lentɑ. . .*'
 global.error = '*☓ Ocurrió un error inesperado*'
@@ -80,41 +73,41 @@ global.rpg = {
   emoticon(string) {
     string = string.toLowerCase()
     let emot = {
-      bibitanggur: '🍇',
-      bibitpisang: '🍌',
-      bibitjeruk: '🍊',
-      bibitapel: '🍎',
-      bibitmangga: '🥭',
-      level: '📊',
-      limit: '🎫',
-      health: '❤️',
-      exp: '✨',
-      money: '💹',
-      bank: '🏦',
-      potion: '🥤',
-      diamond: '💎',
-      common: '📦',
-      uncommon: '🛍️',
-      mythic: '🎁',
-      legendary: '🗃️',
-      superior: '💼',
-      pet: '🔖',
-      trash: '🗑',
-      armor: '🥼',
-      sword: '⚔️',
-      pickaxe: '⛏️',
-      fishingrod: '🎣',
-      wood: '🪵',
-      rock: '🪨',
-      string: '🕸️',
-      horse: '🐴',
-      cat: '🐱',
-      dog: '🐶',
-      fox: '🦊',
-      petFood: '🍖',
-      iron: '⛓️',
-      gold: '🪙',
-      emerald: '❇️',
+      bibitanggur: '🍇 Semilla de uva',
+      bibitpisang: '🍌 Semilla de platano',
+      bibitjeruk: '🍊 Semilla de naranja',
+      bibitapel: '🍎 Semilla de manzana',
+      bibitmangga: '🥭 Semilla de mango',
+      level: '📊 Nivel',
+      limit: '🎫 Limite',
+      health: '❤️ Salud',
+      exp: '✨ Exp',
+      money: '💹 Dinero',
+      bank: '🏦 Banco',
+      potion: '🥤 Poción',
+      diamond: '💎 Diamnate',
+      common: '📦 Caja comun',
+      uncommon: '🛍️ Caja poco comun',
+      mythic: '🎁 Caja mítica',
+      legendary: '🗃️ Caja legendaria',
+      superior: '💼 Caja superior',
+      pet: '🔖 Macota',
+      trash: '🗑 Basura',
+      armor: '🥼 Armadura',
+      sword: '⚔️ Espada',
+      pickaxe: '⛏️ Pico',
+      fishingrod: '🎣 Caña',
+      wood: '🪵 Madera',
+      rock: '🪨 Piedra',
+      string: '🕸️ Cuerda',
+      horse: '🐴 Caballo',
+      cat: '🐱 Gato',
+      dog: '🐶 Perro',
+      fox: '🦊 Zorro',
+      petFood: '🍖 Comida de mascota',
+      iron: '⛓️ Hierro',
+      gold: '🪙 Oro',
+      emerald: '❇️ Esmeralda',
       upgrader: '🧰'
       
     }
