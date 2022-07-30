@@ -18,17 +18,17 @@ let handler = async (m, { usedPrefix }) => {
 [`ᴅᴀɪʟʏ`, `${usedPrefix}daily`]
 ], m, {asLocation: true})
     const rewards = reward(user)
-    let text = '*Perdida de la aventura :*'
+    let text = '*Perdida de la aventura :*\n'
     for (const lost in rewards.lost) if (user[lost]) {
         const total = rewards.lost[lost].getRandom()
         user[lost] -= total * 1
-        if (total) text += `\n◦ ${global.rpg.emoticon(lost)}${lost}: ${total}`
+        if (total) text += `\n◦ ${global.rpg.emoticon(lost)}: ${total}`
     }
-    text += '\n\n*Recompensa de la aventura :*'
+    text += '\n\n*Recompensa de la aventura :*\n'
     for (const rewardItem in rewards.reward) if (rewardItem in user) {
         const total = rewards.reward[rewardItem].getRandom()
         user[rewardItem] += total * 1
-        if (total) text += `\n◦ ${global.rpg.emoticon(rewardItem)}${rewardItem}: ${total}`
+        if (total) text += `\n◦ ${global.rpg.emoticon(rewardItem)}: ${total}`
     }
     let teks = `\t\t\t*× 🎑 Aventura RPG 🎑 ×*\n\n${text}`
     conn.reply(m.chat, teks, m)
