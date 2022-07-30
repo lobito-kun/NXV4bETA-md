@@ -35,7 +35,7 @@ const sections = [
 
 const listMessage = {
   text: caption,
-  footer: wm,
+  footer: '-',
   title: lgocraft,
   buttonText: " KLIK DISINI",
   sections
