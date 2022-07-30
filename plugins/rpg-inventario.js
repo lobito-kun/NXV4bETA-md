@@ -1,7 +1,7 @@
 import daily from './rpg-daily.js'
 import weekly from './rpg-weekly.js'
 import monthly from './rpg-monthly.js'
-import adventure from './rpg-adventure.js'
+import adventure from './rpg-aventura.js'
 
 const inventory = {
   others: {
