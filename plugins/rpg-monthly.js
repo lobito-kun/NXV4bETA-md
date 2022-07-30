@@ -13,7 +13,7 @@ let handler = async (m) => {
     let text = '*Acabas de reclamar tu reclamo del mes :*\n\n'
     for (let reward of Object.keys(rewards)) if (reward in user) {
         user[reward] += rewards[reward]
-        text += `◦ ${rpg.emoticon(reward)} +${rewards[reward]}\n`
+        text += `+${rewards[reward]} de ${rpg.emoticon(reward)}\n`
     }
     m.reply(text)
     user.lastmonthly = new Date * 1
