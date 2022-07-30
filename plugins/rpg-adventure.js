@@ -1,4 +1,5 @@
 const cooldown = 300000
+
 let handler = async (m, { usedPrefix }) => {
     let user = global.db.data.users[m.sender]
     let timers = (cooldown - (new Date - user.lastadventure))
@@ -17,17 +18,17 @@ let handler = async (m, { usedPrefix }) => {
 [`ᴅᴀɪʟʏ`, `${usedPrefix}daily`]
 ], m, {asLocation: true})
     const rewards = reward(user)
-    let text = 'You\'ve been adventure and decrease'
+    let text = '*Perdida de la aventura :*'
     for (const lost in rewards.lost) if (user[lost]) {
         const total = rewards.lost[lost].getRandom()
         user[lost] -= total * 1
-        if (total) text += `\n${global.rpg.emoticon(lost)}${lost}: ${total}`
+        if (total) text += `\n◦ ${global.rpg.emoticon(lost)}${lost}: ${total}`
     }
-    text += '\n\n🔖 ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴇᴡᴀʀᴅ ʀᴇᴄᴇɪᴠᴇᴅ :'
+    text += '\n\n*Recompensa de la aventura :*'
     for (const rewardItem in rewards.reward) if (rewardItem in user) {
         const total = rewards.reward[rewardItem].getRandom()
         user[rewardItem] += total * 1
-        if (total) text += `\n⮕ ${global.rpg.emoticon(rewardItem)}${rewardItem}: ${total}`
+        if (total) text += `\n◦ ${global.rpg.emoticon(rewardItem)}${rewardItem}: ${total}`
     }
     conn.sendButton(m.chat, 
     '*–––––『 ADVENTURE 』–––––*', 
@@ -37,15 +38,17 @@ let handler = async (m, { usedPrefix }) => {
 ], m, {asLocation: true})
     user.lastadventure = new Date * 1
 }
-handler.help = ['adventure']
+
+handler.help = ['aventura']
 handler.tags = ['rpg']
-handler.command = /^(adventure|adv)$/i
+handler.command = /^(aventura|adventure|adv)$/i
 
 handler.cooldown = cooldown
 handler.disabled = false
 
 export default handler
 
+// Otros
 function reward(user = {}) {
     let rewards = {
         reward: {
