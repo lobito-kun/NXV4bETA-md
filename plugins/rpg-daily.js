@@ -7,7 +7,7 @@ const cooldown = 86400000
 
 let handler = async (m,{ conn } ) => {
   let user = global.db.data.users[m.sender]
-  if (new Date - user.lastclaim < cooldown) throw `Ya has reclamado, vuelve dentro de *${((user.lastclaim + cooldown) - new Date()).toTimeString()}*`
+  if (new Date - user.lastclaim < cooldown) throw `Ya has reclamado, vuelve dentro de *${stime((user.lastclaim + cooldown) - new Date())}*`
   let text = '*Acabas de reclamar tu reclamo diario:*\n\n'
   for (let reward of Object.keys(rewards)) {
     if (!(reward in user)) continue
