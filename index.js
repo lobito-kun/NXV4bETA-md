@@ -1,13 +1,13 @@
 console.log('✅ Iniciando...')
 
 import { join, dirname } from 'path'
-import { createRequire } from 'module'
+import { createRequire } from "module";
 import { fileURLToPath } from 'url'
 import { setupMaster, fork } from 'cluster'
 import { watchFile, unwatchFile } from 'fs'
 import cfonts from 'cfonts';
 import { createInterface } from 'readline'
-import Helper from './lib/helper.js'
+import yargs from 'yargs'
 
 // https://stackoverflow.com/a/50052194
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -21,13 +21,14 @@ say('NekoBot MD', {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-say('- Created By Gatito -', {
+say('Created By Gatito', {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
 })
 
 var isRunning = false
+
 /**
  * Start a js file
  * @param {String} file `path/to/file`
@@ -62,14 +63,15 @@ function start(file) {
   })
   p.on('exit', (_, code) => {
     isRunning = false
-    console.error('❎ Ocurrió un error:', code)
+    console.error('❎ Ocurrió un error inesperado:', code)
     if (code === 0) return
     watchFile(args[0], () => {
       unwatchFile(args[0])
       start(file)
     })
   })
-  if (!Helper.opts['test'])
+  let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+  if (!opts['test'])
     if (!rl.listenerCount()) rl.on('line', line => {
       p.emit('message', line.trim())
     })
