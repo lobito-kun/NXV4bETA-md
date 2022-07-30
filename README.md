@@ -137,7 +137,7 @@
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Grupo de WhɑtsApp
 
 
-- Si quieres probɑr el bot ɑntes de instɑlɑr
+- Si quieres probɑr el bot antes de instalar
 
 * <a href="https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
@@ -147,7 +147,7 @@
 
 ---------
 
-## Repo Stɑts 🔭
+## Repo Stats 🔭
 
 ![github card](https://github-readme-stats.vercel.app/api/pin/?username=g4tito&repo=nekobot-md&theme=chartreuse-dark)
 
@@ -162,4 +162,4 @@
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![FG](https://github.com/FG98F.png?size=100)](https://github.com/FG98F)
 ----|----
 [Gɑtito](https://github.com/g4tito) | [FG](https://github.com/FG98F)
-Recodificador | Creɑdor
+Recodificador | Creador
