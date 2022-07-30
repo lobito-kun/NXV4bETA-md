@@ -107,7 +107,7 @@ const inventory = {
       time: monthly.cooldown
     },
     lastadventure: {
-      name: 'adventure',
+      name: 'Aventura', //adventure
       time: adventure.cooldown
     }
   }
@@ -119,10 +119,10 @@ let handler = async (m, { conn }) => {
   const dura = Object.keys(inventory.durabi).map(v => user[v] && `◦ ${global.rpg.emoticon(v)}: ${user[v]}`).filter(v => v).join('\n').trim()
   const crates = Object.keys(inventory.crates).map(v => user[v] && `◦ ${global.rpg.emoticon(v)}: ${user[v]}`).filter(v => v).join('\n').trim()
   const pets = Object.keys(inventory.pets).map(v => user[v] && `◦ ${global.rpg.emoticon(v)}${v}: ${user[v] >= inventory.pets[v] ? 'Max Levels' : `Level(s) ${user[v]}`}`).filter(v => v).join('\n').trim()
-  const cooldowns = Object.entries(inventory.cooldowns).map(([cd, { name, time }]) => cd in user && `*✧ ${name}*: ${new Date() - user[cd] >= time ? '✅' : '❌'}`).filter(v => v).join('\n').trim()
+  const cooldowns = Object.entries(inventory.cooldowns).map(([cd, { name, time }]) => cd in user && `${new Date() - user[cd] >= time ? '✅' : '❌'} ${name}`).filter(v => v).join('\n').trim()
   const teks = `\t\t\t*× 🎒 Inventario RPG 🎒 ×*
 
-*◦ 🧑🏻‍🏫 Usuario:* ${conn.getName(m.sender)}
+◦ 🧑🏻‍🏫 Usuario: ${conn.getName(m.sender)}
 ${Object.keys(inventory.others).map(v => user[v] && `◦ ${global.rpg.emoticon(v)}: ${user[v]}`).filter(v => v).join('\n')}${tools ? `
 *🔖 Herramientas :*
 ${tools}` : ''}${items ? `
@@ -138,8 +138,8 @@ ${pets}` : ''}${cooldowns ? `
 
 *♻️ Tiempo de espera :*
 ${cooldowns}` : ''}
-*✧ dungeon: ${user.lastdungeon == 0 ? '✅': '❌'}*
-*✧ mining: ${user.lastmining == 0 ? '✅': '❌'}*
+${user.lastdungeon == 0 ? '✅': '❌'} Dungeon
+${user.lastmining == 0 ? '✅': '❌'} Mineria
 `
   m.reply(teks)
 }
