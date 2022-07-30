@@ -10,7 +10,7 @@ const cooldown = 2592000000
 let handler = async (m) => {
     let user = global.db.data.users[m.sender]
     if (new Date - user.lastmonthly < cooldown) throw `Ya has reclamado este mes, vuelve dentro de *${stime((user.lastmonthly + cooldown) - new Date())}*`
-    let text = '*Acabas de reclamar tu reclamo del mes:*\n\n'
+    let text = '*Acabas de reclamar tu reclamo del mes :*\n\n'
     for (let reward of Object.keys(rewards)) if (reward in user) {
         user[reward] += rewards[reward]
         text += `◦ ${rpg.emoticon(reward)} +${rewards[reward]}\n`
