@@ -9,7 +9,7 @@ let handler = async (m, { usedPrefix }) => {
 ᴩʟᴇᴀsᴇ ʜᴇᴀʟ ❤ ғɪʀsᴛ ᴛᴏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ᴀɢᴀɪɴ.`.trim(), './media/lowhealth.jpg', [
 [`ʜᴇᴀʟ ❤`, `${usedPrefix}heal`]
 ], m, {asLocation: true})
-    if (new Date - user.lastadventure <= cooldown) return `⏱️ Espere *${timers.toTimeString()}* para volver a ir de aventura`
+    if (new Date - user.lastadventure <= cooldown) return m.reply(`⏱️ Espere *${timers.toTimeString()}* para volver a ir de aventura`)
     const rewards = reward(user)
     let text = '*Perdida de la aventura :*\n'
     for (const lost in rewards.lost) if (user[lost]) {
