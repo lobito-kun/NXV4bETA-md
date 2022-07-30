@@ -1,4 +1,5 @@
 const cooldown = 300000
+
 let handler = async (m, { usedPrefix }) => {
     let user = global.db.data.users[m.sender]
     let timers = (cooldown - (new Date - user.lastmining))
@@ -27,15 +28,17 @@ You're already mining!!, please wait *🕐${timers.toTimeString()}*
     m.reply(text.trim())
     user.lastmining= new Date * 1
 }
-handler.help = ['mining']
+
+handler.help = ['minar']
 handler.tags = ['rpg']
-handler.command = /^(mining)$/i
+handler.command = /^(minar|mining)$/i
 
 handler.cooldown = cooldown
 handler.disabled = false
 
 export default handler
 
+// Otros
 function reward(user = {}) {
     let rewards = {
         reward: {
