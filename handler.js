@@ -40,139 +40,222 @@ export async function handler(chatUpdate) {
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object') global.db.data.users[m.sender] = {}
             if (user) {
-                if (!isNumber(user.exp)) user.exp = 0
-                if (!isNumber(user.limit)) user.limit = 10
-                if (!isNumber(user.lastclaim)) user.lastclaim = 0
-                if (!('registered' in user)) user.registered = false
-                if (!user.registered) {
-                if (!('name' in user)) user.name = m.name
-                if (!isNumber(user.age)) user.age = -1
-                if (!isNumber(user.regTime)) user.regTime = -1
-                }
-
-                if (!isNumber(user.afk)) user.afk = -1
-                if (!('afkReason' in user)) user.afkReason = ''
-                if (!('banned' in user)) user.banned = false
-                if (!isNumber(user.warn)) user.warn = 0
+                if (!isNumber(user.healt)) user.healt = 100
+                if (!isNumber(user.title)) user.title = 0
+                if (!isNumber(user.stamina)) user.stamina = 100
+                if (!isNumber(user.haus)) user.haus = 100
+                if (!isNumber(user.laper)) user.laper = 100
                 if (!isNumber(user.level)) user.level = 0
-                if (!user.role) user.role = 'Novato'
-                if (!('autolevelup' in user)) user.autolevelup = true
-
+                if (!('pasangan' in user)) user.pasangan = ''
+                if (!isNumber(user.exp)) user.exp = 0
+                if (!isNumber(user.pc)) user.pc = 0
+                if (!isNumber(user.korbanngocok)) user.korbanngocok = 0
+                if (!isNumber(user.ojekk)) user.ojekk = 0
+                if (!isNumber(user.trofi)) user.trofi= 0
+                if (!user.rtrofi) user.rtrofi = 'Perunggu'
+                if (!isNumber(user.troopcamp)) user.troopcamp = 0
+                if (!isNumber(user.coin)) user.coin = 0
+                if (!isNumber(user.atm)) user.atm = 0
+                if (!isNumber(user.limit)) user.limit = 20
+                if (!isNumber(user.glimit)) user.glimit = 20
+                if (!isNumber(user.tprem)) user.tprem = 0
+                if (!isNumber(user.tigame)) user.tigame = 50
+                if (!isNumber(user.lastclaim)) user.lastclaim = 0
                 if (!isNumber(user.money)) user.money = 0
-                if (!isNumber(user.health)) user.health = 100
-                if (!isNumber(user.limit)) user.limit = 0
-                if (!isNumber(user.potion)) user.potion = 0
-                if (!isNumber(user.trash)) user.trash = 0
-                if (!isNumber(user.wood)) user.wood = 0
-                if (!isNumber(user.rock)) user.rock = 0
-                if (!isNumber(user.string)) user.string = 0
-                if (!isNumber(user.petFood)) user.petFood = 0
-
-                //Minerales
-                if (!isNumber(user.emerald)) user.emerald = 0
-                if (!isNumber(user.reddiamond)) user.reddiamond = 0
+                if (!isNumber(user.rumahsakit)) user.rumahsakit= 0
+                if (!isNumber(user.fortress)) user.fortress = 0
+                if (!isNumber(user.shield)) user.shield = false
+                if (!isNumber(user.pertanian)) user.pertanian = 0
+                if (!isNumber(user.pertambangan)) user.pertambangan = 0
+                
+                
+                if (!isNumber(user.botol)) user.botol = 0
+                if (!isNumber(user.kardus)) user.kardus = 0
+                if (!isNumber(user.kaleng)) user.kaleng = 0
+                if (!isNumber(user.aqua)) user.aqua = 0
                 if (!isNumber(user.diamond)) user.diamond = 0
-                if (!isNumber(user.gold)) user.gold = 0
                 if (!isNumber(user.iron)) user.iron = 0
-                if (!isNumber(user.stone)) user.stone = 0
-
-                //Frutas
-                if (!isNumber(user.strawberry)) user.strawberry = 0
-                if (!isNumber(user.watermelon)) user.watermelon = 0
-                if (!isNumber(user.grape)) user.grape = 0
-                if (!isNumber(user.kiwi)) user.kiwi = 0
-
-                //Peces
-                if (!isNumber(user.blowfish)) user.blowfish = 0
-                if (!isNumber(user.tropicalfish)) user.tropicalfish = 0
-                if (!isNumber(user.commonfish)) user.commonfish = 0
-                if (!isNumber(user.crab)) user.crab = 0
-                if (!isNumber(user.locust)) user.locust = 0
-                if (!isNumber(user.shrimp)) user.shrimp = 0
-                if (!isNumber(user.squid)) user.squid = 0
-                if (!isNumber(user.octopus)) user.octopus = 0
-
-                //Cajas
+                if (!isNumber(user.emas)) user.emas = 0
+                if (!isNumber(user.arlok)) user.arlok = 0
+    
                 if (!isNumber(user.common)) user.common = 0
-                if (!isNumber(user.rare)) user.rare = 0
+                if (!isNumber(user.as)) user.as = 0
+                if (!isNumber(user.uncommon)) user.uncommon = 0
                 if (!isNumber(user.mythic)) user.mythic = 0
                 if (!isNumber(user.legendary)) user.legendary = 0
-
+                if (!isNumber(user.glory)) user.glory = 0
+                if (!isNumber(user.enchant)) user.enchant = 0
                 if (!isNumber(user.pet)) user.pet = 0
-                if (!isNumber(user.horse)) user.horse = 0
-                if (!isNumber(user.horseexp)) user.horseexp = 0
-                if (!isNumber(user.cat)) user.cat = 0
-                if (!isNumber(user.catexp)) user.catexp = 0
-                if (!isNumber(user.fox)) user.fox = 0
-                if (!isNumber(user.foxhexp)) user.foxexp = 0
-                if (!isNumber(user.dog)) user.dog = 0
-                if (!isNumber(user.dogexp)) user.dogexp = 0
-
-                if (!isNumber(user.horselastfeed)) user.horselastfeed = 0
-                if (!isNumber(user.catlastfeed)) user.catlastfeed = 0
-                if (!isNumber(user.foxlastfeed)) user.foxlastfeed = 0
-                if (!isNumber(user.doglastfeed)) user.doglastfeed = 0
-
+                if (!isNumber(user.psepick)) user.psepick = 0
+                if (!isNumber(user.psenjata)) user.psenjata = 0
+            
+                if (!isNumber(user.potion)) user.potion = 0
+                if (!isNumber(user.sampah)) user.sampah = 0
                 if (!isNumber(user.armor)) user.armor = 0
-                if (!isNumber(user.armordurability)) user.armordurability = 0
+                if (!isNumber(user.pancing)) user.pancing = 0
+                //penambah stamina
+                if (!isNumber(user.apel)) user.apel = 0
+                if (!isNumber(user.ayamb)) user.ayamb = 0
+                if (!isNumber(user.ayamg)) user.ayamg = 0
+                if (!isNumber(user.sapir)) user.sapir = 0
+                if (!isNumber(user.ssapi)) user.ssapi = 0
+                if (!isNumber(user.esteh)) user.esteh = 0
+                if (!isNumber(user.leleg)) user.leleg = 0
+                if (!isNumber(user.leleb)) user.leleb = 0
+                //tools
                 if (!isNumber(user.sword)) user.sword = 0
                 if (!isNumber(user.sworddurability)) user.sworddurability = 0
-
-                //Herramientas
-                if (!isNumber(user.mininglevel)) user.mininglevel = 0
                 if (!isNumber(user.pickaxe)) user.pickaxe = 0
                 if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
-                if (!isNumber(user.fishinglevel)) user.fishinglevel = 0
-                if (!isNumber(user.rod)) user.rod = 0
-                if (!isNumber(user.roddurability)) user.roddurability = 0
-
-                if (!isNumber(user.lastclaim)) user.lastclaim = 0
+                if (!isNumber(user.fishingrod)) user.fishingrod = 0
+                if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
+                if (!isNumber(user.umpan)) user.umpan = 0
+                
+                if (!isNumber(user.kucing)) user.kucing = 0
+                if (!isNumber(user.kucinglastclaim)) user.kucinglastclaim = 0
+                if (!isNumber(user.kuda)) user.kuda = 0
+                if (!isNumber(user.kudalastclaim)) user.kudalastclaim = 0
+                if (!isNumber(user.rubah)) user.rubah = 0
+                if (!isNumber(user.rubahlastclaim)) user.rubahlastclaim = 0
+                if (!isNumber(user.anjing)) user.anjing = 0
+                if (!isNumber(user.anjinglastclaim)) user.anjinglastclaim = 0
+                if (!isNumber(user.serigalalastclaim)) user.serigalalastclaim = 0
+                if (!isNumber(user.nagalastclaim)) user.nagalastclaim = 0
+                if (!isNumber(user.phonixlastclaim)) user.phonixlastclaim = 0
+                if (!isNumber(user.griffinlastclaim)) user.griffinlastclaim = 0
+                if (!isNumber(user.centaurlastclaim)) user.centaurlastclaim = 0
+                
+                if (!isNumber(user.makananpet)) user.makananpet
+                if (!isNumber(user.makanannaga)) user.makanannaga = 0
+                if (!isNumber(user.makananphonix)) user.makananphonix = 0
+                if (!isNumber(user.makanangriffin)) user.makanangriffin = 0
+                if (!isNumber(user.makananserigala)) user.makananserigala = 0
+                if (!isNumber(user.makanancentaur)) user.makanancentaur = 0
+    
+                if (!'Banneduser' in user) user.Banneduser = false
+                if (!'BannedReason' in user) user.BannedReason = ''
+                if (!isNumber(user.warn)) user.warn = 0
+    
+                if (!isNumber(user.afk)) user.afk = -1
+                if (!'afkReason' in user) user.afkReason = ''
+            
+            //PET
+                if (!isNumber(user.healthmonster)) user.healthmonster = 0
+                if (!isNumber(user.anakkucing)) user.anakkucing = 0
+                if (!isNumber(user.anakkuda)) user.anakkuda = 0
+                if (!isNumber(user.anakrubah)) user.anakrubah = 0
+                if (!isNumber(user.anakanjing)) user.anakanjing = 0
+                if (!isNumber(user.serigala)) user.serigala = 0
+                if (!isNumber(user.anakserigala)) user.anakserigala = 0
+                if (!isNumber(user.naga)) user.naga = 0
+                if (!isNumber(user.anaknaga)) user.anaknaga = 0
+                if (!isNumber(user.phonix)) user.phonix = 0
+                if (!isNumber(user.anakphonix)) user.anakphonix = 0
+                if (!isNumber(user.griffin)) user.griffin = 0
+                if (!isNumber(user.anakgriffin)) user.anakgriffin = 0
+                if (!isNumber(user.kyubi)) user.kyubi = 0
+                if (!isNumber(user.anakkyubi)) user.anakkyubi = 0
+                if (!isNumber(user.centaur)) user.centaur = 0
+                if (!isNumber(user.anakcentaur)) user.anakcentaur = 0
+                if (!isNumber(user.makananpet)) user.makananpet = 0
+    
+                if (!isNumber(user.antispam)) user.antispam = 0
+                if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0
+    
+                if (!isNumber(user.kayu)) user.kayu = 0
+                if (!('kingdom' in user)) user.kingdom = true
+                if (!isNumber(user.batu)) user.batu = 0
+                if (!isNumber(user.ramuan)) user.ramuan = 0
+                if (!isNumber(user.string)) user.string = 0
+                if (!isNumber(user.sword)) user.sword = 0
+                if (!isNumber(user.sworddurability)) user.sworddurability = 0
+                if (!isNumber(user.pickaxe)) user.pickaxe = 0
+                if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
+                if (!isNumber(user.fishingrod)) user.fishingrod = 0
+                if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
+    
+                //mancing
+                if (!isNumber(user.paus)) user.paus = 0
+         if (!isNumber(user.kepiting)) user.kepiting = 0
+         if (!isNumber(user.gurita)) user.gurita = 0
+         if (!isNumber(user.cumi)) user.cumi= 0
+         if (!isNumber(user.buntal)) user.buntal = 0
+         if (!isNumber(user.dory)) user.dory = 0
+         if (!isNumber(user.lumba)) user.lumba = 0
+         if (!isNumber(user.lobster)) user.lobster = 0
+         if (!isNumber(user.hiu)) user.hiu = 0
+         if (!isNumber(user.udang)) user.udang = 0
+         if (!isNumber(user.ikan)) user.ikan = 0
+         if (!isNumber(user.nila)) user.nila = 0
+         if (!isNumber(user.bawal)) user.bawal = 0
+         if (!isNumber(user.lele)) user.lele = 0
+         if (!isNumber(user.orca)) user.orca = 0
+            
+         if (!isNumber(user.banteng)) user.banteng = 0
+         if (!isNumber(user.harimau)) user.harimau = 0
+         if (!isNumber(user.gajah)) user.gajah = 0
+         if (!isNumber(user.kambing)) user.kambing = 0
+         if (!isNumber(user.panda)) user.panda = 0
+         if (!isNumber(user.buaya)) user.buaya = 0
+         if (!isNumber(user.kerbau)) user.kerbau = 0
+         if (!isNumber(user.sapi)) user.sapi = 0
+         if (!isNumber(user.monyet)) user.monyet = 0
+         if (!isNumber(user.babihutan)) user.babihutan = 0
+         if (!isNumber(user.babi)) user.babi = 0
+         if (!isNumber(user.ayam)) user.ayam = 0
+     
                 if (!isNumber(user.lastadventure)) user.lastadventure = 0
+                if (!isNumber(user.lastkill)) user.lastkill = 0
                 if (!isNumber(user.lastfishing)) user.lastfishing = 0
                 if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
+                if (!isNumber(user.lastwar)) user.lastwar = 0
+                if (!isNumber(user.lastsda)) user.lastsda = 0
+                if (!isNumber(user.lastberbru)) user.lastberbru = 0
                 if (!isNumber(user.lastduel)) user.lastduel = 0
+                if (!isNumber(user.lastjb)) user.lastjb = 0
+                if (!isNumber(user.lastSetStatus)) user.lastSetStatus = 0
                 if (!isNumber(user.lastmining)) user.lastmining = 0
                 if (!isNumber(user.lasthunt)) user.lasthunt = 0
+                if (!isNumber(user.lastngocok)) user.lastngocok = 0
+                if (!isNumber(user.lastgift)) user.lastgift = 0
+                if (!isNumber(user.lastrob)) user.lastrob = 0
+                if (!isNumber(user.lastngojek)) user.lastngojek = 0
+                if (!isNumber(user.lastgrab)) user.lastgrab = 0
+                if (!isNumber(user.lastberkebon)) user.lastberkebon = 0
+                if (!isNumber(user.lastcodereg)) user.lastcodereg = 0
+                if (!isNumber(user.lastdagang)) user.lastdagang = 0
+                if (!isNumber(user.lasthourly)) user.lasthourly = 0
                 if (!isNumber(user.lastweekly)) user.lastweekly = 0
                 if (!isNumber(user.lastmonthly)) user.lastmonthly = 0
-                    
-                if (!isNumber(user.premium)) user.premium = false
-                if (!isNumber(user.premiumTime)) user.premiumTime = 0
-                if (!isNumber(user.limitjoin)) user.limitjoin = 0
-
-                // Tipos de minerales
-                if (!isNumber(user.mineral_tin)) user.mineral_tin = 0
-                if (!isNumber(user.mineral_copper)) user.mineral_copper = 0
-                if (!isNumber(user.mineral_iron)) user.mineral_iron = 0
-                if (!isNumber(user.mineral_salt)) user.mineral_salt = 0
-                if (!isNumber(user.mineral_coal)) user.mineral_coal = 0
-                if (!isNumber(user.mineral_silver)) user.mineral_silver = 0
-                if (!isNumber(user.mineral_crimsteel)) user.mineral_crimsteel = 0
-                if (!isNumber(user.mineral_gold)) user.mineral_gold = 0
-                if (!isNumber(user.mineral_pink_salt)) user.mineral_pink_salt = 0
-                if (!isNumber(user.mineral_mythan)) user.mineral_mythan = 0
-                if (!isNumber(user.mineral_sandstone)) user.mineral_sandstone = 0
-                if (!isNumber(user.mineral_cobalt)) user.mineral_cobalt = 0
-                if (!isNumber(user.mineral_varaxium)) user.mineral_varaxium = 0
-                if (!isNumber(user.mineral_black_salt)) user.mineral_black_salt = 0
-                if (!isNumber(user.mineral_magic)) user.mineral_magic = 0
-
-                // Tipos de picos
-                if (!isNumber(user.pickaxe_bronze)) user.pickaxe_bronze = 0
-                if (!isNumber(user.pickaxe_iron)) user.pickaxe_iron = 0
-                if (!isNumber(user.pickaxe_steel)) user.pickaxe_steel = 0
-                if (!isNumber(user.pickaxe_crimsteel)) user.pickaxe_crimsteel = 0
-                if (!isNumber(user.pickaxe_mythan)) user.pickaxe_mythan = 0
-                if (!isNumber(user.pickaxe_cobalt)) user.pickaxe_cobalt = 0
-                if (!isNumber(user.pickaxe_varaxite)) user.pickaxe_varaxite = 0
-                if (!isNumber(user.pickaxe_magic)) user.pickaxe_magic = 0
-                if (!isNumber(user.pickaxe_umbral)) user.pickaxe_umbral = 0
-                if (!isNumber(user.pickaxe_ancient)) user.pickaxe_ancient = 0
-
-                if (!isNumber(user.pickaxe_equipped)) user.pickaxe_equipped = 0
-
-                if (!isNumber(user.mining_level)) user.mining_level = 0
-                if (!isNumber(user.mining_exp)) user.mining_exp = 0
+                if (!isNumber(user.lastIstigfar)) user.lastIstigfar = 0
+                if (!isNumber(user.lastturu)) user.lastturu = 0
+                if (!isNumber(user.lastseen)) user.lastseen = 0
+                if (!isNumber(user.lastbansos)) user.lastbansos = 0
+                if (!isNumber(user.lastrampok)) user.lastrampok = 0
+                if (!('registered' in user)) user.registered = false
+                if (!user.registered) {
+                if (!('name' in user)) user.name = conn.getName(m.sender)
+    
+                if (!isNumber(user.apel)) user.apel = 0
+                if (!isNumber(user.anggur)) user.anggur = 0
+                if (!isNumber(user.jeruk)) user.jeruk = 0
+                if (!isNumber(user.semangka)) user.semangka = 0
+                if (!isNumber(user.mangga)) user.mangga = 0
+                if (!isNumber(user.stroberi)) user.stroberi = 0
+                if (!isNumber(user.pisang)) user.pisang = 0
+                if (!isNumber(user.kayu)) user.kayu = 0
+                if (!isNumber(user.emas)) user.emas = 0
+                if (!isNumber(user.makanan)) user.makanan = 0
+                if (!isNumber(user.bibitanggur)) user.bibitanggur = 0
+                if (!isNumber(user.bibitpisang)) user.bibitpisang = 0
+                if (!isNumber(user.bibitapel)) user.bibitapel = 0
+                if (!isNumber(user.bibitmangga)) user.bibitmangga = 0
+                if (!isNumber(user.bibitjeruk)) user.bibitjeruk = 0
+    
+                  
+                    if (!isNumber(user.age)) user.age = -1
+                    if (!isNumber(user.premiumDate)) user.premiumDate = -1
+                    if (!isNumber(user.regTime)) user.regTime = -1
                 
             } else
                 global.db.data.users[m.sender] = {
