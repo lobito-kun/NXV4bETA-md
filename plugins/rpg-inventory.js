@@ -120,32 +120,32 @@ let handler = async (m, { conn }) => {
   const crates = Object.keys(inventory.crates).map(v => user[v] && `*${global.rpg.emoticon(v)}${v}:* ${user[v]}`).filter(v => v).join('\n').trim()
   const pets = Object.keys(inventory.pets).map(v => user[v] && `*${global.rpg.emoticon(v)}${v}:* ${user[v] >= inventory.pets[v] ? 'Max Levels' : `Level(s) ${user[v]}`}`).filter(v => v).join('\n').trim()
   const cooldowns = Object.entries(inventory.cooldowns).map(([cd, { name, time }]) => cd in user && `*✧ ${name}*: ${new Date() - user[cd] >= time ? '✅' : '❌'}`).filter(v => v).join('\n').trim()
-  const caption = `
-🧑🏻‍🏫 ᴜsᴇʀ: *${conn.getName(m.sender)}*
-${Object.keys(inventory.others).map(v => user[v] && `⮕ ${global.rpg.emoticon(v)} ${v}: ${user[v]}`).filter(v => v).join('\n')}${tools ? `
-🔖 ᴛᴏᴏʟs :
+  const teks = `\t\t\t*× 🎒 Inventario RPG 🎒 ×*
+
+*🧑🏻‍🏫 Usuario:* ${conn.getName(m.sender)}
+${Object.keys(inventory.others).map(v => user[v] && `◦ ${global.rpg.emoticon(v)}: ${user[v]}`).filter(v => v).join('\n')}${tools ? `
+*🔖 Herramientas :*
 ${tools}` : ''}${items ? `
 
-🔖 ɪᴛᴇᴍs :
+*🔖 Items :*
 ${items}` : ''}${crates ? `
 
-🔖 ᴄʀᴀᴛᴇs :
+*🔖 Cajas :*
 ${crates}` : ''}${pets ? `
 
-🔖 ᴩᴇᴛs :
+*🔖 Mascotas :*
 ${pets}` : ''}${cooldowns ? `
 
-♻️ ᴄᴏʟʟᴇᴄᴛ ʀᴇᴡᴀʀᴅs:
+*♻️ Tiempo de espera :*
 ${cooldowns}` : ''}
 *✧ dungeon: ${user.lastdungeon == 0 ? '✅': '❌'}*
 *✧ mining: ${user.lastmining == 0 ? '✅': '❌'}*
-`.trim()
-conn.sendButton(m.chat, '*–––––『 INVENTORY 』–––––*', caption, './media/inventory.jpg', [
-[`ᴛʀᴀɴsғᴇʀ`, `.transfer`],
-[`ᴀᴅᴠᴇɴᴛᴜʀᴇ`, `.adventure`]
-], m, {asLocation: true})
+`
+  m.reply(teks)
 }
-handler.help = ['inventory', 'inv']
+
+handler.help = ['inventario']
 handler.tags = ['rpg']
-handler.command = /^(inv(entory)?|bal(ance)?|money|e?xp)$/i
+handler.command = /^(inventario|inventory|inv)$/i
+
 export default handler
