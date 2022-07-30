@@ -9,14 +9,7 @@ let handler = async (m, { usedPrefix }) => {
 ᴩʟᴇᴀsᴇ ʜᴇᴀʟ ❤ ғɪʀsᴛ ᴛᴏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ᴀɢᴀɪɴ.`.trim(), './media/lowhealth.jpg', [
 [`ʜᴇᴀʟ ❤`, `${usedPrefix}heal`]
 ], m, {asLocation: true})
-    if (new Date - user.lastadventure <= cooldown) return conn.sendButton(m.chat, 
-'*–––––『 COOLDOWN 』–––––*',
-`ʏᴏᴜ'ᴠᴇ ᴀʟʀᴇᴀᴅʏ *ᴀᴅᴠᴇɴᴛᴜʀᴇ*, ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ ᴛɪʟʟ ᴄᴏᴏʟᴅᴏᴡɴ ғɪɴɪsʜ.
-
-⏱️ ${timers.toTimeString()}`.trim(), './media/cooldown.jpg', [
-[`ɪɴᴠᴇɴᴛᴏʀʏ`, `${usedPrefix}inventory`],
-[`ᴅᴀɪʟʏ`, `${usedPrefix}daily`]
-], m, {asLocation: true})
+    if (new Date - user.lastadventure <= cooldown) return `⏱️ Espere *${timers.toTimeString()}* para volver a ir de aventura`
     const rewards = reward(user)
     let text = '*Perdida de la aventura :*\n'
     for (const lost in rewards.lost) if (user[lost]) {
