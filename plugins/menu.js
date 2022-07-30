@@ -61,8 +61,8 @@ const defaultMenu = {
 
 \t\t\t*L I S T A  -  M E N U S*
 `.trimStart(),
-  header: '⠀❒ *%category*',
-  body: '⠀│∙ *%cmd*\n',
+  header: '*≡ %category*\n\t┌─',
+  body: '\t│∙ *%cmd*\n',
   footer: '⠀╰•\n╴',
   after: '',
 }
@@ -175,7 +175,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
                 ]
                 let buttonMessage = {
                     image: imgmenu,
-                    caption: teks,
+                    caption: text.trim(),
                     mentions: [m.sender],
                     footer: conn.user.name,
                     buttons: buttons,
