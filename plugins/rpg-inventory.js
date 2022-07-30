@@ -95,15 +95,15 @@ const inventory = {
   },
   cooldowns: {
     lastclaim: {
-      name: 'claim',
+      name: 'Reclamo [ Diario ]',
       time: daily.cooldown
     },
     lastweekly: {
-    	name: 'weekly',
+    	name: 'Reclamo [ Semanal ]',
         time: weekly.cooldown
         },
     lastmonthly: {
-      name: 'monthly',
+      name: 'Reclamo [ Mensual ]',
       time: monthly.cooldown
     },
     lastadventure: {
