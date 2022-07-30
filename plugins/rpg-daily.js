@@ -14,7 +14,6 @@ let handler = async (m,{ conn } ) => {
     user[reward] += rewards[reward]
     text += `◦ ${global.rpg.emoticon(reward)}: +${rewards[reward]}\n`
   }
-  let teks = ``
   m.reply(text)
   user.lastclaim = new Date * 1
 }
