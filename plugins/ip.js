@@ -1,10 +1,10 @@
 import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
-  if (!text) return conn.reply(m.chat, 'Masukan Alamat IP yang akan dicek', m)
+  if (!text) return conn.reply(m.chat, ' SCAN IP created by Lobos de Troya...', m)
   let ip = await (await fetch(`http://ip-api.com/json/${text}`)).json()
   if (ip.status == 'fail') return m.reply('No se encontró la Ip!')
-  let iptext = `\t\t\t\t*‧ 🖥️ Información IP 🖥️ ‧*
+  let iptext = `\t\t\t\t*‧ 🖥️ NX-SYSTEM IP SCAN 🖥️ ‧*
 
 🔍 *Ip:* ${ip.query}
 
