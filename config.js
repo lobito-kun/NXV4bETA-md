@@ -8,15 +8,14 @@ const hoy = new Date(dnw);
 let dtw = hoy.toLocaleDateString()
 
 global.owner = [
-  ['51940617554', '「gatitoツ」', true], 
-  ['5356588048'], 
-  ['5493885839638'], 
-  ['573125484672'] 
+  ['5493704583368', '「Max」', true], 
+  ['5493436473920', '「HHON」', true], 
+  ['5493436617283','「SYSTEM-NX」', true]
   
 ] //Numeros de owner 
 
-global.mods = ['50246028932'] // Moderadores
-global.prems = ['50489079501', '5219631769130', '573125484672']  // El usuario Premium tiene diamantes ilimitado
+global.mods = [''] // Moderadores
+global.prems = ['5493704583368', '5493436473920', '5493436617283']  // El usuario Premium tiene diamantes ilimitado
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
