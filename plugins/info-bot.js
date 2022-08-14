@@ -57,6 +57,6 @@ conn.reply(m.chat, infobt, m, { contextInfo: { externalAdReply: { mediaUrl: fals
 
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = /^(info|infobot|botinfo)$/i
+handler.command = /^(info|infobot|estado)$/i
 
 export default handler
