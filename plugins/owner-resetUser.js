@@ -11,7 +11,7 @@ let handler = async (m, { conn, text }) => {
 		var number = text
   }
 
-  if(!text && !m.quoted) return conn.reply(m.chat, `*❏ USUARIO REINICIADO*\n\nEtiquete al usuario, escriba el número o responda al mensaje del usuario que desea REINICIAR`, m)
+  if(!text && !m.quoted) return conn.reply(m.chat, `*❏ USUARIO REINICIADO DEL NX-SERVER*\n\nEtiquete al usuario, escriba el número o responda al mensaje del usuario que desea REINICIAR`, m)
   //let exists = await conn.isOnWhatsApp(number)
   // if (exists) return conn.reply(m.chat, `*El número no está registrado en WhatsApp*`, m)
   if(isNaN(number)) return conn.reply(m.chat, `*❏ USUARIO REINICIADO*\n\nEl número que ingresaste no es válido`, m)
@@ -34,7 +34,7 @@ let handler = async (m, { conn, text }) => {
   
 	delete global.db.data.users[user]
  	
- 	conn.reply(m.chat, `*❏ USUARIO REINICIADO*\n\n✅ Se reinició a @${number} de la *BASE DE DATOS*`, null, {contextInfo: {
+ 	conn.reply(m.chat, `*❏ USUARIO REINICIADO*\n\n✅ Se reinició a @${number} de la *BASE DE DATOS NX*`, null, {contextInfo: {
     mentionedJid: [user]
  	}})
 
