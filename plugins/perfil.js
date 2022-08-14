@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let prem = global.prems.includes(who.split`@`[0])
   let sn = createHash('md5').update(who).digest('hex')
   let about = (await conn.fetchStatus(who).catch(console.error) || {}).status || '×'
-  let str = `\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
+  let str = `\t\t\t\t*‧ 🐣 Perfil 🐣 ‧*
 
  *◦ Nombre:* ${username}
  *◦ Tag:* @${who.replace(/@.+/, '')}
