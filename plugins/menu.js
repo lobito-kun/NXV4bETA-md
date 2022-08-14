@@ -5,26 +5,26 @@ import { xpRange } from '../lib/levelling.js'
 
 let tags = {
   'main': 'Menu 🧇',
-  'rpg': 'Juego - RPG 🌋',
-  'game': 'Juegos 🎮',
-  'exp': 'Exp & limite ✨',
-  'sticker': 'Stickers 🧩',
-  'maker': 'Logo - maker 🎨',
-  'random': 'Random 🍥',
-  'adm': 'Admins 😎',
-  'nable': 'Activadores 🛎️',
-  'group': 'Grupos 👥',
-  'premium': 'Premiun 👑',
-  'internet': 'Internet 📶',
-  'downloader': 'Descargas 📥',
-  'search': 'Buscador 🔎',
-  'tools': 'Ajustes ⚙️',
-  'fun': 'Diverción 🎡',
-  'database': 'Almacenamiento 📂',
-  'nsfw': 'Nsfw 🔞',
-  'owner': 'Creador 🐈',
-  'info': 'Info 📍',
-  'advanced': 'Abanzado 💠',
+  'rpg': 'Juego - RPG ',
+  'game': 'Juegos ',
+  'exp': 'Exp & limite ',
+  'sticker': 'Stickers ',
+  'maker': 'Logo - maker ',
+  'random': 'Random ',
+  'adm': 'Admins ',
+  'nable': 'Activadores ',
+  'group': 'Grupos ',
+  'premium': 'Premiun ',
+  'internet': 'Internet ',
+  'downloader': 'Descargas ',
+  'search': 'Buscador ',
+  'tools': 'Ajustes ',
+  'fun': 'Diverción ',
+  'database': 'Almacenamiento ',
+  'nsfw': 'Nsfw ',
+  'owner': 'Creador ',
+  'info': 'Info ',
+  'advanced': 'Abanzado ',
 }
 
 const defaultMenu = {
@@ -34,19 +34,19 @@ const defaultMenu = {
 “ Holɑ *%taguser 👋🏻*, %greeting ”
 
 
-\t\t\t*I N F O  -  U S E R*
+\t\t\t*N X  -  U S E R*
 🍬 *Nombre* : %name
 🍬 *Exp* : %totalexp
 🍬 *Limite* : %limit
 🍬 *Rango* : %role
 🍬 *Nivel* : %level
 
-⠀\t\t\t*I N F O  -  B O T*
+⠀\t\t\t*N X  -  B O T*
 🍬 *Usuarios* : %totalreg
 🍬 *Regs* : %rtotalreg
 🍬 *Hora* : %time
 
-⠀\t\t\t*I N F O  -  N P M*
+⠀\t\t\t*N X  -  N P M*
 🍬 *Nombre* : %npmname
 🍬 *Descrip* : %npmdesc
 🍬 *Versión* : %version
@@ -55,11 +55,11 @@ const defaultMenu = {
 🍬 *Licencia* : %license
 
 
-“ Si encuentrɑ un error en lɑ bot reportɑr con el comɑndo *%preport* ”
+“ Si encuentrɑ un error, reportalo con el comɑndo *%preport* ”
 
 *Ժ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴*
 
-\t\t\t*L I S T A  -  M E N U S*
+\t\t\t*N X  -  M E N U E S*
 `.trimStart(),
   header: '*≡ %category*\nᅠ┌─',
   body: 'ᅠ│∙ *%cmd*\n',
