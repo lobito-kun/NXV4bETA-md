@@ -26,7 +26,7 @@ Te falta *${max - user.exp}* de *XP* para subir de nivel
 ▢ Nivel actual : *${user.level}*
 └──────────────
 
-*_Cuanto más interactúes con los bots, mayor será tu nivel_*
+*_Cuanto más interactúes con NIXI, mayor será tu nivel_*
 `.trim()
         try {
             const img = await levelup(teks, user.level)
