@@ -9,11 +9,11 @@ let handler = async (m, { text, usedPrefix, command }) => {
   let tes = json.success
    m.reply(`${tes}`) 
   } catch {
-   m.reply('😔 No entiendo')
+   m.reply(' No entiendo')
   }
 }
 
-handler.help = ['simi']
+handler.help = ['nixi']
 handler.tags = ['main']
 handler.command = /^(simi|simsimi)$/i
 
